@@ -1,1 +1,1 @@
-# Lichatobjekt
+# Lichtobjekt
