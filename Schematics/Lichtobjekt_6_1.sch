@@ -1,0 +1,2508 @@
+EESchema Schematic File Version 4
+EELAYER 30 0
+EELAYER END
+$Descr User 15316 10010
+encoding utf-8
+Sheet 2 3
+Title ""
+Date ""
+Rev ""
+Comp ""
+Comment1 ""
+Comment2 ""
+Comment3 ""
+Comment4 ""
+$EndDescr
+Wire Bus Line
+	10400 3200 7500 3200
+Wire Bus Line
+	7500 3200 4100 3200
+Wire Wire Line
+	9700 5100 9700 5000
+Wire Wire Line
+	9900 5200 9900 5100
+Wire Wire Line
+	9900 5100 9700 5100
+Wire Wire Line
+	9700 5200 9700 5100
+Wire Wire Line
+	9200 5500 9400 5500
+Wire Wire Line
+	9400 5500 9400 5100
+Wire Wire Line
+	9400 5100 9700 5100
+Connection ~ 9700 5100
+Text GLabel 9700 5100 0    10   BiDi ~ 0
++UB3
+Wire Wire Line
+	13100 4000 13100 4100
+Text GLabel 13100 4000 0    10   BiDi ~ 0
++UB3
+Wire Wire Line
+	7700 1300 7100 1300
+Wire Wire Line
+	7100 1300 7100 1200
+Wire Wire Line
+	7100 1200 7100 1100
+Wire Wire Line
+	7700 1200 7100 1200
+Wire Wire Line
+	6800 1900 6800 1800
+Wire Wire Line
+	6800 1800 7100 1800
+Wire Wire Line
+	7100 1800 7100 1900
+Wire Wire Line
+	7100 1800 7100 1300
+Wire Wire Line
+	7700 1800 7100 1800
+Connection ~ 7100 1200
+Connection ~ 7100 1800
+Connection ~ 7100 1300
+Text GLabel 7700 1300 0    10   BiDi ~ 0
++UB3
+Wire Wire Line
+	11800 2900 12000 2900
+Wire Wire Line
+	12000 2900 12000 2800
+Text GLabel 11800 2900 0    10   BiDi ~ 0
++UB3
+Wire Wire Line
+	2400 2300 2400 2600
+Wire Wire Line
+	2400 2600 2000 2600
+Wire Wire Line
+	2500 2600 2400 2600
+Connection ~ 2400 2600
+Text GLabel 2400 2300 0    10   BiDi ~ 0
++UB3
+Wire Wire Line
+	3800 6900 3800 7000
+Text GLabel 3800 6900 0    10   BiDi ~ 0
++UB3
+Wire Wire Line
+	4800 4300 4800 3700
+Wire Wire Line
+	5200 3700 4800 3700
+Wire Wire Line
+	4800 3700 4800 3600
+Connection ~ 4800 3700
+Text GLabel 4800 4300 0    10   BiDi ~ 0
++UB3
+Wire Wire Line
+	2700 4600 2100 4600
+Wire Wire Line
+	2100 5000 2100 4600
+Wire Wire Line
+	2100 4600 2100 4400
+Connection ~ 2100 4600
+Text GLabel 2700 4600 0    10   BiDi ~ 0
++UB3
+Wire Wire Line
+	11200 4200 11200 4100
+Text GLabel 11200 4200 0    10   BiDi ~ 0
+GND
+Wire Wire Line
+	11600 4200 11600 4100
+Text GLabel 11600 4200 0    10   BiDi ~ 0
+GND
+Wire Wire Line
+	12800 5500 12800 5400
+Wire Wire Line
+	12800 5400 12800 5100
+Wire Wire Line
+	13100 5300 13100 5400
+Wire Wire Line
+	13100 5400 12800 5400
+Connection ~ 12800 5400
+Text GLabel 12800 5500 0    10   BiDi ~ 0
+GND
+Wire Wire Line
+	12700 3400 12700 3300
+Wire Wire Line
+	12700 3300 12700 3200
+Wire Wire Line
+	13200 3200 13200 3300
+Wire Wire Line
+	13200 3300 13000 3300
+Wire Wire Line
+	13000 3300 12900 3300
+Wire Wire Line
+	12900 3300 12700 3300
+Wire Wire Line
+	13000 2900 13000 3300
+Wire Wire Line
+	12900 2900 12900 3300
+Connection ~ 12900 3300
+Connection ~ 13000 3300
+Connection ~ 12700 3300
+Text GLabel 12700 3400 0    10   BiDi ~ 0
+GND
+Wire Wire Line
+	13300 8000 13300 7800
+Text GLabel 13300 8000 0    10   BiDi ~ 0
+GND
+Wire Wire Line
+	12900 8000 12900 7800
+Text GLabel 12900 8000 0    10   BiDi ~ 0
+GND
+Wire Wire Line
+	11700 2100 11700 1800
+Text GLabel 11700 2100 0    10   BiDi ~ 0
+GND
+Wire Wire Line
+	11200 2100 11200 2000
+Text GLabel 11200 2100 0    10   BiDi ~ 0
+GND
+Wire Wire Line
+	1900 8200 1800 8200
+Wire Wire Line
+	2000 7500 1800 7500
+Wire Wire Line
+	1800 7500 1800 8200
+Wire Wire Line
+	1800 8200 1800 8700
+Wire Wire Line
+	1800 8700 1800 9000
+Wire Wire Line
+	2600 8700 1800 8700
+Connection ~ 1800 8200
+Connection ~ 1800 8700
+Text GLabel 1900 8200 0    10   BiDi ~ 0
+GND
+Wire Wire Line
+	3200 7900 3200 8800
+Wire Wire Line
+	3200 8800 3500 8800
+Wire Wire Line
+	3500 8800 3800 8800
+Wire Wire Line
+	3800 8800 3800 9000
+Wire Wire Line
+	3800 8800 3800 8700
+Wire Wire Line
+	3500 8800 3500 8700
+Connection ~ 3500 8800
+Connection ~ 3800 8800
+Text GLabel 3200 7900 0    10   BiDi ~ 0
+GND
+Wire Wire Line
+	7600 2300 7600 2400
+Wire Wire Line
+	7600 2400 7600 2500
+Wire Wire Line
+	7600 2500 7600 2600
+Wire Wire Line
+	7100 2200 7100 2300
+Wire Wire Line
+	7100 2300 7400 2300
+Wire Wire Line
+	7400 2300 7600 2300
+Wire Wire Line
+	6800 2200 6800 2300
+Wire Wire Line
+	6800 2300 7100 2300
+Wire Wire Line
+	7700 2300 7600 2300
+Wire Wire Line
+	7700 2500 7600 2500
+Wire Wire Line
+	7700 2400 7600 2400
+Wire Wire Line
+	7600 2300 7600 2100
+Wire Wire Line
+	7600 2100 7600 2000
+Wire Wire Line
+	7600 2000 7600 1900
+Wire Wire Line
+	7600 1900 7700 1900
+Wire Wire Line
+	7700 2100 7600 2100
+Wire Wire Line
+	7700 2000 7600 2000
+Wire Wire Line
+	7400 2200 7400 2300
+Connection ~ 7100 2300
+Connection ~ 7600 2000
+Connection ~ 7600 2100
+Connection ~ 7600 2300
+Connection ~ 7600 2400
+Connection ~ 7600 2500
+Connection ~ 7400 2300
+Text GLabel 7600 2300 0    10   BiDi ~ 0
+GND
+Wire Wire Line
+	2400 3100 2400 2900
+Wire Wire Line
+	2400 2900 2000 2900
+Wire Wire Line
+	2000 3100 2400 3100
+Wire Wire Line
+	2400 3100 2400 3600
+Connection ~ 2400 3100
+Text GLabel 2400 3100 0    10   BiDi ~ 0
+GND
+Wire Wire Line
+	9800 1400 9800 1800
+Wire Wire Line
+	9700 1400 9800 1400
+Text GLabel 9800 1400 0    10   BiDi ~ 0
+GND
+Wire Wire Line
+	12500 8900 12500 8800
+Text GLabel 12500 8900 0    10   BiDi ~ 0
+GND
+Wire Wire Line
+	4800 7700 4800 7600
+Text GLabel 4800 7700 0    10   BiDi ~ 0
+GND
+Wire Wire Line
+	5200 7700 5200 7400
+Text GLabel 5200 7700 0    10   BiDi ~ 0
+GND
+Wire Wire Line
+	5600 7700 5600 7200
+Text GLabel 5600 7700 0    10   BiDi ~ 0
+GND
+Wire Wire Line
+	9800 7900 9900 7900
+Wire Wire Line
+	9900 7900 9900 8000
+Text GLabel 9800 7900 0    10   BiDi ~ 0
+GND
+Wire Wire Line
+	9100 8700 9300 8700
+Wire Wire Line
+	9300 8700 9300 8800
+Text GLabel 9100 8700 0    10   BiDi ~ 0
+GND
+Wire Wire Line
+	11900 4200 11900 4100
+Text GLabel 11900 4200 0    10   BiDi ~ 0
+GND
+Wire Wire Line
+	8600 4400 8400 4400
+Wire Wire Line
+	8400 4400 8400 4600
+Text GLabel 8600 4400 0    10   BiDi ~ 0
+GND
+Wire Wire Line
+	12800 1800 12800 2100
+Text GLabel 12800 1800 0    10   BiDi ~ 0
+GND
+Wire Wire Line
+	9200 5600 9400 5600
+Wire Wire Line
+	9400 5600 9400 5900
+Text GLabel 9200 5600 0    10   BiDi ~ 0
+GND
+Wire Wire Line
+	4800 4800 4800 4700
+Wire Wire Line
+	4800 4700 4800 4600
+Wire Wire Line
+	5200 4400 5100 4400
+Wire Wire Line
+	5100 4400 5100 4700
+Wire Wire Line
+	6200 4200 6300 4200
+Wire Wire Line
+	6300 4200 6300 4700
+Wire Wire Line
+	6300 4700 5100 4700
+Wire Wire Line
+	4800 4700 5100 4700
+Connection ~ 5100 4700
+Connection ~ 4800 4700
+Text GLabel 4800 4800 0    10   BiDi ~ 0
+GND
+Wire Wire Line
+	2100 5900 2100 5800
+Wire Wire Line
+	2100 5800 2100 5300
+Wire Wire Line
+	3500 4900 3600 4900
+Wire Wire Line
+	3600 4900 3600 5100
+Wire Wire Line
+	3600 5100 3600 5200
+Wire Wire Line
+	3600 5200 3600 5300
+Wire Wire Line
+	3600 5300 3600 5800
+Wire Wire Line
+	3600 5800 2700 5800
+Wire Wire Line
+	2700 5800 2100 5800
+Wire Wire Line
+	2700 5500 2700 5800
+Wire Wire Line
+	3500 5300 3600 5300
+Wire Wire Line
+	3500 5200 3600 5200
+Wire Wire Line
+	3500 5100 3600 5100
+Connection ~ 3600 5100
+Connection ~ 3600 5200
+Connection ~ 3600 5300
+Connection ~ 2700 5800
+Connection ~ 2100 5800
+Text GLabel 2100 5900 0    10   BiDi ~ 0
+GND
+Wire Wire Line
+	11400 2900 11200 2900
+Wire Wire Line
+	11200 2900 11200 3300
+Wire Wire Line
+	11200 3300 11200 3600
+Wire Wire Line
+	11200 3600 11200 3700
+Wire Wire Line
+	11600 3800 11600 3600
+Wire Wire Line
+	11600 3600 11200 3600
+Wire Wire Line
+	11100 3300 11200 3300
+Wire Wire Line
+	11200 3600 10500 3600
+Wire Wire Line
+	11900 3700 11900 3600
+Wire Wire Line
+	11900 3600 11600 3600
+Wire Wire Line
+	11100 2900 11200 2900
+Connection ~ 11200 3600
+Connection ~ 11200 3300
+Text Label 10500 3600 0    70   ~ 0
+BRIGHT_IN
+Connection ~ 11600 3600
+Connection ~ 11200 2900
+Wire Wire Line
+	11500 9000 10500 9000
+Text Label 10500 9000 0    70   ~ 0
+BRIGHT_IN
+Wire Wire Line
+	13700 4600 12800 4600
+Wire Wire Line
+	12800 4600 12800 4800
+Wire Wire Line
+	10500 4600 12800 4600
+Text Label 10500 4600 0    70   ~ 0
+NRST
+Connection ~ 12800 4600
+Wire Wire Line
+	2000 3300 4000 3300
+Text Label 3450 3300 0    70   ~ 0
+NRST
+Wire Wire Line
+	13100 4500 13100 4800
+Wire Wire Line
+	13100 4800 13100 4900
+Wire Wire Line
+	13200 4800 13100 4800
+Connection ~ 13100 4800
+Wire Wire Line
+	13600 4800 13700 4800
+Wire Wire Line
+	13200 2700 13300 2700
+Wire Wire Line
+	13200 2900 13200 2700
+Wire Wire Line
+	13100 2700 13200 2700
+Connection ~ 13200 2700
+Wire Wire Line
+	13700 2700 13800 2700
+Wire Wire Line
+	13800 2600 12700 2600
+Wire Wire Line
+	12700 2600 12700 2700
+Wire Wire Line
+	12700 2700 12700 2900
+Wire Wire Line
+	12800 2700 12700 2700
+Connection ~ 12700 2700
+Wire Wire Line
+	13900 7200 12900 7200
+Wire Wire Line
+	12900 7200 12900 7300
+Wire Wire Line
+	12900 7300 12900 7500
+Wire Wire Line
+	13000 7300 12900 7300
+Connection ~ 12900 7300
+Wire Wire Line
+	13200 7300 13300 7300
+Wire Wire Line
+	13300 7300 13400 7300
+Wire Wire Line
+	13300 7500 13300 7300
+Connection ~ 13300 7300
+Wire Wire Line
+	13800 7300 13900 7300
+Wire Wire Line
+	11500 1500 11200 1500
+Wire Wire Line
+	11200 1500 11100 1500
+Wire Wire Line
+	11200 1600 11200 1500
+Connection ~ 11200 1500
+Wire Wire Line
+	11700 1400 11700 1300
+Wire Wire Line
+	11700 1300 11900 1300
+Wire Wire Line
+	12200 1300 12300 1300
+Wire Wire Line
+	10700 3300 10500 3300
+Text Label 10500 3300 0    70   ~ 0
+BRIGHT_HIGH
+Wire Wire Line
+	11500 7500 10500 7500
+Text Label 10500 7500 0    70   ~ 0
+BRIGHT_HIGH
+Wire Wire Line
+	9900 5700 9900 5600
+Wire Wire Line
+	9900 5700 10300 5700
+Wire Wire Line
+	9900 5700 9200 5700
+Text Label 10050 5700 0    70   ~ 0
+SDA
+Connection ~ 9900 5700
+Wire Wire Line
+	9700 1300 10300 1300
+Text Label 9850 1300 0    70   ~ 0
+SDA
+Wire Wire Line
+	11500 8500 10500 8500
+Text Label 10500 8500 0    70   ~ 0
+SDA
+Wire Wire Line
+	5200 4200 4200 4200
+Text Label 4200 4200 0    70   ~ 0
+SDA
+Wire Wire Line
+	2400 5100 2400 5600
+Wire Wire Line
+	2400 5600 4000 5600
+Text Label 3800 5600 0    70   ~ 0
+SDA
+Wire Wire Line
+	9700 5600 9700 5800
+Wire Wire Line
+	9700 5800 10300 5800
+Wire Wire Line
+	9200 5800 9700 5800
+Text Label 10050 5800 0    70   ~ 0
+SCL
+Connection ~ 9700 5800
+Wire Wire Line
+	9700 1200 10300 1200
+Text Label 9850 1200 0    70   ~ 0
+SCL
+Wire Wire Line
+	11500 8400 10500 8400
+Text Label 10500 8400 0    70   ~ 0
+SCL
+Wire Wire Line
+	5200 4100 4200 4100
+Text Label 4200 4100 0    70   ~ 0
+SCL
+Wire Wire Line
+	3500 4800 4000 4800
+Text Label 3800 4800 0    70   ~ 0
+SCL
+Wire Wire Line
+	2600 7500 2500 7500
+Wire Wire Line
+	2500 7500 2400 7500
+Wire Wire Line
+	2600 7200 2500 7200
+Wire Wire Line
+	2500 7200 2500 7500
+Connection ~ 2500 7500
+Wire Wire Line
+	2600 8100 2500 8100
+Wire Wire Line
+	2500 8100 2400 8100
+Wire Wire Line
+	2600 7800 2500 7800
+Wire Wire Line
+	2500 7800 2500 8100
+Connection ~ 2500 8100
+Wire Wire Line
+	2600 8300 2500 8300
+Wire Wire Line
+	2500 8300 2400 8300
+Wire Wire Line
+	2600 8500 2500 8500
+Wire Wire Line
+	2500 8500 2500 8300
+Connection ~ 2500 8300
+Wire Wire Line
+	3000 7500 3200 7500
+Wire Wire Line
+	3200 7500 3800 7500
+Wire Wire Line
+	3800 7500 4000 7500
+Wire Wire Line
+	3200 7600 3200 7500
+Wire Wire Line
+	3800 7400 3800 7500
+Connection ~ 3200 7500
+Text Label 3350 7500 0    70   ~ 0
+ENC_SW
+Connection ~ 3800 7500
+Wire Wire Line
+	11500 4900 10500 4900
+Text Label 10500 4900 0    70   ~ 0
+ENC_SW
+Wire Wire Line
+	11500 7400 11200 7400
+Wire Wire Line
+	11200 7400 11200 8100
+Wire Wire Line
+	11200 8100 12500 8100
+Wire Wire Line
+	12500 8100 12500 8400
+Wire Wire Line
+	11200 7400 10500 7400
+Text GLabel 10500 7400 2    70   BiDi ~ 0
+PERIP_PWR
+Connection ~ 11200 7400
+Wire Wire Line
+	9900 7000 10300 7000
+Text GLabel 10000 7000 2    70   BiDi ~ 0
+PERIP_PWR
+Wire Wire Line
+	2200 3700 2000 3700
+Wire Wire Line
+	2000 3700 2000 3500
+Text GLabel 2200 3700 0    10   BiDi ~ 0
++5V
+Wire Wire Line
+	9700 1600 10300 1600
+Text Label 9850 1600 0    70   ~ 0
+ACCINT1
+Wire Wire Line
+	11500 7700 10500 7700
+Text Label 10500 7700 0    70   ~ 0
+ACCINT1
+Wire Wire Line
+	9700 1700 10300 1700
+Text Label 9850 1700 0    70   ~ 0
+ACCINT2
+Wire Wire Line
+	13900 7100 12500 7100
+Wire Wire Line
+	12500 7100 12500 6900
+Wire Wire Line
+	12500 6900 10500 6900
+Text Label 10500 6900 0    70   ~ 0
+ACCINT2
+Wire Wire Line
+	5200 3900 4200 3900
+Text Label 4200 3900 0    70   ~ 0
+ACCINT2
+Wire Wire Line
+	2000 3400 4000 3400
+Text Label 3450 3400 0    70   ~ 0
+J-LINKRX
+Wire Wire Line
+	11500 6000 10500 6000
+Text Label 10500 6000 0    70   ~ 0
+J-LINKRX
+Wire Wire Line
+	2000 3000 4000 3000
+Text Label 3450 3000 0    70   ~ 0
+SWCLK
+Wire Wire Line
+	11500 6500 10500 6500
+Text Label 10500 6500 0    70   ~ 0
+SWCLK
+Wire Wire Line
+	2000 2700 4000 2700
+Text Label 3450 2700 0    70   ~ 0
+J-LINKTX
+Wire Wire Line
+	11500 6100 10500 6100
+Text Label 10500 6100 0    70   ~ 0
+J-LINKTX
+Wire Wire Line
+	2000 2800 3000 2800
+Wire Wire Line
+	3000 2800 4000 2800
+Wire Wire Line
+	2900 2600 3000 2600
+Wire Wire Line
+	3000 2600 3000 2800
+Connection ~ 3000 2800
+Text Label 3450 2800 0    70   ~ 0
+SWDIO
+Wire Wire Line
+	10500 6400 11500 6400
+Text Label 10500 6400 0    70   ~ 0
+SWDIO
+Wire Wire Line
+	11500 7800 10500 7800
+Text Label 10500 7800 0    70   ~ 0
+ENC_B
+Wire Wire Line
+	3000 8300 3500 8300
+Wire Wire Line
+	3500 8300 4000 8300
+Wire Wire Line
+	3500 8400 3500 8300
+Connection ~ 3500 8300
+Text Label 3350 8300 0    70   ~ 0
+ENC_B
+Wire Wire Line
+	11500 5000 10500 5000
+Text GLabel 10500 5000 2    70   BiDi ~ 0
+LED_1_PWM
+Wire Wire Line
+	7400 1900 7400 1500
+Wire Wire Line
+	7400 1500 7700 1500
+Wire Wire Line
+	12700 1300 12800 1300
+Wire Wire Line
+	12800 1300 12800 1200
+Wire Wire Line
+	12800 1300 12800 1500
+Connection ~ 12800 1300
+Text GLabel 12700 1300 0    10   BiDi ~ 0
++UB
+Wire Wire Line
+	5600 5800 5400 5800
+Wire Wire Line
+	5400 5800 5200 5800
+Wire Wire Line
+	5200 5800 5000 5800
+Wire Wire Line
+	5000 5800 4800 5800
+Wire Wire Line
+	4800 5800 4800 5700
+Wire Wire Line
+	5000 5900 5000 5800
+Wire Wire Line
+	4800 5900 4800 5800
+Wire Wire Line
+	5200 5900 5200 5800
+Wire Wire Line
+	5400 5900 5400 5800
+Wire Wire Line
+	5600 5900 5600 5800
+Wire Wire Line
+	5600 5800 5800 5800
+Wire Wire Line
+	5800 5800 5800 5900
+Connection ~ 4800 5800
+Connection ~ 5000 5800
+Connection ~ 5200 5800
+Connection ~ 5400 5800
+Connection ~ 5600 5800
+Text GLabel 5600 5800 0    10   BiDi ~ 0
++UB
+Wire Wire Line
+	9200 4400 9300 4400
+Wire Wire Line
+	9300 4400 9300 4700
+Wire Wire Line
+	9300 4700 9600 4700
+Text GLabel 9200 4400 0    10   BiDi ~ 0
++UB
+Wire Wire Line
+	9500 7900 9300 7900
+Wire Wire Line
+	9300 7900 9100 7900
+Wire Wire Line
+	9500 7000 9300 7000
+Wire Wire Line
+	9300 7000 9300 7900
+Connection ~ 9300 7900
+Wire Wire Line
+	5600 6700 5600 6800
+Wire Wire Line
+	5200 6700 5200 7000
+Wire Wire Line
+	4800 6700 4800 7200
+Wire Wire Line
+	4800 6200 4800 6300
+Wire Wire Line
+	5000 6200 4800 6200
+Connection ~ 4800 6200
+Wire Wire Line
+	5200 6200 5200 6300
+Wire Wire Line
+	5400 6200 5200 6200
+Connection ~ 5200 6200
+Wire Wire Line
+	5600 6200 5600 6300
+Wire Wire Line
+	5800 6200 5600 6200
+Connection ~ 5600 6200
+Wire Wire Line
+	11500 5100 10500 5100
+Text Label 10500 5100 0    70   ~ 0
+IR_IN
+Wire Wire Line
+	9100 8300 10300 8300
+Text Label 10050 8300 0    70   ~ 0
+IR_IN
+Wire Wire Line
+	11500 5200 10500 5200
+Text GLabel 10500 5200 2    70   BiDi ~ 0
+V_BAT
+Wire Wire Line
+	11500 5300 10500 5300
+Text GLabel 10500 5300 2    70   BiDi ~ 0
+V_PWR
+Wire Wire Line
+	11500 5400 10500 5400
+Text GLabel 10500 5400 2    70   BiDi ~ 0
+LED_2_PWM
+Wire Wire Line
+	11500 5500 10500 5500
+Text Label 10500 5500 0    70   ~ 0
+STATUS_LED_R_PWM
+Wire Wire Line
+	5000 7100 4200 7100
+Text Label 4200 7100 0    70   ~ 0
+STATUS_LED_R_PWM
+Wire Wire Line
+	11500 5600 10500 5600
+Text Label 10500 5600 0    70   ~ 0
+STATUS_LED_G_PWM
+Wire Wire Line
+	4600 7300 4200 7300
+Text Label 4200 7300 0    70   ~ 0
+STATUS_LED_G_PWM
+Wire Wire Line
+	11500 7200 10500 7200
+Wire Wire Line
+	5400 6900 4200 6900
+Text Label 4200 6900 0    70   ~ 0
+STATUS_LED_B_PWM
+Wire Wire Line
+	11500 6200 10500 6200
+Text Label 10500 6200 0    70   ~ 0
+LCD_CS
+Wire Wire Line
+	9200 4100 10300 4100
+Text Label 9300 4100 0    70   ~ 0
+LCD_CS
+Wire Wire Line
+	11500 6300 10500 6300
+Text Label 10500 6300 0    70   ~ 0
+LCD_A0
+Wire Wire Line
+	9200 4000 10300 4000
+Text Label 9300 4000 0    70   ~ 0
+LCD_A0
+Wire Wire Line
+	11500 6600 10500 6600
+Text Label 10500 6600 0    70   ~ 0
+BRIGHT_LOW
+Wire Wire Line
+	10700 2900 10500 2900
+Text Label 10500 2900 0    70   ~ 0
+BRIGHT_LOW
+Wire Wire Line
+	11500 7300 10500 7300
+Text Label 10500 7300 0    70   ~ 0
+LCD_BACKLIGHT_PWM
+Wire Wire Line
+	8600 4300 7600 4300
+Text Label 7600 4300 0    70   ~ 0
+LCD_BACKLIGHT_PWM
+Wire Wire Line
+	11500 7600 10500 7600
+Text GLabel 10500 7600 2    70   BiDi ~ 0
+CHARG_STATUS
+Wire Wire Line
+	11500 8800 10500 8800
+Text Label 10500 8800 0    70   ~ 0
+IR_OUT
+Wire Wire Line
+	10700 1500 10500 1500
+Text Label 10500 1500 0    70   ~ 0
+IR_OUT
+Wire Wire Line
+	11500 8900 10500 8900
+Text Label 10500 8900 0    70   ~ 0
+LCD_SCK
+Wire Wire Line
+	8600 4100 7600 4100
+Text Label 7600 4100 0    70   ~ 0
+LCD_SCK
+Wire Wire Line
+	11500 9100 10500 9100
+Text Label 10500 9100 0    70   ~ 0
+LCD_MOSI
+Wire Wire Line
+	9200 4200 10300 4200
+Text Label 9300 4200 0    70   ~ 0
+LCD_MOSI
+Wire Wire Line
+	11500 5900 10500 5900
+Text Label 10500 5900 0    70   ~ 0
+LCD_RST
+Wire Wire Line
+	8600 4000 7600 4000
+Text Label 7600 4000 0    70   ~ 0
+LCD_RST
+Wire Wire Line
+	11500 7900 10500 7900
+Text Label 10500 7900 0    70   ~ 0
+ENC_A
+Wire Wire Line
+	3000 8100 3800 8100
+Wire Wire Line
+	3800 8100 4000 8100
+Wire Wire Line
+	3800 8400 3800 8100
+Connection ~ 3800 8100
+Text Label 3350 8100 0    70   ~ 0
+ENC_A
+Wire Wire Line
+	9200 4300 10300 4300
+Text Label 9300 4300 0    70   ~ 0
+LED_3_PWM_SCL2
+Wire Wire Line
+	11500 8600 10500 8600
+Text Label 10500 8600 0    70   ~ 0
+LED_3_PWM_SCL2
+Wire Wire Line
+	8600 4200 7600 4200
+Text Label 7600 4200 0    70   ~ 0
+LED_4_PWM_SDA2
+Wire Wire Line
+	11500 8700 10500 8700
+Text Label 10500 8700 0    70   ~ 0
+LED_4_PWM_SDA2
+Wire Wire Line
+	6200 3800 7400 3800
+Text GLabel 6750 3800 2    70   BiDi ~ 0
+VBACKUP
+Entry Wire Line
+	10400 3500 10500 3600
+Entry Wire Line
+	10400 8900 10500 9000
+Entry Wire Line
+	10400 4500 10500 4600
+Entry Wire Line
+	10400 3200 10500 3300
+Entry Wire Line
+	10400 7400 10500 7500
+Entry Wire Line
+	10300 5700 10400 5800
+Entry Wire Line
+	10400 8400 10500 8500
+Entry Wire Line
+	10300 5800 10400 5900
+Entry Wire Line
+	10400 8300 10500 8400
+Entry Wire Line
+	10400 4800 10500 4900
+Entry Wire Line
+	10400 7300 10500 7400
+Entry Wire Line
+	10300 7000 10400 7100
+Entry Wire Line
+	10400 7600 10500 7700
+Entry Wire Line
+	10400 6800 10500 6900
+Entry Wire Line
+	10400 5900 10500 6000
+Entry Wire Line
+	10400 6400 10500 6500
+Entry Wire Line
+	10400 6000 10500 6100
+Entry Wire Line
+	10400 6300 10500 6400
+Entry Wire Line
+	10400 7700 10500 7800
+Entry Wire Line
+	10400 4900 10500 5000
+Entry Wire Line
+	10400 5000 10500 5100
+Entry Wire Line
+	10300 8300 10400 8400
+Entry Wire Line
+	10400 5100 10500 5200
+Entry Wire Line
+	10400 5200 10500 5300
+Entry Wire Line
+	10400 5300 10500 5400
+Entry Wire Line
+	10400 5400 10500 5500
+Entry Wire Line
+	10400 5500 10500 5600
+Entry Wire Line
+	10400 7100 10500 7200
+Entry Wire Line
+	10400 6100 10500 6200
+Entry Wire Line
+	10300 4100 10400 4200
+Entry Wire Line
+	10400 6200 10500 6300
+Entry Wire Line
+	10300 4000 10400 4100
+Entry Wire Line
+	10400 6500 10500 6600
+Entry Wire Line
+	10400 7200 10500 7300
+Entry Wire Line
+	10400 7500 10500 7600
+Entry Wire Line
+	10400 8700 10500 8800
+Entry Wire Line
+	10400 8800 10500 8900
+Entry Wire Line
+	10400 9000 10500 9100
+Entry Wire Line
+	10300 4200 10400 4300
+Entry Wire Line
+	10400 5800 10500 5900
+Entry Wire Line
+	10400 7800 10500 7900
+Entry Wire Line
+	10300 4300 10400 4400
+Entry Wire Line
+	10400 8500 10500 8600
+Entry Wire Line
+	10400 8600 10500 8700
+Entry Wire Line
+	4000 3300 4100 3400
+Entry Wire Line
+	4100 4100 4200 4200
+Entry Wire Line
+	4000 5600 4100 5700
+Entry Wire Line
+	4100 4000 4200 4100
+Entry Wire Line
+	4000 4800 4100 4900
+Entry Wire Line
+	4000 7500 4100 7600
+Entry Wire Line
+	4100 3800 4200 3900
+Entry Wire Line
+	4000 3400 4100 3500
+Entry Wire Line
+	4000 8300 4100 8200
+Entry Wire Line
+	4100 7000 4200 7100
+Entry Wire Line
+	4100 7200 4200 7300
+Entry Wire Line
+	4100 6800 4200 6900
+Entry Wire Line
+	4000 8100 4100 8200
+Entry Wire Line
+	10300 1300 10400 1400
+Entry Wire Line
+	10300 1200 10400 1300
+Entry Wire Line
+	10300 1600 10400 1700
+Entry Wire Line
+	10300 1700 10400 1800
+Entry Wire Line
+	10400 2800 10500 2900
+Entry Wire Line
+	10400 1400 10500 1500
+Entry Wire Line
+	4000 3000 4100 3100
+Entry Wire Line
+	4000 2700 4100 2800
+Entry Wire Line
+	4000 2800 4100 2900
+Entry Wire Line
+	7500 4200 7600 4300
+Entry Wire Line
+	7500 4000 7600 4100
+Entry Wire Line
+	7500 3900 7600 4000
+Entry Wire Line
+	7500 4100 7600 4200
+Entry Wire Line
+	7400 3800 7500 3900
+$Comp
+L Lichtobjekt_6-eagle-import:STM32F10XCXT6 IC1
+U 1 1 22F7723E
+P 11800 5200
+AR Path="/22F7723E" Ref="IC1"  Part="1" 
+AR Path="/5FF636DD/22F7723E" Ref="IC1"  Part="1" 
+F 0 "IC1" H 11600 5400 42  0000 L BNN
+F 1 "STM32F10XCXT6" H 11600 4900 42  0000 L BNN
+F 2 "Lichtobjekt 6:TQFP48" H 11800 5200 50  0001 C CNN
+F 3 "" H 11800 5200 50  0001 C CNN
+	1    11800 5200
+	1    0    0    -1  
+$EndComp
+$Comp
+L Lichtobjekt_6-eagle-import:STM32F10XCXT6 IC1
+U 2 1 22F77232
+P 11800 6300
+AR Path="/22F77232" Ref="IC1"  Part="2" 
+AR Path="/5FF636DD/22F77232" Ref="IC1"  Part="2" 
+F 0 "IC1" H 11600 6500 42  0000 L BNN
+F 1 "STM32F10XCXT6" H 11600 6000 42  0000 L BNN
+F 2 "Lichtobjekt 6:TQFP48" H 11800 6300 50  0001 C CNN
+F 3 "" H 11800 6300 50  0001 C CNN
+	2    11800 6300
+	1    0    0    -1  
+$EndComp
+$Comp
+L Lichtobjekt_6-eagle-import:STM32F10XCXT6 IC1
+U 3 1 22F77236
+P 11900 7600
+AR Path="/22F77236" Ref="IC1"  Part="3" 
+AR Path="/5FF636DD/22F77236" Ref="IC1"  Part="3" 
+F 0 "IC1" H 11700 7800 42  0000 L BNN
+F 1 "STM32F10XCXT6" H 11700 7300 42  0000 L BNN
+F 2 "Lichtobjekt 6:TQFP48" H 11900 7600 50  0001 C CNN
+F 3 "" H 11900 7600 50  0001 C CNN
+	3    11900 7600
+	-1   0    0    -1  
+$EndComp
+$Comp
+L Lichtobjekt_6-eagle-import:STM32F10XCXT6 IC1
+U 4 1 22F7722A
+P 11900 8700
+AR Path="/22F7722A" Ref="IC1"  Part="4" 
+AR Path="/5FF636DD/22F7722A" Ref="IC1"  Part="4" 
+F 0 "IC1" H 11700 8900 42  0000 L BNN
+F 1 "STM32F10XCXT6" H 11700 8400 42  0000 L BNN
+F 2 "Lichtobjekt 6:TQFP48" H 11900 8700 50  0001 C CNN
+F 3 "" H 11900 8700 50  0001 C CNN
+	4    11900 8700
+	-1   0    0    -1  
+$EndComp
+$Comp
+L Lichtobjekt_6-eagle-import:STM32F10XCXT6 IC1
+U 6 1 22F77222
+P 14200 7200
+AR Path="/22F77222" Ref="IC1"  Part="6" 
+AR Path="/5FF636DD/22F77222" Ref="IC1"  Part="6" 
+F 0 "IC1" H 14000 7400 42  0000 L BNN
+F 1 "STM32F10XCXT6" H 14000 6900 42  0000 L BNN
+F 2 "Lichtobjekt 6:TQFP48" H 14200 7200 50  0001 C CNN
+F 3 "" H 14200 7200 50  0001 C CNN
+	6    14200 7200
+	1    0    0    -1  
+$EndComp
+$Comp
+L Lichtobjekt_6-eagle-import:STM32F10XCXT6 IC1
+U 7 1 22F77226
+P 14100 2600
+AR Path="/22F77226" Ref="IC1"  Part="7" 
+AR Path="/5FF636DD/22F77226" Ref="IC1"  Part="7" 
+F 0 "IC1" H 13900 2800 42  0000 L BNN
+F 1 "STM32F10XCXT6" H 13900 2300 42  0000 L BNN
+F 2 "Lichtobjekt 6:TQFP48" H 14100 2600 50  0001 C CNN
+F 3 "" H 14100 2600 50  0001 C CNN
+	7    14100 2600
+	-1   0    0    -1  
+$EndComp
+$Comp
+L Lichtobjekt_6-eagle-import:STM32F10XCXT6 IC1
+U 9 1 22F7721E
+P 14100 4700
+AR Path="/22F7721E" Ref="IC1"  Part="9" 
+AR Path="/5FF636DD/22F7721E" Ref="IC1"  Part="9" 
+F 0 "IC1" H 13900 4900 42  0000 L BNN
+F 1 "STM32F10XCXT6" H 13900 4400 42  0000 L BNN
+F 2 "Lichtobjekt 6:TQFP48" H 14100 4700 50  0001 C CNN
+F 3 "" H 14100 4700 50  0001 C CNN
+	9    14100 4700
+	-1   0    0    -1  
+$EndComp
+$Comp
+L Lichtobjekt_6-eagle-import:SFH320 T1
+U 1 1 B8952976
+P 11300 3900
+AR Path="/B8952976" Ref="T1"  Part="1" 
+AR Path="/5FF636DD/B8952976" Ref="T1"  Part="1" 
+F 0 "T1" H 11500 4000 59  0000 L BNN
+F 1 "SFH320" H 11500 3900 59  0000 L BNN
+F 2 "LED_SMD:LED_PLCC-2" H 11300 3900 50  0001 C CNN
+F 3 "" H 11300 3900 50  0001 C CNN
+	1    11300 3900
+	-1   0    0    -1  
+$EndComp
+$Comp
+L Lichtobjekt_6-eagle-import:R-EU_R0805 R1
+U 1 1 5FC72806
+P 10900 3300
+AR Path="/5FC72806" Ref="R1"  Part="1" 
+AR Path="/5FF636DD/5FC72806" Ref="R1"  Part="1" 
+F 0 "R1" H 10750 3359 59  0000 L BNN
+F 1 "10k" H 10750 3170 59  0000 L BNN
+F 2 "Lichtobjekt 6:R0805" H 10900 3300 50  0001 C CNN
+F 3 "" H 10900 3300 50  0001 C CNN
+	1    10900 3300
+	-1   0    0    -1  
+$EndComp
+$Comp
+L Lichtobjekt_6-eagle-import:R-EU_R0805 R3
+U 1 1 4E27DB08
+P 11600 2900
+AR Path="/4E27DB08" Ref="R3"  Part="1" 
+AR Path="/5FF636DD/4E27DB08" Ref="R3"  Part="1" 
+F 0 "R3" H 11450 2959 59  0000 L BNN
+F 1 "10M" H 11450 2770 59  0000 L BNN
+F 2 "Lichtobjekt 6:R0805" H 11600 2900 50  0001 C CNN
+F 3 "" H 11600 2900 50  0001 C CNN
+	1    11600 2900
+	1    0    0    1   
+$EndComp
+$Comp
+L Lichtobjekt_6-eagle-import:+3.0V #SUPPLY8
+U 1 1 39566F8A
+P 9700 4900
+AR Path="/39566F8A" Ref="#SUPPLY8"  Part="1" 
+AR Path="/5FF636DD/39566F8A" Ref="#SUPPLY08"  Part="1" 
+F 0 "#SUPPLY08" H 9700 4900 50  0001 C CNN
+F 1 "+3.0V" H 9625 5025 59  0000 L BNN
+F 2 "" H 9700 4900 50  0001 C CNN
+F 3 "" H 9700 4900 50  0001 C CNN
+	1    9700 4900
+	1    0    0    -1  
+$EndComp
+$Comp
+L Lichtobjekt_6-eagle-import:GND #SUPPLY11
+U 1 1 E0B04C0E
+P 11200 4300
+AR Path="/E0B04C0E" Ref="#SUPPLY11"  Part="1" 
+AR Path="/5FF636DD/E0B04C0E" Ref="#SUPPLY011"  Part="1" 
+F 0 "#SUPPLY011" H 11200 4300 50  0001 C CNN
+F 1 "GND" H 11125 4175 59  0000 L BNN
+F 2 "" H 11200 4300 50  0001 C CNN
+F 3 "" H 11200 4300 50  0001 C CNN
+	1    11200 4300
+	-1   0    0    -1  
+$EndComp
+$Comp
+L Lichtobjekt_6-eagle-import:R-EU_R0805 R8
+U 1 1 3097C624
+P 9700 5400
+AR Path="/3097C624" Ref="R8"  Part="1" 
+AR Path="/5FF636DD/3097C624" Ref="R8"  Part="1" 
+F 0 "R8" H 9550 5459 59  0000 L BNN
+F 1 "10k" H 9750 5470 59  0000 L BNN
+F 2 "Lichtobjekt 6:R0805" H 9700 5400 50  0001 C CNN
+F 3 "" H 9700 5400 50  0001 C CNN
+	1    9700 5400
+	0    -1   -1   0   
+$EndComp
+$Comp
+L Lichtobjekt_6-eagle-import:R-EU_R0805 R9
+U 1 1 22FF1DF3
+P 9900 5400
+AR Path="/22FF1DF3" Ref="R9"  Part="1" 
+AR Path="/5FF636DD/22FF1DF3" Ref="R9"  Part="1" 
+F 0 "R9" H 9750 5459 59  0000 L BNN
+F 1 "10k" H 9950 5470 59  0000 L BNN
+F 2 "Lichtobjekt 6:R0805" H 9900 5400 50  0001 C CNN
+F 3 "" H 9900 5400 50  0001 C CNN
+	1    9900 5400
+	0    -1   -1   0   
+$EndComp
+$Comp
+L Lichtobjekt_6-eagle-import:C-EUC0603 C18
+U 1 1 53B3C674
+P 11600 3900
+AR Path="/53B3C674" Ref="C18"  Part="1" 
+AR Path="/5FF636DD/53B3C674" Ref="C18"  Part="1" 
+F 0 "C18" H 11660 3915 59  0000 L BNN
+F 1 "220n" H 11660 3715 59  0000 L BNN
+F 2 "Lichtobjekt 6:C0603" H 11600 3900 50  0001 C CNN
+F 3 "" H 11600 3900 50  0001 C CNN
+	1    11600 3900
+	-1   0    0    -1  
+$EndComp
+$Comp
+L Lichtobjekt_6-eagle-import:GND #SUPPLY20
+U 1 1 74256EE2
+P 11600 4300
+AR Path="/74256EE2" Ref="#SUPPLY20"  Part="1" 
+AR Path="/5FF636DD/74256EE2" Ref="#SUPPLY020"  Part="1" 
+F 0 "#SUPPLY020" H 11600 4300 50  0001 C CNN
+F 1 "GND" H 11525 4175 59  0000 L BNN
+F 2 "" H 11600 4300 50  0001 C CNN
+F 3 "" H 11600 4300 50  0001 C CNN
+	1    11600 4300
+	-1   0    0    -1  
+$EndComp
+$Comp
+L Lichtobjekt_6-eagle-import:C-EUC0603 C26
+U 1 1 65B84017
+P 12800 4900
+AR Path="/65B84017" Ref="C26"  Part="1" 
+AR Path="/5FF636DD/65B84017" Ref="C26"  Part="1" 
+F 0 "C26" H 12860 4915 59  0000 L BNN
+F 1 "220n" H 12860 4715 59  0000 L BNN
+F 2 "Lichtobjekt 6:C0603" H 12800 4900 50  0001 C CNN
+F 3 "" H 12800 4900 50  0001 C CNN
+	1    12800 4900
+	1    0    0    -1  
+$EndComp
+$Comp
+L Lichtobjekt_6-eagle-import:GND #SUPPLY28
+U 1 1 390F8B27
+P 12800 5600
+AR Path="/390F8B27" Ref="#SUPPLY28"  Part="1" 
+AR Path="/5FF636DD/390F8B27" Ref="#SUPPLY028"  Part="1" 
+F 0 "#SUPPLY028" H 12800 5600 50  0001 C CNN
+F 1 "GND" H 12725 5475 59  0000 L BNN
+F 2 "" H 12800 5600 50  0001 C CNN
+F 3 "" H 12800 5600 50  0001 C CNN
+	1    12800 5600
+	1    0    0    -1  
+$EndComp
+$Comp
+L Lichtobjekt_6-eagle-import:+3.0V #SUPPLY29
+U 1 1 D637372C
+P 13100 3900
+AR Path="/D637372C" Ref="#SUPPLY29"  Part="1" 
+AR Path="/5FF636DD/D637372C" Ref="#SUPPLY029"  Part="1" 
+F 0 "#SUPPLY029" H 13100 3900 50  0001 C CNN
+F 1 "+3.0V" H 13025 4025 59  0000 L BNN
+F 2 "" H 13100 3900 50  0001 C CNN
+F 3 "" H 13100 3900 50  0001 C CNN
+	1    13100 3900
+	1    0    0    -1  
+$EndComp
+$Comp
+L Lichtobjekt_6-eagle-import:SJ SJ2
+U 1 1 2B525D20
+P 13100 4300
+AR Path="/2B525D20" Ref="SJ2"  Part="1" 
+AR Path="/5FF636DD/2B525D20" Ref="SJ2"  Part="1" 
+F 0 "SJ2" H 13000 4400 59  0000 L BNN
+F 1 "SJ" H 13000 4150 59  0000 L BNN
+F 2 "Lichtobjekt 6:SJ" H 13100 4300 50  0001 C CNN
+F 3 "" H 13100 4300 50  0001 C CNN
+	1    13100 4300
+	0    1    1    0   
+$EndComp
+$Comp
+L Lichtobjekt_6-eagle-import:SJ SJ3
+U 1 1 787D351D
+P 13100 5100
+AR Path="/787D351D" Ref="SJ3"  Part="1" 
+AR Path="/5FF636DD/787D351D" Ref="SJ3"  Part="1" 
+F 0 "SJ3" H 13000 5200 59  0000 L BNN
+F 1 "SJ" H 13000 4950 59  0000 L BNN
+F 2 "Lichtobjekt 6:SJ" H 13100 5100 50  0001 C CNN
+F 3 "" H 13100 5100 50  0001 C CNN
+	1    13100 5100
+	0    1    1    0   
+$EndComp
+$Comp
+L Lichtobjekt_6-eagle-import:R-EU_R0805 R16
+U 1 1 216CA044
+P 13400 4800
+AR Path="/216CA044" Ref="R16"  Part="1" 
+AR Path="/5FF636DD/216CA044" Ref="R16"  Part="1" 
+F 0 "R16" H 13250 4859 59  0000 L BNN
+F 1 "1,5k" H 13250 4670 59  0000 L BNN
+F 2 "Lichtobjekt 6:R0805" H 13400 4800 50  0001 C CNN
+F 3 "" H 13400 4800 50  0001 C CNN
+	1    13400 4800
+	1    0    0    -1  
+$EndComp
+$Comp
+L Lichtobjekt_6-eagle-import:MS1V-T1K Q1
+U 1 1 9A7B6B27
+P 13100 7300
+AR Path="/9A7B6B27" Ref="Q1"  Part="1" 
+AR Path="/5FF636DD/9A7B6B27" Ref="Q1"  Part="1" 
+F 0 "Q1" H 13000 7640 59  0000 L BNN
+F 1 "32,768 MS1V-7" H 13000 7500 59  0000 L BNN
+F 2 "Lichtobjekt 6:MS1V-T1K" H 13100 7300 50  0001 C CNN
+F 3 "" H 13100 7300 50  0001 C CNN
+	1    13100 7300
+	-1   0    0    1   
+$EndComp
+$Comp
+L Lichtobjekt_6-eagle-import:CRYSTALS-GND-LID-CFPX-180 Q2
+U 1 1 3DECE7D9
+P 12900 2700
+AR Path="/3DECE7D9" Ref="Q2"  Part="1" 
+AR Path="/5FF636DD/3DECE7D9" Ref="Q2"  Part="1" 
+F 0 "Q2" H 12800 2940 59  0000 L BNN
+F 1 "12MHz" H 12800 2850 59  0000 L BNN
+F 2 "Lichtobjekt 6:3.4X2.7-4-PAD" H 12900 2700 50  0001 C CNN
+F 3 "" H 12900 2700 50  0001 C CNN
+	1    12900 2700
+	1    0    0    -1  
+$EndComp
+$Comp
+L Lichtobjekt_6-eagle-import:R-EU_R0805 R18
+U 1 1 C64DCBDE
+P 13500 2700
+AR Path="/C64DCBDE" Ref="R18"  Part="1" 
+AR Path="/5FF636DD/C64DCBDE" Ref="R18"  Part="1" 
+F 0 "R18" H 13350 2759 59  0000 L BNN
+F 1 "220" H 13350 2570 59  0000 L BNN
+F 2 "Lichtobjekt 6:R0805" H 13500 2700 50  0001 C CNN
+F 3 "" H 13500 2700 50  0001 C CNN
+	1    13500 2700
+	1    0    0    -1  
+$EndComp
+$Comp
+L Lichtobjekt_6-eagle-import:C-EUC0603 C27
+U 1 1 2AA81172
+P 12700 3000
+AR Path="/2AA81172" Ref="C27"  Part="1" 
+AR Path="/5FF636DD/2AA81172" Ref="C27"  Part="1" 
+F 0 "C27" H 12760 3015 59  0000 L BNN
+F 1 "22p" H 12760 2815 59  0000 L BNN
+F 2 "Lichtobjekt 6:C0603" H 12700 3000 50  0001 C CNN
+F 3 "" H 12700 3000 50  0001 C CNN
+	1    12700 3000
+	1    0    0    -1  
+$EndComp
+$Comp
+L Lichtobjekt_6-eagle-import:C-EUC0603 C28
+U 1 1 486F9C55
+P 13200 3000
+AR Path="/486F9C55" Ref="C28"  Part="1" 
+AR Path="/5FF636DD/486F9C55" Ref="C28"  Part="1" 
+F 0 "C28" H 13260 3015 59  0000 L BNN
+F 1 "22p" H 13260 2815 59  0000 L BNN
+F 2 "Lichtobjekt 6:C0603" H 13200 3000 50  0001 C CNN
+F 3 "" H 13200 3000 50  0001 C CNN
+	1    13200 3000
+	1    0    0    -1  
+$EndComp
+$Comp
+L Lichtobjekt_6-eagle-import:GND #SUPPLY31
+U 1 1 668EE308
+P 12700 3500
+AR Path="/668EE308" Ref="#SUPPLY31"  Part="1" 
+AR Path="/5FF636DD/668EE308" Ref="#SUPPLY031"  Part="1" 
+F 0 "#SUPPLY031" H 12700 3500 50  0001 C CNN
+F 1 "GND" H 12625 3375 59  0000 L BNN
+F 2 "" H 12700 3500 50  0001 C CNN
+F 3 "" H 12700 3500 50  0001 C CNN
+	1    12700 3500
+	1    0    0    -1  
+$EndComp
+$Comp
+L Lichtobjekt_6-eagle-import:R-EU_R0805 R19
+U 1 1 5AB74D6D
+P 13600 7300
+AR Path="/5AB74D6D" Ref="R19"  Part="1" 
+AR Path="/5FF636DD/5AB74D6D" Ref="R19"  Part="1" 
+F 0 "R19" H 13650 7159 59  0000 L BNN
+F 1 "220k" H 13650 7070 59  0000 L BNN
+F 2 "Lichtobjekt 6:R0805" H 13600 7300 50  0001 C CNN
+F 3 "" H 13600 7300 50  0001 C CNN
+	1    13600 7300
+	1    0    0    -1  
+$EndComp
+$Comp
+L Lichtobjekt_6-eagle-import:C-EUC0603 C29
+U 1 1 69CF7760
+P 13300 7600
+AR Path="/69CF7760" Ref="C29"  Part="1" 
+AR Path="/5FF636DD/69CF7760" Ref="C29"  Part="1" 
+F 0 "C29" H 13360 7615 59  0000 L BNN
+F 1 "6.8p" H 13360 7415 59  0000 L BNN
+F 2 "Lichtobjekt 6:C0603" H 13300 7600 50  0001 C CNN
+F 3 "" H 13300 7600 50  0001 C CNN
+	1    13300 7600
+	1    0    0    -1  
+$EndComp
+$Comp
+L Lichtobjekt_6-eagle-import:GND #SUPPLY33
+U 1 1 C39E5E7F
+P 13300 8100
+AR Path="/C39E5E7F" Ref="#SUPPLY33"  Part="1" 
+AR Path="/5FF636DD/C39E5E7F" Ref="#SUPPLY033"  Part="1" 
+F 0 "#SUPPLY033" H 13300 8100 50  0001 C CNN
+F 1 "GND" H 13225 7975 59  0000 L BNN
+F 2 "" H 13300 8100 50  0001 C CNN
+F 3 "" H 13300 8100 50  0001 C CNN
+	1    13300 8100
+	1    0    0    -1  
+$EndComp
+$Comp
+L Lichtobjekt_6-eagle-import:GND #SUPPLY34
+U 1 1 E0252FF9
+P 12900 8100
+AR Path="/E0252FF9" Ref="#SUPPLY34"  Part="1" 
+AR Path="/5FF636DD/E0252FF9" Ref="#SUPPLY034"  Part="1" 
+F 0 "#SUPPLY034" H 12900 8100 50  0001 C CNN
+F 1 "GND" H 12825 7975 59  0000 L BNN
+F 2 "" H 12900 8100 50  0001 C CNN
+F 3 "" H 12900 8100 50  0001 C CNN
+	1    12900 8100
+	1    0    0    -1  
+$EndComp
+$Comp
+L Lichtobjekt_6-eagle-import:C-EUC0603 C30
+U 1 1 C514D90A
+P 12900 7600
+AR Path="/C514D90A" Ref="C30"  Part="1" 
+AR Path="/5FF636DD/C514D90A" Ref="C30"  Part="1" 
+F 0 "C30" H 12960 7615 59  0000 L BNN
+F 1 "6.8p" H 12960 7415 59  0000 L BNN
+F 2 "Lichtobjekt 6:C0603" H 12900 7600 50  0001 C CNN
+F 3 "" H 12900 7600 50  0001 C CNN
+	1    12900 7600
+	1    0    0    -1  
+$EndComp
+$Comp
+L Lichtobjekt_6-eagle-import:BSS138 T3
+U 1 1 C1530958
+P 11700 1600
+AR Path="/C1530958" Ref="T3"  Part="1" 
+AR Path="/5FF636DD/C1530958" Ref="T3"  Part="1" 
+F 0 "T3" H 11800 1600 59  0000 L BNN
+F 1 "BSS138" H 11800 1500 59  0000 L BNN
+F 2 "Lichtobjekt 6:SOT23" H 11700 1600 50  0001 C CNN
+F 3 "" H 11700 1600 50  0001 C CNN
+	1    11700 1600
+	1    0    0    1   
+$EndComp
+$Comp
+L Lichtobjekt_6-eagle-import:GND #SUPPLY39
+U 1 1 9CD1BB76
+P 11700 2200
+AR Path="/9CD1BB76" Ref="#SUPPLY39"  Part="1" 
+AR Path="/5FF636DD/9CD1BB76" Ref="#SUPPLY039"  Part="1" 
+F 0 "#SUPPLY039" H 11700 2200 50  0001 C CNN
+F 1 "GND" H 11625 2075 59  0000 L BNN
+F 2 "" H 11700 2200 50  0001 C CNN
+F 3 "" H 11700 2200 50  0001 C CNN
+	1    11700 2200
+	-1   0    0    -1  
+$EndComp
+$Comp
+L Lichtobjekt_6-eagle-import:R-EU_R0805 R20
+U 1 1 439ED14E
+P 10900 1500
+AR Path="/439ED14E" Ref="R20"  Part="1" 
+AR Path="/5FF636DD/439ED14E" Ref="R20"  Part="1" 
+F 0 "R20" H 10750 1559 59  0000 L BNN
+F 1 "150" H 10750 1370 59  0000 L BNN
+F 2 "Lichtobjekt 6:R0805" H 10900 1500 50  0001 C CNN
+F 3 "" H 10900 1500 50  0001 C CNN
+	1    10900 1500
+	-1   0    0    -1  
+$EndComp
+$Comp
+L Lichtobjekt_6-eagle-import:R-EU_R0805 R21
+U 1 1 32019389
+P 11200 1800
+AR Path="/32019389" Ref="R21"  Part="1" 
+AR Path="/5FF636DD/32019389" Ref="R21"  Part="1" 
+F 0 "R21" H 11050 1859 59  0000 L BNN
+F 1 "100k" H 11050 1670 59  0000 L BNN
+F 2 "Lichtobjekt 6:R0805" H 11200 1800 50  0001 C CNN
+F 3 "" H 11200 1800 50  0001 C CNN
+	1    11200 1800
+	0    -1   1    0   
+$EndComp
+$Comp
+L Lichtobjekt_6-eagle-import:GND #SUPPLY40
+U 1 1 9A077208
+P 11200 2200
+AR Path="/9A077208" Ref="#SUPPLY40"  Part="1" 
+AR Path="/5FF636DD/9A077208" Ref="#SUPPLY040"  Part="1" 
+F 0 "#SUPPLY040" H 11200 2200 50  0001 C CNN
+F 1 "GND" H 11125 2075 59  0000 L BNN
+F 2 "" H 11200 2200 50  0001 C CNN
+F 3 "" H 11200 2200 50  0001 C CNN
+	1    11200 2200
+	-1   0    0    -1  
+$EndComp
+$Comp
+L Lichtobjekt_6-eagle-import:R-EU_R1206 R22
+U 1 1 A68F2DD3
+P 12500 1300
+AR Path="/A68F2DD3" Ref="R22"  Part="1" 
+AR Path="/5FF636DD/A68F2DD3" Ref="R22"  Part="1" 
+F 0 "R22" H 12350 1359 59  0000 L BNN
+F 1 "15" H 12350 1170 59  0000 L BNN
+F 2 "Lichtobjekt 6:R1206" H 12500 1300 50  0001 C CNN
+F 3 "" H 12500 1300 50  0001 C CNN
+	1    12500 1300
+	1    0    0    1   
+$EndComp
+$Comp
+L Lichtobjekt_6-eagle-import:+UB #SUPPLY41
+U 1 1 B77A050A
+P 12800 1100
+AR Path="/B77A050A" Ref="#SUPPLY41"  Part="1" 
+AR Path="/5FF636DD/B77A050A" Ref="#SUPPLY041"  Part="1" 
+F 0 "#SUPPLY041" H 12800 1100 50  0001 C CNN
+F 1 "+UB" H 12725 1225 59  0000 L BNN
+F 2 "" H 12800 1100 50  0001 C CNN
+F 3 "" H 12800 1100 50  0001 C CNN
+	1    12800 1100
+	-1   0    0    -1  
+$EndComp
+$Comp
+L Lichtobjekt_6-eagle-import:LED3MM LED1
+U 1 1 DC60FE33
+P 12100 1300
+AR Path="/DC60FE33" Ref="LED1"  Part="1" 
+AR Path="/5FF636DD/DC60FE33" Ref="LED1"  Part="1" 
+F 0 "LED1" V 12240 1120 59  0000 L BNN
+F 1 "SFH409" V 12325 1120 59  0000 L BNN
+F 2 "Lichtobjekt 6:LED3MM" H 12100 1300 50  0001 C CNN
+F 3 "" H 12100 1300 50  0001 C CNN
+	1    12100 1300
+	0    1    -1   0   
+$EndComp
+$Comp
+L Lichtobjekt_6-eagle-import:GND #SUPPLY42
+U 1 1 4A937D01
+P 1800 9100
+AR Path="/4A937D01" Ref="#SUPPLY42"  Part="1" 
+AR Path="/5FF636DD/4A937D01" Ref="#SUPPLY042"  Part="1" 
+F 0 "#SUPPLY042" H 1800 9100 50  0001 C CNN
+F 1 "GND" H 1725 8975 59  0000 L BNN
+F 2 "" H 1800 9100 50  0001 C CNN
+F 3 "" H 1800 9100 50  0001 C CNN
+	1    1800 9100
+	1    0    0    -1  
+$EndComp
+$Comp
+L Lichtobjekt_6-eagle-import:EC11B-V-T SW2
+U 1 1 E12904EF
+P 2200 8200
+AR Path="/E12904EF" Ref="SW2"  Part="1" 
+AR Path="/5FF636DD/E12904EF" Ref="SW2"  Part="1" 
+F 0 "SW2" H 2300 8250 59  0000 L BNN
+F 1 "EC11B-V-T" H 2300 8100 59  0000 L BNN
+F 2 "Lichtobjekt 6:EC11B-V" H 2200 8200 50  0001 C CNN
+F 3 "" H 2200 8200 50  0001 C CNN
+	1    2200 8200
+	0    -1   -1   0   
+$EndComp
+$Comp
+L Lichtobjekt_6-eagle-import:EC11B-V-T SW2
+U 2 1 E12904E3
+P 2200 7500
+AR Path="/E12904E3" Ref="SW2"  Part="2" 
+AR Path="/5FF636DD/E12904E3" Ref="SW2"  Part="2" 
+F 0 "SW2" H 2300 7550 59  0000 L BNN
+F 1 "EC11B-V-T" H 2300 7400 59  0000 L BNN
+F 2 "Lichtobjekt 6:EC11B-V" H 2200 7500 50  0001 C CNN
+F 3 "" H 2200 7500 50  0001 C CNN
+	2    2200 7500
+	0    -1   -1   0   
+$EndComp
+$Comp
+L Lichtobjekt_6-eagle-import:R-EU_R0805 R36
+U 1 1 89ADDCD5
+P 2800 8100
+AR Path="/89ADDCD5" Ref="R36"  Part="1" 
+AR Path="/5FF636DD/89ADDCD5" Ref="R36"  Part="1" 
+F 0 "R36" H 2650 8159 59  0000 L BNN
+F 1 "470" H 2850 8170 59  0000 L BNN
+F 2 "Lichtobjekt 6:R0805" H 2800 8100 50  0001 C CNN
+F 3 "" H 2800 8100 50  0001 C CNN
+	1    2800 8100
+	1    0    0    -1  
+$EndComp
+$Comp
+L Lichtobjekt_6-eagle-import:R-EU_R0805 R37
+U 1 1 9C3E3BE1
+P 2800 8300
+AR Path="/9C3E3BE1" Ref="R37"  Part="1" 
+AR Path="/5FF636DD/9C3E3BE1" Ref="R37"  Part="1" 
+F 0 "R37" H 2650 8359 59  0000 L BNN
+F 1 "470" H 2850 8370 59  0000 L BNN
+F 2 "Lichtobjekt 6:R0805" H 2800 8300 50  0001 C CNN
+F 3 "" H 2800 8300 50  0001 C CNN
+	1    2800 8300
+	1    0    0    -1  
+$EndComp
+$Comp
+L Lichtobjekt_6-eagle-import:R-EU_R0805 R38
+U 1 1 E1C96CE5
+P 2800 7500
+AR Path="/E1C96CE5" Ref="R38"  Part="1" 
+AR Path="/5FF636DD/E1C96CE5" Ref="R38"  Part="1" 
+F 0 "R38" H 2650 7559 59  0000 L BNN
+F 1 "470" H 2650 7370 59  0000 L BNN
+F 2 "Lichtobjekt 6:R0805" H 2800 7500 50  0001 C CNN
+F 3 "" H 2800 7500 50  0001 C CNN
+	1    2800 7500
+	1    0    0    -1  
+$EndComp
+$Comp
+L Lichtobjekt_6-eagle-import:C-EUC0603 C38
+U 1 1 D44F5EBA
+P 3200 7800
+AR Path="/D44F5EBA" Ref="C38"  Part="1" 
+AR Path="/5FF636DD/D44F5EBA" Ref="C38"  Part="1" 
+F 0 "C38" H 3260 7815 59  0000 L BNN
+F 1 "1n" H 3260 7615 59  0000 L BNN
+F 2 "Lichtobjekt 6:C0603" H 3200 7800 50  0001 C CNN
+F 3 "" H 3200 7800 50  0001 C CNN
+	1    3200 7800
+	-1   0    0    1   
+$EndComp
+$Comp
+L Lichtobjekt_6-eagle-import:C-EUC0603 C41
+U 1 1 78F6C071
+P 3800 8600
+AR Path="/78F6C071" Ref="C41"  Part="1" 
+AR Path="/5FF636DD/78F6C071" Ref="C41"  Part="1" 
+F 0 "C41" H 3860 8615 59  0000 L BNN
+F 1 "1n" H 3860 8415 59  0000 L BNN
+F 2 "Lichtobjekt 6:C0603" H 3800 8600 50  0001 C CNN
+F 3 "" H 3800 8600 50  0001 C CNN
+	1    3800 8600
+	-1   0    0    1   
+$EndComp
+$Comp
+L Lichtobjekt_6-eagle-import:C-EUC0603 C42
+U 1 1 80F6BA78
+P 3500 8600
+AR Path="/80F6BA78" Ref="C42"  Part="1" 
+AR Path="/5FF636DD/80F6BA78" Ref="C42"  Part="1" 
+F 0 "C42" H 3560 8615 59  0000 L BNN
+F 1 "1n" H 3560 8415 59  0000 L BNN
+F 2 "Lichtobjekt 6:C0603" H 3500 8600 50  0001 C CNN
+F 3 "" H 3500 8600 50  0001 C CNN
+	1    3500 8600
+	-1   0    0    1   
+$EndComp
+$Comp
+L Lichtobjekt_6-eagle-import:GND #SUPPLY51
+U 1 1 08868301
+P 3800 9100
+AR Path="/08868301" Ref="#SUPPLY51"  Part="1" 
+AR Path="/5FF636DD/08868301" Ref="#SUPPLY051"  Part="1" 
+F 0 "#SUPPLY051" H 3800 9100 50  0001 C CNN
+F 1 "GND" H 3725 8975 59  0000 L BNN
+F 2 "" H 3800 9100 50  0001 C CNN
+F 3 "" H 3800 9100 50  0001 C CNN
+	1    3800 9100
+	1    0    0    -1  
+$EndComp
+$Comp
+L Lichtobjekt_6-eagle-import:PINHEADER1X10-05LONG PH1
+U 1 1 31BD5485
+P 1700 2600
+AR Path="/31BD5485" Ref="PH1"  Part="1" 
+AR Path="/5FF636DD/31BD5485" Ref="PH1"  Part="1" 
+F 0 "PH1" H 1650 3650 42  0000 L TNN
+F 1 "PINHEADER1X10-05LONG" H 1650 2450 42  0000 L BNN
+F 2 "Lichtobjekt 6:PINHEADER_005-1-10" H 1700 2600 50  0001 C CNN
+F 3 "" H 1700 2600 50  0001 C CNN
+	1    1700 2600
+	1    0    0    1   
+$EndComp
+$Comp
+L Lichtobjekt_6-eagle-import:+5V #SUPPLY64
+U 1 1 F08EC8FE
+P 2200 3600
+AR Path="/F08EC8FE" Ref="#SUPPLY64"  Part="1" 
+AR Path="/5FF636DD/F08EC8FE" Ref="#SUPPLY064"  Part="1" 
+F 0 "#SUPPLY064" H 2200 3600 50  0001 C CNN
+F 1 "+5V" H 2125 3725 59  0000 L BNN
+F 2 "" H 2200 3600 50  0001 C CNN
+F 3 "" H 2200 3600 50  0001 C CNN
+	1    2200 3600
+	1    0    0    -1  
+$EndComp
+$Comp
+L Lichtobjekt_6-eagle-import:GND #SUPPLY65
+U 1 1 C2078BBE
+P 2400 3700
+AR Path="/C2078BBE" Ref="#SUPPLY65"  Part="1" 
+AR Path="/5FF636DD/C2078BBE" Ref="#SUPPLY065"  Part="1" 
+F 0 "#SUPPLY065" H 2400 3700 50  0001 C CNN
+F 1 "GND" H 2325 3575 59  0000 L BNN
+F 2 "" H 2400 3700 50  0001 C CNN
+F 3 "" H 2400 3700 50  0001 C CNN
+	1    2400 3700
+	1    0    0    -1  
+$EndComp
+$Comp
+L Lichtobjekt_6-eagle-import:R-EU_R0805 R43
+U 1 1 6416136B
+P 2700 2600
+AR Path="/6416136B" Ref="R43"  Part="1" 
+AR Path="/5FF636DD/6416136B" Ref="R43"  Part="1" 
+F 0 "R43" H 2550 2659 59  0000 L BNN
+F 1 "100k" H 2550 2770 59  0000 L BNN
+F 2 "Lichtobjekt 6:R0805" H 2700 2600 50  0001 C CNN
+F 3 "" H 2700 2600 50  0001 C CNN
+	1    2700 2600
+	1    0    0    -1  
+$EndComp
+$Comp
+L Lichtobjekt_6-eagle-import:GND #SUPPLY66
+U 1 1 E45F0719
+P 7600 2700
+AR Path="/E45F0719" Ref="#SUPPLY66"  Part="1" 
+AR Path="/5FF636DD/E45F0719" Ref="#SUPPLY066"  Part="1" 
+F 0 "#SUPPLY066" H 7600 2700 50  0001 C CNN
+F 1 "GND" H 7525 2575 59  0000 L BNN
+F 2 "" H 7600 2700 50  0001 C CNN
+F 3 "" H 7600 2700 50  0001 C CNN
+	1    7600 2700
+	1    0    0    -1  
+$EndComp
+$Comp
+L Lichtobjekt_6-eagle-import:+3.0V #SUPPLY67
+U 1 1 FC7F7F90
+P 7100 1000
+AR Path="/FC7F7F90" Ref="#SUPPLY67"  Part="1" 
+AR Path="/5FF636DD/FC7F7F90" Ref="#SUPPLY067"  Part="1" 
+F 0 "#SUPPLY067" H 7100 1000 50  0001 C CNN
+F 1 "+3.0V" H 7025 1125 59  0000 L BNN
+F 2 "" H 7100 1000 50  0001 C CNN
+F 3 "" H 7100 1000 50  0001 C CNN
+	1    7100 1000
+	1    0    0    -1  
+$EndComp
+$Comp
+L Lichtobjekt_6-eagle-import:C-EUC0805 C46
+U 1 1 689A3310
+P 7100 2100
+AR Path="/689A3310" Ref="C46"  Part="1" 
+AR Path="/5FF636DD/689A3310" Ref="C46"  Part="1" 
+F 0 "C46" H 7160 2115 59  0000 L BNN
+F 1 "4.7µ" H 7160 1915 59  0000 L BNN
+F 2 "Lichtobjekt 6:C0805" H 7100 2100 50  0001 C CNN
+F 3 "" H 7100 2100 50  0001 C CNN
+	1    7100 2100
+	-1   0    0    1   
+$EndComp
+$Comp
+L Lichtobjekt_6-eagle-import:C-EUC0603 C47
+U 1 1 530AB97A
+P 6800 2000
+AR Path="/530AB97A" Ref="C47"  Part="1" 
+AR Path="/5FF636DD/530AB97A" Ref="C47"  Part="1" 
+F 0 "C47" H 6560 1815 59  0000 L BNN
+F 1 "220n" H 6560 2015 59  0000 L BNN
+F 2 "Lichtobjekt 6:C0603" H 6800 2000 50  0001 C CNN
+F 3 "" H 6800 2000 50  0001 C CNN
+	1    6800 2000
+	1    0    0    -1  
+$EndComp
+$Comp
+L Lichtobjekt_6-eagle-import:+3.0V #SUPPLY68
+U 1 1 94B3E2E2
+P 2400 2200
+AR Path="/94B3E2E2" Ref="#SUPPLY68"  Part="1" 
+AR Path="/5FF636DD/94B3E2E2" Ref="#SUPPLY068"  Part="1" 
+F 0 "#SUPPLY068" H 2400 2200 50  0001 C CNN
+F 1 "+3.0V" H 2325 2325 59  0000 L BNN
+F 2 "" H 2400 2200 50  0001 C CNN
+F 3 "" H 2400 2200 50  0001 C CNN
+	1    2400 2200
+	1    0    0    -1  
+$EndComp
+$Comp
+L Lichtobjekt_6-eagle-import:GND #SUPPLY70
+U 1 1 BEAD07EB
+P 9800 1900
+AR Path="/BEAD07EB" Ref="#SUPPLY70"  Part="1" 
+AR Path="/5FF636DD/BEAD07EB" Ref="#SUPPLY070"  Part="1" 
+F 0 "#SUPPLY070" H 9800 1900 50  0001 C CNN
+F 1 "GND" H 9725 1775 59  0000 L BNN
+F 2 "" H 9800 1900 50  0001 C CNN
+F 3 "" H 9800 1900 50  0001 C CNN
+	1    9800 1900
+	1    0    0    -1  
+$EndComp
+$Comp
+L Lichtobjekt_6-eagle-import:+3.0V #SUPPLY46
+U 1 1 14D11BA1
+P 12000 2700
+AR Path="/14D11BA1" Ref="#SUPPLY46"  Part="1" 
+AR Path="/5FF636DD/14D11BA1" Ref="#SUPPLY046"  Part="1" 
+F 0 "#SUPPLY046" H 12000 2700 50  0001 C CNN
+F 1 "+3.0V" H 11925 2825 59  0000 L BNN
+F 2 "" H 12000 2700 50  0001 C CNN
+F 3 "" H 12000 2700 50  0001 C CNN
+	1    12000 2700
+	1    0    0    -1  
+$EndComp
+$Comp
+L Lichtobjekt_6-eagle-import:R-EU_R0805 R48
+U 1 1 D3E52946
+P 12500 8600
+AR Path="/D3E52946" Ref="R48"  Part="1" 
+AR Path="/5FF636DD/D3E52946" Ref="R48"  Part="1" 
+F 0 "R48" H 12350 8659 59  0000 L BNN
+F 1 "100k" H 12350 8470 59  0000 L BNN
+F 2 "Lichtobjekt 6:R0805" H 12500 8600 50  0001 C CNN
+F 3 "" H 12500 8600 50  0001 C CNN
+	1    12500 8600
+	0    1    1    0   
+$EndComp
+$Comp
+L Lichtobjekt_6-eagle-import:GND #SUPPLY71
+U 1 1 739EFB96
+P 12500 9000
+AR Path="/739EFB96" Ref="#SUPPLY71"  Part="1" 
+AR Path="/5FF636DD/739EFB96" Ref="#SUPPLY071"  Part="1" 
+F 0 "#SUPPLY071" H 12500 9000 50  0001 C CNN
+F 1 "GND" H 12425 8875 59  0000 L BNN
+F 2 "" H 12500 9000 50  0001 C CNN
+F 3 "" H 12500 9000 50  0001 C CNN
+	1    12500 9000
+	1    0    0    -1  
+$EndComp
+$Comp
+L Lichtobjekt_6-eagle-import:+3.0V #SUPPLY74
+U 1 1 3C512DAF
+P 3800 6800
+AR Path="/3C512DAF" Ref="#SUPPLY74"  Part="1" 
+AR Path="/5FF636DD/3C512DAF" Ref="#SUPPLY074"  Part="1" 
+F 0 "#SUPPLY074" H 3800 6800 50  0001 C CNN
+F 1 "+3.0V" H 3725 6925 59  0000 L BNN
+F 2 "" H 3800 6800 50  0001 C CNN
+F 3 "" H 3800 6800 50  0001 C CNN
+	1    3800 6800
+	1    0    0    -1  
+$EndComp
+$Comp
+L Lichtobjekt_6-eagle-import:R-EU_R0805 R49
+U 1 1 4C529127
+P 3800 7200
+AR Path="/4C529127" Ref="R49"  Part="1" 
+AR Path="/5FF636DD/4C529127" Ref="R49"  Part="1" 
+F 0 "R49" H 3650 7259 59  0000 L BNN
+F 1 "10k" H 3650 7070 59  0000 L BNN
+F 2 "Lichtobjekt 6:R0805" H 3800 7200 50  0001 C CNN
+F 3 "" H 3800 7200 50  0001 C CNN
+	1    3800 7200
+	0    1    1    0   
+$EndComp
+$Comp
+L Lichtobjekt_6-eagle-import:MMA8452 U3
+U 1 1 C6A83FC2
+P 8700 1800
+AR Path="/C6A83FC2" Ref="U3"  Part="1" 
+AR Path="/5FF636DD/C6A83FC2" Ref="U3"  Part="1" 
+F 0 "U3" H 8489 2759 69  0000 L BNN
+F 1 "MMA8452" H 8437 671 69  0000 L BNN
+F 2 "Lichtobjekt 6:LGA16R50P3X5_300X300X100" H 8700 1800 50  0001 C CNN
+F 3 "" H 8700 1800 50  0001 C CNN
+	1    8700 1800
+	1    0    0    -1  
+$EndComp
+$Comp
+L Lichtobjekt_6-eagle-import:C-EUC0603 C48
+U 1 1 E01ED374
+P 7400 2000
+AR Path="/E01ED374" Ref="C48"  Part="1" 
+AR Path="/5FF636DD/E01ED374" Ref="C48"  Part="1" 
+F 0 "C48" H 7160 1815 59  0000 L BNN
+F 1 "220n" H 7160 2015 59  0000 L BNN
+F 2 "Lichtobjekt 6:C0603" H 7400 2000 50  0001 C CNN
+F 3 "" H 7400 2000 50  0001 C CNN
+	1    7400 2000
+	1    0    0    -1  
+$EndComp
+$Comp
+L Lichtobjekt_6-eagle-import:TSOP348 IC2
+U 1 1 BC34DC86
+P 8000 8500
+AR Path="/BC34DC86" Ref="IC2"  Part="1" 
+AR Path="/5FF636DD/BC34DC86" Ref="IC2"  Part="1" 
+F 0 "IC2" H 6600 9200 42  0000 L BNN
+F 1 "TSOP348" H 6600 9000 42  0000 L BNN
+F 2 "Lichtobjekt 6:TSOP348" H 8000 8500 50  0001 C CNN
+F 3 "" H 8000 8500 50  0001 C CNN
+	1    8000 8500
+	1    0    0    -1  
+$EndComp
+$Comp
+L Lichtobjekt_6-eagle-import:GM5WA94310A LED2
+U 1 1 221661FE
+P 4800 6000
+AR Path="/221661FE" Ref="LED2"  Part="1" 
+AR Path="/5FF636DD/221661FE" Ref="LED2"  Part="1" 
+F 0 "LED2" V 4940 5820 59  0000 L BNN
+F 1 "GM5WA94310A" V 5025 5820 59  0000 L BNN
+F 2 "Lichtobjekt 6:GM5WA94310A" H 4800 6000 50  0001 C CNN
+F 3 "" H 4800 6000 50  0001 C CNN
+	1    4800 6000
+	1    0    0    -1  
+$EndComp
+$Comp
+L Lichtobjekt_6-eagle-import:GM5WA94310A LED2
+U 2 1 221661F2
+P 5200 6000
+AR Path="/221661F2" Ref="LED2"  Part="2" 
+AR Path="/5FF636DD/221661F2" Ref="LED2"  Part="2" 
+F 0 "LED2" V 5340 5820 59  0000 L BNN
+F 1 "GM5WA94310A" V 5425 5820 59  0000 L BNN
+F 2 "Lichtobjekt 6:GM5WA94310A" H 5200 6000 50  0001 C CNN
+F 3 "" H 5200 6000 50  0001 C CNN
+	2    5200 6000
+	1    0    0    -1  
+$EndComp
+$Comp
+L Lichtobjekt_6-eagle-import:GM5WA94310A LED2
+U 3 1 221661F6
+P 5600 6000
+AR Path="/221661F6" Ref="LED2"  Part="3" 
+AR Path="/5FF636DD/221661F6" Ref="LED2"  Part="3" 
+F 0 "LED2" V 5740 5820 59  0000 L BNN
+F 1 "GM5WA94310A" V 5825 5820 59  0000 L BNN
+F 2 "Lichtobjekt 6:GM5WA94310A" H 5600 6000 50  0001 C CNN
+F 3 "" H 5600 6000 50  0001 C CNN
+	3    5600 6000
+	1    0    0    -1  
+$EndComp
+$Comp
+L Lichtobjekt_6-eagle-import:R-EU_R0805 R11
+U 1 1 9E0C26CB
+P 5600 6500
+AR Path="/9E0C26CB" Ref="R11"  Part="1" 
+AR Path="/5FF636DD/9E0C26CB" Ref="R11"  Part="1" 
+F 0 "R11" H 5450 6559 59  0000 L BNN
+F 1 "4,7k" H 5450 6370 59  0000 L BNN
+F 2 "Lichtobjekt 6:R0805" H 5600 6500 50  0001 C CNN
+F 3 "" H 5600 6500 50  0001 C CNN
+	1    5600 6500
+	0    1    1    0   
+$EndComp
+$Comp
+L Lichtobjekt_6-eagle-import:R-EU_R0805 R12
+U 1 1 51523D80
+P 4800 6500
+AR Path="/51523D80" Ref="R12"  Part="1" 
+AR Path="/5FF636DD/51523D80" Ref="R12"  Part="1" 
+F 0 "R12" H 4650 6559 59  0000 L BNN
+F 1 "4,7k" H 4650 6370 59  0000 L BNN
+F 2 "Lichtobjekt 6:R0805" H 4800 6500 50  0001 C CNN
+F 3 "" H 4800 6500 50  0001 C CNN
+	1    4800 6500
+	0    1    1    0   
+$EndComp
+$Comp
+L Lichtobjekt_6-eagle-import:R-EU_R0805 R13
+U 1 1 FE1562B2
+P 5200 6500
+AR Path="/FE1562B2" Ref="R13"  Part="1" 
+AR Path="/5FF636DD/FE1562B2" Ref="R13"  Part="1" 
+F 0 "R13" H 5050 6559 59  0000 L BNN
+F 1 "4,7k" H 5050 6370 59  0000 L BNN
+F 2 "Lichtobjekt 6:R0805" H 5200 6500 50  0001 C CNN
+F 3 "" H 5200 6500 50  0001 C CNN
+	1    5200 6500
+	0    1    1    0   
+$EndComp
+$Comp
+L Lichtobjekt_6-eagle-import:GND #SUPPLY45
+U 1 1 E1A79452
+P 9300 8900
+AR Path="/E1A79452" Ref="#SUPPLY45"  Part="1" 
+AR Path="/5FF636DD/E1A79452" Ref="#SUPPLY045"  Part="1" 
+F 0 "#SUPPLY045" H 9300 8900 50  0001 C CNN
+F 1 "GND" H 9225 8775 59  0000 L BNN
+F 2 "" H 9300 8900 50  0001 C CNN
+F 3 "" H 9300 8900 50  0001 C CNN
+	1    9300 8900
+	-1   0    0    -1  
+$EndComp
+$Comp
+L Lichtobjekt_6-eagle-import:C-EUC0603 C5
+U 1 1 E5173872
+P 9600 7900
+AR Path="/E5173872" Ref="C5"  Part="1" 
+AR Path="/5FF636DD/E5173872" Ref="C5"  Part="1" 
+F 0 "C5" H 9660 7915 59  0000 L BNN
+F 1 "220n" H 9660 7715 59  0000 L BNN
+F 2 "Lichtobjekt 6:C0603" H 9600 7900 50  0001 C CNN
+F 3 "" H 9600 7900 50  0001 C CNN
+	1    9600 7900
+	0    -1   -1   0   
+$EndComp
+$Comp
+L Lichtobjekt_6-eagle-import:GND #SUPPLY47
+U 1 1 4969E8ED
+P 9900 8100
+AR Path="/4969E8ED" Ref="#SUPPLY47"  Part="1" 
+AR Path="/5FF636DD/4969E8ED" Ref="#SUPPLY047"  Part="1" 
+F 0 "#SUPPLY047" H 9900 8100 50  0001 C CNN
+F 1 "GND" H 9825 7975 59  0000 L BNN
+F 2 "" H 9900 8100 50  0001 C CNN
+F 3 "" H 9900 8100 50  0001 C CNN
+	1    9900 8100
+	-1   0    0    -1  
+$EndComp
+$Comp
+L Lichtobjekt_6-eagle-import:GND #SUPPLY48
+U 1 1 B65B4B36
+P 5600 7800
+AR Path="/B65B4B36" Ref="#SUPPLY48"  Part="1" 
+AR Path="/5FF636DD/B65B4B36" Ref="#SUPPLY048"  Part="1" 
+F 0 "#SUPPLY048" H 5600 7800 50  0001 C CNN
+F 1 "GND" H 5525 7675 59  0000 L BNN
+F 2 "" H 5600 7800 50  0001 C CNN
+F 3 "" H 5600 7800 50  0001 C CNN
+	1    5600 7800
+	-1   0    0    -1  
+$EndComp
+$Comp
+L Lichtobjekt_6-eagle-import:BSS138 T4
+U 1 1 353E786D
+P 5600 7000
+AR Path="/353E786D" Ref="T4"  Part="1" 
+AR Path="/5FF636DD/353E786D" Ref="T4"  Part="1" 
+F 0 "T4" H 5700 7000 59  0000 L BNN
+F 1 "BSS138" H 5700 6900 59  0000 L BNN
+F 2 "Lichtobjekt 6:SOT23" H 5600 7000 50  0001 C CNN
+F 3 "" H 5600 7000 50  0001 C CNN
+	1    5600 7000
+	1    0    0    1   
+$EndComp
+$Comp
+L Lichtobjekt_6-eagle-import:BSS138 T5
+U 1 1 27702C92
+P 5200 7200
+AR Path="/27702C92" Ref="T5"  Part="1" 
+AR Path="/5FF636DD/27702C92" Ref="T5"  Part="1" 
+F 0 "T5" H 5300 7200 59  0000 L BNN
+F 1 "BSS138" H 5300 7100 59  0000 L BNN
+F 2 "Lichtobjekt 6:SOT23" H 5200 7200 50  0001 C CNN
+F 3 "" H 5200 7200 50  0001 C CNN
+	1    5200 7200
+	1    0    0    1   
+$EndComp
+$Comp
+L Lichtobjekt_6-eagle-import:BSS138 T6
+U 1 1 07270D9D
+P 4800 7400
+AR Path="/07270D9D" Ref="T6"  Part="1" 
+AR Path="/5FF636DD/07270D9D" Ref="T6"  Part="1" 
+F 0 "T6" H 4900 7400 59  0000 L BNN
+F 1 "BSS138" H 4900 7300 59  0000 L BNN
+F 2 "Lichtobjekt 6:SOT23" H 4800 7400 50  0001 C CNN
+F 3 "" H 4800 7400 50  0001 C CNN
+	1    4800 7400
+	1    0    0    1   
+$EndComp
+$Comp
+L Lichtobjekt_6-eagle-import:GND #SUPPLY49
+U 1 1 E771B627
+P 4800 7800
+AR Path="/E771B627" Ref="#SUPPLY49"  Part="1" 
+AR Path="/5FF636DD/E771B627" Ref="#SUPPLY049"  Part="1" 
+F 0 "#SUPPLY049" H 4800 7800 50  0001 C CNN
+F 1 "GND" H 4725 7675 59  0000 L BNN
+F 2 "" H 4800 7800 50  0001 C CNN
+F 3 "" H 4800 7800 50  0001 C CNN
+	1    4800 7800
+	-1   0    0    -1  
+$EndComp
+$Comp
+L Lichtobjekt_6-eagle-import:GND #SUPPLY52
+U 1 1 EC6E92AD
+P 5200 7800
+AR Path="/EC6E92AD" Ref="#SUPPLY52"  Part="1" 
+AR Path="/5FF636DD/EC6E92AD" Ref="#SUPPLY052"  Part="1" 
+F 0 "#SUPPLY052" H 5200 7800 50  0001 C CNN
+F 1 "GND" H 5125 7675 59  0000 L BNN
+F 2 "" H 5200 7800 50  0001 C CNN
+F 3 "" H 5200 7800 50  0001 C CNN
+	1    5200 7800
+	-1   0    0    -1  
+$EndComp
+$Comp
+L Lichtobjekt_6-eagle-import:+UB #SUPPLY53
+U 1 1 A453148A
+P 4800 5600
+AR Path="/A453148A" Ref="#SUPPLY53"  Part="1" 
+AR Path="/5FF636DD/A453148A" Ref="#SUPPLY053"  Part="1" 
+F 0 "#SUPPLY053" H 4800 5600 50  0001 C CNN
+F 1 "+UB" H 4725 5725 59  0000 L BNN
+F 2 "" H 4800 5600 50  0001 C CNN
+F 3 "" H 4800 5600 50  0001 C CNN
+	1    4800 5600
+	-1   0    0    -1  
+$EndComp
+$Comp
+L Lichtobjekt_6-eagle-import:GM5WA94310A LED3
+U 1 1 E9052FDA
+P 5000 6000
+AR Path="/E9052FDA" Ref="LED3"  Part="1" 
+AR Path="/5FF636DD/E9052FDA" Ref="LED3"  Part="1" 
+F 0 "LED3" V 5140 5820 59  0000 L BNN
+F 1 "GM5WA94310A" V 5225 5820 59  0000 L BNN
+F 2 "Lichtobjekt 6:GM5WA94310A" H 5000 6000 50  0001 C CNN
+F 3 "" H 5000 6000 50  0001 C CNN
+	1    5000 6000
+	1    0    0    -1  
+$EndComp
+$Comp
+L Lichtobjekt_6-eagle-import:GM5WA94310A LED3
+U 2 1 E9052FD6
+P 5400 6000
+AR Path="/E9052FD6" Ref="LED3"  Part="2" 
+AR Path="/5FF636DD/E9052FD6" Ref="LED3"  Part="2" 
+F 0 "LED3" V 5540 5820 59  0000 L BNN
+F 1 "GM5WA94310A" V 5625 5820 59  0000 L BNN
+F 2 "Lichtobjekt 6:GM5WA94310A" H 5400 6000 50  0001 C CNN
+F 3 "" H 5400 6000 50  0001 C CNN
+	2    5400 6000
+	1    0    0    -1  
+$EndComp
+$Comp
+L Lichtobjekt_6-eagle-import:GM5WA94310A LED3
+U 3 1 E9052FD2
+P 5800 6000
+AR Path="/E9052FD2" Ref="LED3"  Part="3" 
+AR Path="/5FF636DD/E9052FD2" Ref="LED3"  Part="3" 
+F 0 "LED3" V 5940 5820 59  0000 L BNN
+F 1 "GM5WA94310A" V 6025 5820 59  0000 L BNN
+F 2 "Lichtobjekt 6:GM5WA94310A" H 5800 6000 50  0001 C CNN
+F 3 "" H 5800 6000 50  0001 C CNN
+	3    5800 6000
+	1    0    0    -1  
+$EndComp
+$Comp
+L Lichtobjekt_6-eagle-import:SFH320 T7
+U 1 1 48A7C7EE
+P 12000 3900
+AR Path="/48A7C7EE" Ref="T7"  Part="1" 
+AR Path="/5FF636DD/48A7C7EE" Ref="T7"  Part="1" 
+F 0 "T7" H 12200 4000 59  0000 L BNN
+F 1 "SFH320" H 12200 3900 59  0000 L BNN
+F 2 "LED_SMD:LED_PLCC-2" H 12000 3900 50  0001 C CNN
+F 3 "" H 12000 3900 50  0001 C CNN
+	1    12000 3900
+	-1   0    0    -1  
+$EndComp
+$Comp
+L Lichtobjekt_6-eagle-import:GND #SUPPLY22
+U 1 1 15C4ECC7
+P 11900 4300
+AR Path="/15C4ECC7" Ref="#SUPPLY22"  Part="1" 
+AR Path="/5FF636DD/15C4ECC7" Ref="#SUPPLY022"  Part="1" 
+F 0 "#SUPPLY022" H 11900 4300 50  0001 C CNN
+F 1 "GND" H 11825 4175 59  0000 L BNN
+F 2 "" H 11900 4300 50  0001 C CNN
+F 3 "" H 11900 4300 50  0001 C CNN
+	1    11900 4300
+	-1   0    0    -1  
+$EndComp
+$Comp
+L Lichtobjekt_6-eagle-import:R-EU_R0805 R14
+U 1 1 70F11D72
+P 9700 7000
+AR Path="/70F11D72" Ref="R14"  Part="1" 
+AR Path="/5FF636DD/70F11D72" Ref="R14"  Part="1" 
+F 0 "R14" H 9550 7059 59  0000 L BNN
+F 1 "150" H 9550 6870 59  0000 L BNN
+F 2 "Lichtobjekt 6:R0805" H 9700 7000 50  0001 C CNN
+F 3 "" H 9700 7000 50  0001 C CNN
+	1    9700 7000
+	1    0    0    -1  
+$EndComp
+$Comp
+L Lichtobjekt_6-eagle-import:GND #SUPPLY43
+U 1 1 7C604A95
+P 8400 4700
+AR Path="/7C604A95" Ref="#SUPPLY43"  Part="1" 
+AR Path="/5FF636DD/7C604A95" Ref="#SUPPLY043"  Part="1" 
+F 0 "#SUPPLY043" H 8400 4700 50  0001 C CNN
+F 1 "GND" H 8325 4575 59  0000 L BNN
+F 2 "" H 8400 4700 50  0001 C CNN
+F 3 "" H 8400 4700 50  0001 C CNN
+	1    8400 4700
+	1    0    0    -1  
+$EndComp
+$Comp
+L Lichtobjekt_6-eagle-import:R-EU_R0805 R4
+U 1 1 36E417A6
+P 10900 2900
+AR Path="/36E417A6" Ref="R4"  Part="1" 
+AR Path="/5FF636DD/36E417A6" Ref="R4"  Part="1" 
+F 0 "R4" H 10750 2959 59  0000 L BNN
+F 1 "330k" H 10750 2770 59  0000 L BNN
+F 2 "Lichtobjekt 6:R0805" H 10900 2900 50  0001 C CNN
+F 3 "" H 10900 2900 50  0001 C CNN
+	1    10900 2900
+	-1   0    0    -1  
+$EndComp
+$Comp
+L Lichtobjekt_6-eagle-import:X05X2 X1
+U 1 1 8679BB61
+P 9100 4200
+AR Path="/8679BB61" Ref="X1"  Part="1" 
+AR Path="/5FF636DD/8679BB61" Ref="X1"  Part="1" 
+F 0 "X1" H 9200 4550 51  0000 R TNN
+F 1 "X05X2" H 9200 4625 51  0000 R TNN
+F 2 "Lichtobjekt 6:X10N-IDC" H 9100 4200 50  0001 C CNN
+F 3 "" H 9100 4200 50  0001 C CNN
+	1    9100 4200
+	-1   0    0    1   
+$EndComp
+$Comp
+L Lichtobjekt_6-eagle-import:X05X2 X1
+U 2 1 8679BB6D
+P 8700 4200
+AR Path="/8679BB6D" Ref="X1"  Part="2" 
+AR Path="/5FF636DD/8679BB6D" Ref="X1"  Part="2" 
+F 0 "X1" H 8800 4550 51  0000 R TNN
+F 1 "X05X2" H 8800 4625 51  0000 R TNN
+F 2 "Lichtobjekt 6:X10N-IDC" H 8700 4200 50  0001 C CNN
+F 3 "" H 8700 4200 50  0001 C CNN
+	2    8700 4200
+	1    0    0    1   
+$EndComp
+$Comp
+L Lichtobjekt_6-eagle-import:C-EUC0603 C8
+U 1 1 690031A3
+P 12800 1600
+AR Path="/690031A3" Ref="C8"  Part="1" 
+AR Path="/5FF636DD/690031A3" Ref="C8"  Part="1" 
+F 0 "C8" H 12860 1615 59  0000 L BNN
+F 1 "220n" H 12860 1415 59  0000 L BNN
+F 2 "Lichtobjekt 6:C0603" H 12800 1600 50  0001 C CNN
+F 3 "" H 12800 1600 50  0001 C CNN
+	1    12800 1600
+	-1   0    0    -1  
+$EndComp
+$Comp
+L Lichtobjekt_6-eagle-import:GND #SUPPLY38
+U 1 1 05643BC3
+P 12800 2200
+AR Path="/05643BC3" Ref="#SUPPLY38"  Part="1" 
+AR Path="/5FF636DD/05643BC3" Ref="#SUPPLY038"  Part="1" 
+F 0 "#SUPPLY038" H 12800 2200 50  0001 C CNN
+F 1 "GND" H 12725 2075 59  0000 L BNN
+F 2 "" H 12800 2200 50  0001 C CNN
+F 3 "" H 12800 2200 50  0001 C CNN
+	1    12800 2200
+	-1   0    0    -1  
+$EndComp
+$Comp
+L Lichtobjekt_6-eagle-import:+UB #SUPPLY57
+U 1 1 E646FC6A
+P 9600 4600
+AR Path="/E646FC6A" Ref="#SUPPLY57"  Part="1" 
+AR Path="/5FF636DD/E646FC6A" Ref="#SUPPLY057"  Part="1" 
+F 0 "#SUPPLY057" H 9600 4600 50  0001 C CNN
+F 1 "+UB" H 9525 4725 59  0000 L BNN
+F 2 "" H 9600 4600 50  0001 C CNN
+F 3 "" H 9600 4600 50  0001 C CNN
+	1    9600 4600
+	-1   0    0    -1  
+$EndComp
+$Comp
+L Lichtobjekt_6-eagle-import:22-?-0427-2041 J6
+U 1 1 C649B669
+P 2700 7200
+AR Path="/C649B669" Ref="J6"  Part="1" 
+AR Path="/5FF636DD/C649B669" Ref="J6"  Part="1" 
+F 0 "J6" H 2800 7170 51  0000 L BNN
+F 1 "22-?-0427-2041" H 2670 7255 59  0001 L BNN
+F 2 "Lichtobjekt 6:6410-04" H 2700 7200 50  0001 C CNN
+F 3 "" H 2700 7200 50  0001 C CNN
+	1    2700 7200
+	1    0    0    -1  
+$EndComp
+$Comp
+L Lichtobjekt_6-eagle-import:22-?-0427-2041 J6
+U 2 1 C649B665
+P 2700 7800
+AR Path="/C649B665" Ref="J6"  Part="2" 
+AR Path="/5FF636DD/C649B665" Ref="J6"  Part="2" 
+F 0 "J6" H 2800 7770 51  0000 L BNN
+F 1 "22-?-0427-2041" H 2670 7855 59  0001 L BNN
+F 2 "Lichtobjekt 6:6410-04" H 2700 7800 50  0001 C CNN
+F 3 "" H 2700 7800 50  0001 C CNN
+	2    2700 7800
+	1    0    0    -1  
+$EndComp
+$Comp
+L Lichtobjekt_6-eagle-import:22-?-0427-2041 J6
+U 3 1 C649B661
+P 2700 8500
+AR Path="/C649B661" Ref="J6"  Part="3" 
+AR Path="/5FF636DD/C649B661" Ref="J6"  Part="3" 
+F 0 "J6" H 2800 8470 51  0000 L BNN
+F 1 "22-?-0427-2041" H 2670 8555 59  0001 L BNN
+F 2 "Lichtobjekt 6:6410-04" H 2700 8500 50  0001 C CNN
+F 3 "" H 2700 8500 50  0001 C CNN
+	3    2700 8500
+	1    0    0    -1  
+$EndComp
+$Comp
+L Lichtobjekt_6-eagle-import:22-?-0427-2041 J6
+U 4 1 C649B67D
+P 2700 8700
+AR Path="/C649B67D" Ref="J6"  Part="4" 
+AR Path="/5FF636DD/C649B67D" Ref="J6"  Part="4" 
+F 0 "J6" H 2800 8670 51  0000 L BNN
+F 1 "22-?-0427-2041" H 2670 8755 59  0001 L BNN
+F 2 "Lichtobjekt 6:6410-04" H 2700 8700 50  0001 C CNN
+F 3 "" H 2700 8700 50  0001 C CNN
+	4    2700 8700
+	1    0    0    -1  
+$EndComp
+$Comp
+L Lichtobjekt_6-eagle-import:X04 X2
+U 1 1 EE6A8C5B
+P 9100 5700
+AR Path="/EE6A8C5B" Ref="X2"  Part="1" 
+AR Path="/5FF636DD/EE6A8C5B" Ref="X2"  Part="1" 
+F 0 "X2" H 9200 5950 51  0000 R TNN
+F 1 "X04" H 9200 6025 51  0000 R TNN
+F 2 "Lichtobjekt 6:X04N-SIL" H 9100 5700 50  0001 C CNN
+F 3 "" H 9100 5700 50  0001 C CNN
+	1    9100 5700
+	-1   0    0    1   
+$EndComp
+$Comp
+L Lichtobjekt_6-eagle-import:GND #SUPPLY73
+U 1 1 D24849E4
+P 9400 6000
+AR Path="/D24849E4" Ref="#SUPPLY73"  Part="1" 
+AR Path="/5FF636DD/D24849E4" Ref="#SUPPLY073"  Part="1" 
+F 0 "#SUPPLY073" H 9400 6000 50  0001 C CNN
+F 1 "GND" H 9325 5875 59  0000 L BNN
+F 2 "" H 9400 6000 50  0001 C CNN
+F 3 "" H 9400 6000 50  0001 C CNN
+	1    9400 6000
+	1    0    0    -1  
+$EndComp
+$Comp
+L Lichtobjekt_6-eagle-import:RV-3029-C2 IC4
+U 1 1 FA55F29D
+P 5700 4000
+AR Path="/FA55F29D" Ref="IC4"  Part="1" 
+AR Path="/5FF636DD/FA55F29D" Ref="IC4"  Part="1" 
+F 0 "IC4" H 5300 4450 59  0000 L BNN
+F 1 "RV-3029-C2" H 5300 3400 59  0000 L BNN
+F 2 "Lichtobjekt 6:SON-10" H 5700 4000 50  0001 C CNN
+F 3 "" H 5700 4000 50  0001 C CNN
+	1    5700 4000
+	1    0    0    -1  
+$EndComp
+$Comp
+L Lichtobjekt_6-eagle-import:C-EUC0603 C36
+U 1 1 326D7DD1
+P 4800 4400
+AR Path="/326D7DD1" Ref="C36"  Part="1" 
+AR Path="/5FF636DD/326D7DD1" Ref="C36"  Part="1" 
+F 0 "C36" H 4560 4215 59  0000 L BNN
+F 1 "220n" H 4560 4415 59  0000 L BNN
+F 2 "Lichtobjekt 6:C0603" H 4800 4400 50  0001 C CNN
+F 3 "" H 4800 4400 50  0001 C CNN
+	1    4800 4400
+	1    0    0    -1  
+$EndComp
+$Comp
+L Lichtobjekt_6-eagle-import:GND #SUPPLY76
+U 1 1 4EF46F42
+P 4800 4900
+AR Path="/4EF46F42" Ref="#SUPPLY76"  Part="1" 
+AR Path="/5FF636DD/4EF46F42" Ref="#SUPPLY076"  Part="1" 
+F 0 "#SUPPLY076" H 4800 4900 50  0001 C CNN
+F 1 "GND" H 4725 4775 59  0000 L BNN
+F 2 "" H 4800 4900 50  0001 C CNN
+F 3 "" H 4800 4900 50  0001 C CNN
+	1    4800 4900
+	1    0    0    -1  
+$EndComp
+$Comp
+L Lichtobjekt_6-eagle-import:+3.0V #SUPPLY75
+U 1 1 91A3AC66
+P 4800 3500
+AR Path="/91A3AC66" Ref="#SUPPLY75"  Part="1" 
+AR Path="/5FF636DD/91A3AC66" Ref="#SUPPLY075"  Part="1" 
+F 0 "#SUPPLY075" H 4800 3500 50  0001 C CNN
+F 1 "+3.0V" H 4725 3625 59  0000 L BNN
+F 2 "" H 4800 3500 50  0001 C CNN
+F 3 "" H 4800 3500 50  0001 C CNN
+	1    4800 3500
+	1    0    0    -1  
+$EndComp
+$Comp
+L Lichtobjekt_6-eagle-import:24SN IC6
+U 1 1 0EE5647E
+P 3000 5100
+AR Path="/0EE5647E" Ref="IC6"  Part="1" 
+AR Path="/5FF636DD/0EE5647E" Ref="IC6"  Part="1" 
+F 0 "IC6" H 2600 5550 59  0000 L BNN
+F 1 "24SN" H 2600 4700 59  0000 L BNN
+F 2 "Lichtobjekt 6:SO-08" H 3000 5100 50  0001 C CNN
+F 3 "" H 3000 5100 50  0001 C CNN
+	1    3000 5100
+	-1   0    0    -1  
+$EndComp
+$Comp
+L Lichtobjekt_6-eagle-import:GND #SUPPLY78
+U 1 1 E788E7CA
+P 2100 6000
+AR Path="/E788E7CA" Ref="#SUPPLY78"  Part="1" 
+AR Path="/5FF636DD/E788E7CA" Ref="#SUPPLY078"  Part="1" 
+F 0 "#SUPPLY078" H 2100 6000 50  0001 C CNN
+F 1 "GND" H 2025 5875 59  0000 L BNN
+F 2 "" H 2100 6000 50  0001 C CNN
+F 3 "" H 2100 6000 50  0001 C CNN
+	1    2100 6000
+	1    0    0    -1  
+$EndComp
+$Comp
+L Lichtobjekt_6-eagle-import:C-EUC0603 C39
+U 1 1 AF12E363
+P 2100 5100
+AR Path="/AF12E363" Ref="C39"  Part="1" 
+AR Path="/5FF636DD/AF12E363" Ref="C39"  Part="1" 
+F 0 "C39" H 1860 4915 59  0000 L BNN
+F 1 "220n" H 1860 5115 59  0000 L BNN
+F 2 "Lichtobjekt 6:C0603" H 2100 5100 50  0001 C CNN
+F 3 "" H 2100 5100 50  0001 C CNN
+	1    2100 5100
+	1    0    0    -1  
+$EndComp
+$Comp
+L Lichtobjekt_6-eagle-import:+3.0V #SUPPLY77
+U 1 1 EA78E503
+P 2100 4300
+AR Path="/EA78E503" Ref="#SUPPLY77"  Part="1" 
+AR Path="/5FF636DD/EA78E503" Ref="#SUPPLY077"  Part="1" 
+F 0 "#SUPPLY077" H 2100 4300 50  0001 C CNN
+F 1 "+3.0V" H 2025 4425 59  0000 L BNN
+F 2 "" H 2100 4300 50  0001 C CNN
+F 3 "" H 2100 4300 50  0001 C CNN
+	1    2100 4300
+	1    0    0    -1  
+$EndComp
+Text Notes 11550 950  0    59   ~ 0
+200mA @ <50%, >10kHz\nalt. MOSFET IRLML2402
+Text Notes 1700 2400 0    59   ~ 0
+Debug via\nSWD + UART
+Text Notes 700  3600 0    59   ~ 0
+1 VTref\n2 J-Link Tx\n3 SWDIO\n4 GND\n5 SWCLK\n6 GND\n7 SWO (optional)\n8 Reset\n9 J-Link Rx\n10 +5V Supply
+Text Notes 12800 8700 0    59   ~ 0
+Boot1
+Text GLabel 7700 1700 0    10   BiDi ~ 0
+DNC
+Text Label 10500 7200 0    70   ~ 0
+STATUS_LED_B_PWM
+Wire Bus Line
+	4100 2700 4100 3200
+Wire Bus Line
+	10400 1200 10400 3200
+Wire Bus Line
+	7500 3200 7500 4300
+Wire Bus Line
+	4100 3200 4100 8300
+Wire Bus Line
+	10400 3200 10400 9100
+$EndSCHEMATC

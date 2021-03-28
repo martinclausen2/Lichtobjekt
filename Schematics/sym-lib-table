@@ -1,0 +1,3 @@
+(sym_lib_table
+  (lib (name Lichtobjekt_6-eagle-import)(type Legacy)(uri ${KIPRJMOD}/Lichtobjekt_6-eagle-import.lib)(options "")(descr ""))
+)
