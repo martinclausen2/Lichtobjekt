@@ -116,7 +116,7 @@ void MainMenu()
 				if (LightOn)
 					LEDOn();
 				else
-					LEDStandby();
+					LEDSetupStandby();
 				}
 			break;
 		case 3:
