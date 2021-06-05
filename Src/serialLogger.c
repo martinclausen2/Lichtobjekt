@@ -7,8 +7,8 @@
 
 #include "serialLogger.h"
 
-volatile uint8_t Tx_len;
-volatile uint8_t Tx_Buffer[64];
+char Tx_len;
+char Tx_Buffer[64];
 
 void Init_SerialLogger(UART_HandleTypeDef *handle_huart)
 {

@@ -10,6 +10,7 @@
 
 #include "stm32l1xx_hal.h"
 #include "globals.h"
+#include <string.h>
 
 UART_HandleTypeDef *huart_logger;
 
