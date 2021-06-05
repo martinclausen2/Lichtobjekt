@@ -1467,7 +1467,7 @@ F 1 "BSS138" H 11800 1500 59  0000 L BNN
 F 2 "Lichtobjekt 6:SOT23" H 11700 1600 50  0001 C CNN
 F 3 "" H 11700 1600 50  0001 C CNN
 	1    11700 1600
-	1    0    0    1   
+	1    0    0    -1  
 $EndComp
 $Comp
 L Lichtobjekt_6-eagle-import:GND #SUPPLY39
@@ -2065,7 +2065,7 @@ F 1 "BSS138" H 5700 6900 59  0000 L BNN
 F 2 "Lichtobjekt 6:SOT23" H 5600 7000 50  0001 C CNN
 F 3 "" H 5600 7000 50  0001 C CNN
 	1    5600 7000
-	1    0    0    1   
+	1    0    0    -1  
 $EndComp
 $Comp
 L Lichtobjekt_6-eagle-import:BSS138 T5
@@ -2078,7 +2078,7 @@ F 1 "BSS138" H 5300 7100 59  0000 L BNN
 F 2 "Lichtobjekt 6:SOT23" H 5200 7200 50  0001 C CNN
 F 3 "" H 5200 7200 50  0001 C CNN
 	1    5200 7200
-	1    0    0    1   
+	1    0    0    -1  
 $EndComp
 $Comp
 L Lichtobjekt_6-eagle-import:BSS138 T6
@@ -2091,7 +2091,7 @@ F 1 "BSS138" H 4900 7300 59  0000 L BNN
 F 2 "Lichtobjekt 6:SOT23" H 4800 7400 50  0001 C CNN
 F 3 "" H 4800 7400 50  0001 C CNN
 	1    4800 7400
-	1    0    0    1   
+	1    0    0    -1  
 $EndComp
 $Comp
 L Lichtobjekt_6-eagle-import:GND #SUPPLY49
@@ -2495,6 +2495,16 @@ Text GLabel 7700 1700 0    10   BiDi ~ 0
 DNC
 Text Label 10500 7200 0    70   ~ 0
 STATUS_LED_B_PWM
+Text Notes 13250 5300 0    50   ~ 0
+close for boot from FLASH
+Wire Wire Line
+	5400 6900 5400 7100
+Wire Wire Line
+	5000 7100 5000 7300
+Wire Wire Line
+	4600 7300 4600 7500
+Wire Wire Line
+	11500 1700 11500 1500
 Wire Bus Line
 	4100 2700 4100 3200
 Wire Bus Line
