@@ -143,7 +143,9 @@ int main(void)
   Init_SerialLogger(&huart1);
   Status_LED_Init(&htim3);
   Encoder_Init(&htim4);
+  Init_ExtBrightness(&hadc);
   Init_MainMenu();
+
 
   /*##-1- Start the TIM Base generation in interrupt mode ####################*/
   HAL_TIM_Base_Start_IT(&htim6);  //RC5 decoder
@@ -163,6 +165,7 @@ int main(void)
 		Keys(!HAL_GPIO_ReadPin(ENC_SW_GPIO_Port, ENC_SW_Pin));
 		Encoder();
        	MainMenu();
+      	Sample_ExtBrightness();
 	}
     HAL_PWR_EnterSLEEPMode(PWR_MAINREGULATOR_ON, PWR_SLEEPENTRY_WFI);
   }											 
@@ -939,6 +942,14 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
   	//set flag
    	TimerFlag = true;
   }
+}
+
+void HAL_ADC_ConvCpltCallback(ADC_HandleTypeDef* hadc)
+{
+    // Read & Update the ADC Result
+	// assumption: ADC only used for brightness measurement,
+	// otherwise insert code for branching according to interrupt source here
+	AddValue_ExtBrightness(hadc);
 }
 /* USER CODE END 4 */
 

@@ -9,7 +9,6 @@
 #define MAINMENU_H_
 
 #include "stm32l1xx_hal.h"
-#include "globals.h"
 #include "settings.h"
 #include "keys.h"
 #include "encoder.h"

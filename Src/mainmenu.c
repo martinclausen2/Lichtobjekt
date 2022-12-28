@@ -56,22 +56,20 @@ void MainMenu()
 		{
 		case 0:
 			DecodeRemote();
-//			MeasureExtBrightness();
 			break;
 		case 1:
 			if (LightOn)
 				{
-//				StoreBrightness();	// store brightness if required
+				StoreBrightness();	// store brightness if required
 				LEDLimit();
 				}
 			else
 				{
-//				MeasureExtBrightness();
 				if (!KeyState)	//protect preview from being overwritten
 					{
 					LEDStandby();	//dim standby led according to external brightness
 					}
-//				WriteTimer=0;
+				WriteTimer=0;
 				}
 			break;
 		case 2:
@@ -102,10 +100,10 @@ void MainMenu()
 					}
 				else
 					{
-//					if (ComModeConditional<=SenderMode)		//reset to eeprom value in swalllightoff()
-//						{
-//						SenderMode=ComModeAll;
-//						}
+					if (ComModeConditional<=SenderMode)		//reset to eeprom value in swalllightoff()
+						{
+						SenderMode=ComModeAll;
+						}
 //					SendRC5(RC5Addr_com, RC5Cmd_On, 1, ComModeAll, RC5Cmd_Repeats);
 					SwAllLightOn();
 					}
@@ -129,7 +127,7 @@ void MainMenu()
 					PWM_SetupDim(FocusBacklight, Brightness_steps, EncoderSteps);
 					EncoderSteps = 0;								//ack any steps
 					LEDSetupLimit();
-					//WriteTimer=WriteTime;
+					WriteTimer=WriteTime;
 //					SendRC5(RC5Addr_front+FocusBacklight, (Brightness[FocusBacklight]>>2) & 0x3F, (Brightness[FocusBacklight]>>1) & 0x01, ComModeAll, RC5Value_Repeats);
 					}
 				}

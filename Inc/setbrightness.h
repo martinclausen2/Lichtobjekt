@@ -8,7 +8,6 @@
 #ifndef SETBRIGHTNESS_H_
 #define SETBRIGHTNESS_H_
 
-#include "globals.h"
 #include "status_LED.h"
 #include <stdbool.h>
 #include "stm32l1xx_hal.h"
