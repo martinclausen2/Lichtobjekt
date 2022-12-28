@@ -10,11 +10,11 @@
 
 #include "stm32l1xx_hal.h"
 #include "globals.h"
+#include "settings.h"
 #include "keys.h"
 #include "encoder.h"
 #include "setbrightness.h"
 #include "status_LED.h"
-#include "options.h"
 #include "RC5.h"
 #include <stdbool.h>
 

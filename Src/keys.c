@@ -10,6 +10,10 @@
 
 #include "keys.h"
 
+volatile unsigned char KeyState;		//stores the keys state
+volatile unsigned char OldKeyState;
+volatile unsigned char KeyPressDuration;
+
 void Keys(unsigned int KeyStateInput)	//call from int at 40Hz to read keys
 {
 	KeyState = KeyStateInput;

@@ -6,13 +6,7 @@ Controls Status RGB LED
 #define __StatusLED_H_GUARD
 
 #include "stm32l1xx_hal.h"
-
-unsigned char LEDFlashCount;		//Number of flashes currently required, should not exceed 0x7F ...
-unsigned char LEDFlashSeqCounter;	//Number of flashes * 2 (on & off) to be produced in this sequence
-unsigned char LEDLimitFlashTimer;	//Software timer to decouple flashing frequency from calling frequency
-unsigned char LEDStandbyTimer;
-
-unsigned char LEDCurrentColor;
+#include "extbrightness.h"
 
 #define LEDFlashMaxSeq	8	//max. number of flashes in a squence, should not exceed 0x7F ...
 #define LEDFlashMaxSeqSteps LEDFlashMaxSeq << 1
@@ -23,8 +17,6 @@ unsigned char LEDCurrentColor;
 
 #define maxLimit		2	//upper brightness limit
 #define minLimit		1	//lower brightness limit
-
-unsigned char limit;
 
 #define LEDBlank	0
 #define LEDWhite	1
@@ -53,7 +45,7 @@ static const unsigned char colorTable[12][3] = { { 0x00, 0x00, 0x00},	//off
 
 static const unsigned char flashColorTable[8] = {LEDBlue, LEDBlank, LEDBlue, LEDBlank, LEDBlue, LEDBlank, LEDRed, LEDBlank};
 
-TIM_HandleTypeDef *htim_StatusPWM;				//handle to address timer
+extern unsigned char limit;
 
 void Status_LED_Init(TIM_HandleTypeDef *htim_StatusPWM);
 

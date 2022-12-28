@@ -12,13 +12,20 @@
 #include "globals.h"
 #include "serialLogger.h"
 #include "setbrightness.h"
-#include "options.h"
 #include "main.h"
+#include "settings.h"
 #include <stdbool.h>
 #include <stdio.h>
 
 
 #define MainloopFrequ       10	//40Hz durch 4 Schritte
+
+#define maxComMode 3
+
+#define ComModeOff	0
+#define ComModeAlarm	1
+#define ComModeConditional	2
+#define ComModeAll	3
 
 #define RC5Addr_front		27	//address for front light brightness
 #define RC5Addr_back		28	//address for back light brightness, MUST follow front address!
@@ -36,11 +43,7 @@
 #define RemoteSteps			2	//Step size for brightness control via remote control
 #define Brightness_steps	20	//number of steps used to execute a brightness change
 
-volatile unsigned char rCommand;   //Bitte erhalten! Wenn Befehl fertig: auswerten
-volatile unsigned char rAddress;   //Bitte erhalten! Wenn Befehl fertig: auswerten
-volatile unsigned char rCounter;   //Bitte erhalten!
-
-volatile bool RTbit;			//Togglebit von RC5
+extern unsigned char SenderMode;		//Mode for sending commands to other devices
 
 //State Machine zur Decodierung des RC5-Fernbedieungscodes
 static const unsigned char tblRemote[] =	{

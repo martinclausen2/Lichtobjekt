@@ -42,6 +42,8 @@
 ADC_HandleTypeDef hadc;
 DMA_HandleTypeDef hdma_adc;
 
+CRC_HandleTypeDef hcrc;
+
 I2C_HandleTypeDef hi2c1;
 
 RTC_HandleTypeDef hrtc;
@@ -78,6 +80,7 @@ static void MX_SPI2_Init(void);
 static void MX_USART1_UART_Init(void);
 static void MX_TIM6_Init(void);
 static void MX_TIM11_Init(void);
+static void MX_CRC_Init(void);
 /* USER CODE BEGIN PFP */
 
 /* USER CODE END PFP */
@@ -128,11 +131,12 @@ int main(void)
   MX_USART1_UART_Init();
   MX_TIM6_Init();
   MX_TIM11_Init();
+  MX_CRC_Init();
   /* USER CODE BEGIN 2 */
-//load RAM values from EEPROM
-//	ReceiverMode=Read_EEPROM(EEAddr_ReceiverMode);
-//	SenderMode=Read_EEPROM(EEAddr_SenderMode);
-  RC5Addr=0; //Read_EEPROM(EEAddr_RC5Addr);
+  //load RAM values from EEPROM
+  Settings_Init(&hcrc);
+  SenderMode = GLOBAL_settings_ptr->SenderMode;
+
   HAL_GPIO_WritePin(PERIP_PWR_GPIO_Port, PERIP_PWR_Pin, GPIO_PIN_SET);
 
   PWM_Init(&htim2);
@@ -181,6 +185,7 @@ void SystemClock_Config(void)
   /** Configure the main internal regulator output voltage
   */
   __HAL_PWR_VOLTAGESCALING_CONFIG(PWR_REGULATOR_VOLTAGE_SCALE1);
+
   /** Initializes the RCC Oscillators according to the specified parameters
   * in the RCC_OscInitTypeDef structure.
   */
@@ -193,6 +198,7 @@ void SystemClock_Config(void)
   {
     Error_Handler();
   }
+
   /** Initializes the CPU, AHB and APB buses clocks
   */
   RCC_ClkInitStruct.ClockType = RCC_CLOCKTYPE_HCLK|RCC_CLOCKTYPE_SYSCLK
@@ -231,6 +237,7 @@ static void MX_ADC_Init(void)
   /* USER CODE BEGIN ADC_Init 1 */
 
   /* USER CODE END ADC_Init 1 */
+
   /** Configure the global features of the ADC (Clock, Resolution, Data Alignment and number of conversion)
   */
   hadc.Instance = ADC1;
@@ -252,6 +259,7 @@ static void MX_ADC_Init(void)
   {
     Error_Handler();
   }
+
   /** Configure for the selected ADC regular channel its corresponding rank in the sequencer and its sample time.
   */
   sConfig.Channel = ADC_CHANNEL_TEMPSENSOR;
@@ -264,6 +272,32 @@ static void MX_ADC_Init(void)
   /* USER CODE BEGIN ADC_Init 2 */
 
   /* USER CODE END ADC_Init 2 */
+
+}
+
+/**
+  * @brief CRC Initialization Function
+  * @param None
+  * @retval None
+  */
+static void MX_CRC_Init(void)
+{
+
+  /* USER CODE BEGIN CRC_Init 0 */
+
+  /* USER CODE END CRC_Init 0 */
+
+  /* USER CODE BEGIN CRC_Init 1 */
+
+  /* USER CODE END CRC_Init 1 */
+  hcrc.Instance = CRC;
+  if (HAL_CRC_Init(&hcrc) != HAL_OK)
+  {
+    Error_Handler();
+  }
+  /* USER CODE BEGIN CRC_Init 2 */
+
+  /* USER CODE END CRC_Init 2 */
 
 }
 
@@ -319,6 +353,7 @@ static void MX_RTC_Init(void)
   /* USER CODE BEGIN RTC_Init 1 */
 
   /* USER CODE END RTC_Init 1 */
+
   /** Initialize RTC Only
   */
   hrtc.Instance = RTC;
@@ -388,7 +423,6 @@ static void MX_SPI2_Init(void)
   hspi2.Init.NSS = SPI_NSS_SOFT;
   hspi2.Init.BaudRatePrescaler = SPI_BAUDRATEPRESCALER_2;
   hspi2.Init.FirstBit = SPI_FIRSTBIT_MSB;
-  hspi2.Init.TIMode = SPI_TIMODE_DISABLE;
   hspi2.Init.CRCCalculation = SPI_CRCCALCULATION_DISABLE;
   hspi2.Init.CRCPolynomial = 10;
   if (HAL_SPI_Init(&hspi2) != HAL_OK)
@@ -848,10 +882,10 @@ static void MX_GPIO_Init(void)
   __HAL_RCC_GPIOB_CLK_ENABLE();
 
   /*Configure GPIO pin Output Level */
-  HAL_GPIO_WritePin(GPIOB, PERIP_PWR_Pin|Bright_High_Pin, GPIO_PIN_RESET);
+  HAL_GPIO_WritePin(GPIOB, PERIP_PWR_Pin|BRIGHT_HIGH_Pin, GPIO_PIN_RESET);
 
   /*Configure GPIO pin Output Level */
-  HAL_GPIO_WritePin(GPIOA, LCD_RST_Pin|LCD_CS_Pin|LCD_A0_Pin|Bright_Low_Pin, GPIO_PIN_RESET);
+  HAL_GPIO_WritePin(GPIOA, LCD_RST_Pin|LCD_CS_Pin|LCD_A0_Pin|BRIGHT_LOW_Pin, GPIO_PIN_RESET);
 
   /*Configure GPIO pin : ACCInt2_Pin */
   GPIO_InitStruct.Pin = ACCInt2_Pin;
@@ -859,15 +893,15 @@ static void MX_GPIO_Init(void)
   GPIO_InitStruct.Pull = GPIO_PULLUP;
   HAL_GPIO_Init(ACCInt2_GPIO_Port, &GPIO_InitStruct);
 
-  /*Configure GPIO pins : PERIP_PWR_Pin Bright_High_Pin */
-  GPIO_InitStruct.Pin = PERIP_PWR_Pin|Bright_High_Pin;
+  /*Configure GPIO pins : PERIP_PWR_Pin BRIGHT_HIGH_Pin */
+  GPIO_InitStruct.Pin = PERIP_PWR_Pin|BRIGHT_HIGH_Pin;
   GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
   GPIO_InitStruct.Pull = GPIO_NOPULL;
   GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
   HAL_GPIO_Init(GPIOB, &GPIO_InitStruct);
 
-  /*Configure GPIO pins : LCD_RST_Pin LCD_CS_Pin LCD_A0_Pin Bright_Low_Pin */
-  GPIO_InitStruct.Pin = LCD_RST_Pin|LCD_CS_Pin|LCD_A0_Pin|Bright_Low_Pin;
+  /*Configure GPIO pins : LCD_RST_Pin LCD_CS_Pin LCD_A0_Pin BRIGHT_LOW_Pin */
+  GPIO_InitStruct.Pin = LCD_RST_Pin|LCD_CS_Pin|LCD_A0_Pin|BRIGHT_LOW_Pin;
   GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
   GPIO_InitStruct.Pull = GPIO_NOPULL;
   GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
@@ -936,5 +970,3 @@ void assert_failed(uint8_t *file, uint32_t line)
   /* USER CODE END 6 */
 }
 #endif /* USE_FULL_ASSERT */
-
-/************************ (C) COPYRIGHT STMicroelectronics *****END OF FILE****/

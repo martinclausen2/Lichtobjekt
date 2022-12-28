@@ -7,6 +7,10 @@
 
 #include "encoder.h"
 
+volatile int EncoderSteps;
+
+TIM_HandleTypeDef *htim_encoder;						//handle to address timer
+
 void Encoder_Init(TIM_HandleTypeDef *handle_tim)
 {
 	htim_encoder = handle_tim;

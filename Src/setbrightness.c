@@ -9,7 +9,14 @@
 
 unsigned char Brightness_start[] = {0x3F,0x3F};	//value before lights off
 unsigned int PWM_Offset[] = {0,0};			//PWM value, where the driver effectively starts to generate an output
-unsigned int ExtBrightness_last = 0x01FFF;			//external brightness during lights off divided by 256
+TIM_HandleTypeDef *htim_PWM;				//handle to address timer
+
+bool LightOn;
+bool FocusBacklight;
+unsigned char Brightness[2];				//current value
+
+unsigned int ExtBrightness_last = 0x01FFF;	//external brightness during lights off divided by 256
+unsigned char WriteTimer;					/* time until Brightness is saved in calls to StoreBrightness() */
 
 signed int PWM_set[] = {0,0};				//current PWM value
 signed int PWM_incr[] = {0,0};			//PWM dimming step size
@@ -28,7 +35,7 @@ void PWM_Init(TIM_HandleTypeDef *handle_tim)
 
 void Update_PWM_Offset(unsigned char i)
 {
-	PWM_Offset[i]  = 0; // TODO Read_EEPROM(EEAddr_OffsetFrontBrightness+i);
+	PWM_Offset[i]  = GLOBAL_settings_ptr->PWM_Offset[i];
 	PWM_Offset[i] *= PWM_Offset[i];
 }
 
@@ -134,7 +141,7 @@ void SwLightOn(unsigned char i, unsigned int relBrightness)
 	unsigned long temp;
 	unsigned char minBrightness;					//avoid reduction to very low brightness values by external light
 
-	minBrightness = 0;  //TODO Read_EEPROM(EEAddr_MinimumFrontBrightness+i-1);	//2 is lcd backlight
+	minBrightness = GLOBAL_settings_ptr->minBrightness[i];
 	temp=Brightness_start[i];
 	temp=(temp*relBrightness)>>4;
 	if (maxBrightness < temp)						//limit brightness to maximum
@@ -173,6 +180,11 @@ void SwAllLightOn()
 		{
 		FocusBacklight=startupfocus;
 		LightOn=true;
+		relBrightness=sqrt32(Get_ExtBrightness()/GLOBAL_settings_ptr->ExtBrightness_last);
+		SwLightOn(0, relBrightness);
+		SwLightOn(1, relBrightness);
+		SwLightOn(2, relBrightness);
+		SwLightOn(3, relBrightness);
 		relBrightness=1; //TODO sqrt32(ExtBrightness/ExtBrightness_last);
 		SwLightOn(FrontChannel, relBrightness);
 		SwLightOn(BackChannel, relBrightness);
@@ -185,15 +197,11 @@ void SwAllLightOff()
 	if (LightOn == true)						//remote signal might try to switch a switched on light on again
 		{
 		LightOn=false;
-		Alarmflag=0;
 		SwLightOff(FrontChannel);
 		SwLightOff(BackChannel);
-		ExtBrightness_last=1; // TODO(ExtBrightness>>8) & 0xFFFF;
-		if (0==ExtBrightness_last)
-			{
-			ExtBrightness_last=1;
-			}
-//		SenderMode=0; //TODO Read_EEPROM(EEAddr_SenderMode);			//reset mode
+		HAL_Delay(750);
+		SetExtBrightness_last();
+		SenderMode=GLOBAL_settings_ptr->SenderMode; 		//reset mode
 		LEDSetupStandby();
 		}
 }
@@ -201,4 +209,33 @@ void SwAllLightOff()
 void ToggleFocus()
 {
 	FocusBacklight = !FocusBacklight;
+}
+
+void SetExtBrightness_last()
+{
+	unsigned int ExtBrightness_last=(Get_ExtBrightness()>>8) & 0xFFFF;
+	if (0==ExtBrightness_last)
+		{
+		ExtBrightness_last=1;
+		}
+	GLOBAL_settings_ptr->ExtBrightness_last=ExtBrightness_last;
+}
+
+void StoreBrightness()
+{
+	if (1<WriteTimer)		/* store current brightness after timeout */
+		{
+		--WriteTimer;
+		}
+	else if (1 == WriteTimer)
+		{
+		if (LightOn)
+			{
+			memcpy(Brightness_start, GLOBAL_settings_ptr->Brightness_start, sizeof(Brightness_start));
+			SetExtBrightness_last();
+			GLOBAL_settings_ptr->ExtBrightness_last=ExtBrightness_last;
+			Settings_Write();
+			}
+		WriteTimer=0;
+		}
 }

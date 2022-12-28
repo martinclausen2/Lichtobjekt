@@ -20,9 +20,7 @@
 #define MaxChange 0x0FFF
 #define MaxCounter 0xFFFF
 
-volatile int EncoderSteps;
-
-TIM_HandleTypeDef *htim_encoder;						//handle to address timer
+extern volatile int EncoderSteps;
 
 void Encoder_Init(TIM_HandleTypeDef *htim_encoder);
 

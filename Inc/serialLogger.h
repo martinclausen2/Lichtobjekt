@@ -12,8 +12,6 @@
 #include "globals.h"
 #include <string.h>
 
-UART_HandleTypeDef *huart_logger;
-
 void Init_SerialLogger(UART_HandleTypeDef *huart_logger);
 
 void log_serial(char *c);

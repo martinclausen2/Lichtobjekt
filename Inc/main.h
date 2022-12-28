@@ -7,7 +7,7 @@
   ******************************************************************************
   * @attention
   *
-  * <h2><center>&copy; Copyright (c) 2019 STMicroelectronics.
+  * <h2><center>&copy; Copyright (c) 2021 STMicroelectronics.
   * All rights reserved.</center></h2>
   *
   * This software component is licensed by ST under BSD 3-Clause license,
@@ -43,7 +43,8 @@ extern "C" {
 #include "encoder.h"
 #include "keys.h"
 #include "RC5.h"
-//#include "options.h"
+#include "settings.h"
+#include "extbrightness.h"
 
 /* USER CODE END Includes */
 
@@ -122,10 +123,10 @@ void Error_Handler(void);
 #define SWDIO_GPIO_Port GPIOA
 #define SWCLK_Pin GPIO_PIN_14
 #define SWCLK_GPIO_Port GPIOA
-#define Bright_Low_Pin GPIO_PIN_15
-#define Bright_Low_GPIO_Port GPIOA
-#define Bright_High_Pin GPIO_PIN_3
-#define Bright_High_GPIO_Port GPIOB
+#define BRIGHT_LOW_Pin GPIO_PIN_15
+#define BRIGHT_LOW_GPIO_Port GPIOA
+#define BRIGHT_HIGH_Pin GPIO_PIN_3
+#define BRIGHT_HIGH_GPIO_Port GPIOB
 #define Charging_Status_Pin GPIO_PIN_4
 #define Charging_Status_GPIO_Port GPIOB
 #define ACCInt1_Pin GPIO_PIN_5
@@ -134,6 +135,7 @@ void Error_Handler(void);
 #define ENC_B_GPIO_Port GPIOB
 #define ENC_A_Pin GPIO_PIN_7
 #define ENC_A_GPIO_Port GPIOB
+
 /* USER CODE BEGIN Private defines */
 
 // set to 1 for ZXLD1374 since the chip will not switch on at PWM frequencies lower than 100Hz (SetBrightness.C)
@@ -148,5 +150,3 @@ void send(uint8_t *pData);
 #endif
 
 #endif /* __MAIN_H */
-
-/************************ (C) COPYRIGHT STMicroelectronics *****END OF FILE****/

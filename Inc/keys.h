@@ -8,9 +8,9 @@
 #ifndef KEYS_H_
 #define KEYS_H_
 
-volatile unsigned char KeyState;		//stores the keys state
-volatile unsigned char OldKeyState;
-volatile unsigned char KeyPressDuration;
+extern volatile unsigned char KeyState;		//stores the keys state
+extern volatile unsigned char OldKeyState;
+extern volatile unsigned char KeyPressDuration;
 
 void Keys(unsigned int KeyState);
 unsigned char CheckKeyPressed();
