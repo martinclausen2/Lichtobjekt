@@ -48,7 +48,6 @@ typedef struct {
 	unsigned char RC5Addr;								//IR remote control address
 	unsigned char ReceiverMode;							//Mode for acting on commands from other devices
 	unsigned char SenderMode;							//Mode for sending commands to other devices
-	unsigned char LCDContrast;							//LCD contrast setting
 	unsigned int ExtBrightness_last;					//external brightness during lights off divided by 256
 	unsigned char Brightness_start[maxVirtualChannel];	//value before lights off
 	unsigned char minBrightness[maxChannel];			//minimum brightness after power on and recalculation using measured brightness
@@ -56,10 +55,12 @@ typedef struct {
 	unsigned char AlarmBrightness[maxChannel];			//maximum brightness targeted during alarm
 	unsigned int PWM_Offset[maxChannel];				//PWM value, where the driver effectively starts to generate an output
 	unsigned char LightFading;							//Minutes to fade light in
-	unsigned char AlarmTime2Signal;						//Delay after alarm until noise is being generated
-	unsigned char AlarmTimeSnooze;						//Snooze Time
 	unsigned int FadingTime;							//Seconds to fade from one color setting to next
-	unsigned char BeepVolume;							//Volume of the key beep
+	unsigned int cal_uBat;
+	unsigned int cal_uPwr;
+	unsigned int min_uBat;
+	unsigned int min_uPwr;
+
 	alarm_t Alarm[maxAlarm];
 	uint32_t crc32;
 } settings_t;

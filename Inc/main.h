@@ -74,8 +74,6 @@ void MainTimerCallback(TIM_HandleTypeDef *htim);
 /* USER CODE END EFP */
 
 /* Private defines -----------------------------------------------------------*/
-#define ACCInt2_Pin GPIO_PIN_13
-#define ACCInt2_GPIO_Port GPIOC
 #define ENC_SW_Pin GPIO_PIN_0
 #define ENC_SW_GPIO_Port GPIOA
 #define LED_2_PWM_Pin GPIO_PIN_1
@@ -94,32 +92,16 @@ void MainTimerCallback(TIM_HandleTypeDef *htim);
 #define STATUS_LED_G_PWM_GPIO_Port GPIOA
 #define STATUS_LED_B_PWM_Pin GPIO_PIN_0
 #define STATUS_LED_B_PWM_GPIO_Port GPIOB
-#define LCD_BACKLIGHT_PWM_Pin GPIO_PIN_1
-#define LCD_BACKLIGHT_PWM_GPIO_Port GPIOB
 #define PERIP_PWR_Pin GPIO_PIN_2
 #define PERIP_PWR_GPIO_Port GPIOB
-#define LED_3_PWM_Pin GPIO_PIN_10
-#define LED_3_PWM_GPIO_Port GPIOB
-#define LED_4_PWM_Pin GPIO_PIN_11
-#define LED_4_PWM_GPIO_Port GPIOB
 #define IR_OUT_Pin GPIO_PIN_12
 #define IR_OUT_GPIO_Port GPIOB
-#define LCD_SCK_Pin GPIO_PIN_13
-#define LCD_SCK_GPIO_Port GPIOB
 #define BRIGHT_IN_Pin GPIO_PIN_14
 #define BRIGHT_IN_GPIO_Port GPIOB
-#define LCD_MOSI_Pin GPIO_PIN_15
-#define LCD_MOSI_GPIO_Port GPIOB
-#define LCD_RST_Pin GPIO_PIN_8
-#define LCD_RST_GPIO_Port GPIOA
 #define J_LinkRX_Pin GPIO_PIN_9
 #define J_LinkRX_GPIO_Port GPIOA
 #define J_LinkTX_Pin GPIO_PIN_10
 #define J_LinkTX_GPIO_Port GPIOA
-#define LCD_CS_Pin GPIO_PIN_11
-#define LCD_CS_GPIO_Port GPIOA
-#define LCD_A0_Pin GPIO_PIN_12
-#define LCD_A0_GPIO_Port GPIOA
 #define SWDIO_Pin GPIO_PIN_13
 #define SWDIO_GPIO_Port GPIOA
 #define SWCLK_Pin GPIO_PIN_14
@@ -130,8 +112,6 @@ void MainTimerCallback(TIM_HandleTypeDef *htim);
 #define BRIGHT_HIGH_GPIO_Port GPIOB
 #define Charging_Status_Pin GPIO_PIN_4
 #define Charging_Status_GPIO_Port GPIOB
-#define ACCInt1_Pin GPIO_PIN_5
-#define ACCInt1_GPIO_Port GPIOB
 #define ENC_B_Pin GPIO_PIN_6
 #define ENC_B_GPIO_Port GPIOB
 #define ENC_A_Pin GPIO_PIN_7

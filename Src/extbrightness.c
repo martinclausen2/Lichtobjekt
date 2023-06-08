@@ -11,13 +11,19 @@
  * result is found in the unsigned long ExtBrightness
  *
  * BRIGHT_LOW_Pin and BRIGHT_HIGH_Pin must be set to high via the device configuration
-*/
+ */
 
 #include "extbrightness.h"
 
 ADC_HandleTypeDef *hadc_extbrightness;
 
 unsigned long extBrightness = 0;	//will be filled up to 24 bit with 64 datapoint moving average
+
+//assume full power until everything is initialized
+unsigned int uBat = maxADCvalue;
+unsigned int uPwr = maxADCvalue;
+
+unsigned int ADC_cnt = 0;
 
 PhotoGain_t PhotoGain;
 
@@ -38,7 +44,15 @@ void Init_ExtBrightness(ADC_HandleTypeDef *handle_adc)
 
 void Sample_ExtBrightness()
 {
-    HAL_ADC_Start_IT(hadc_extbrightness);
+	if (ADC_cnt)
+	{
+		--ADC_cnt;
+	}
+	else
+	{
+		ADC_cnt = ADC_cnt_reload;
+		HAL_ADC_Start_IT(hadc_extbrightness);
+	}
 }
 
 // set pin to output or analog input to imitate open source output not available on STM32
@@ -70,21 +84,33 @@ void AdjustGain(PhotoGain_t PhotoGain) {
 void AddValue_ExtBrightness(ADC_HandleTypeDef *handle_adc)
 {
 	// check if value was created by sampling the brightness ADC input channel
-	if (handle_adc->Instance == hadc_extbrightness->Instance && handle_adc->NbrOfConversionRank == extbrightness_ADC_RANK)
+	int ADC_Result;
+	if (handle_adc->Instance == hadc_extbrightness->Instance)
 	{
-		int ADC_Result = maxADCvalue - HAL_ADC_GetValue(hadc_extbrightness);
-		extBrightness -= (extBrightness >> 6) & 0x0FFFFFFF;		//in the meantime: remove a 1/64 so we have a moving average over 64 data points
-		extBrightness += ADC_Result * photoampfactor[PhotoGain.ALL];
-		if ((maxphotoamp < ADC_Result) && (maxphotogain > PhotoGain.ALL))
+		switch (handle_adc->NbrOfConversionRank)
+		{
+		case extbrightness_ADC_RANK:
+			ADC_Result = maxADCvalue - HAL_ADC_GetValue(hadc_extbrightness);
+			extBrightness -= (extBrightness >> 6) & 0x0FFFFFFF;		//in the meantime: remove a 1/64 so we have a moving average over 64 data points
+			extBrightness += ADC_Result * photoampfactor[PhotoGain.ALL];
+			if ((maxphotoamp < ADC_Result) && (maxphotogain > PhotoGain.ALL))
 			{
-			++PhotoGain.ALL;
-	    	AdjustGain(PhotoGain);
+				++PhotoGain.ALL;
+				AdjustGain(PhotoGain);
 			}
-		else if ((minphotoamp > ADC_Result) && (minphotogain < PhotoGain.ALL))
+			else if ((minphotoamp > ADC_Result) && (minphotogain < PhotoGain.ALL))
 			{
-			--PhotoGain.ALL;
-	    	AdjustGain(PhotoGain);
+				--PhotoGain.ALL;
+				AdjustGain(PhotoGain);
 			}
+			break;
+		case uBat_ADC_RANK:
+			uBat = HAL_ADC_GetValue(hadc_extbrightness);
+			break;
+		case uPwr_ADC_RANK:
+			uPwr = HAL_ADC_GetValue(hadc_extbrightness);
+			break;
+		}
 	}
 }
 

@@ -24,14 +24,14 @@ void SettingsInit(CRC_HandleTypeDef *handle_crc)
 void SettingsRead(void){
 	//copy data from EEPROM to RAM
 	memcpy(GLOBAL_settings_ptr, (uint32_t*)DATA_EEPROM_START_ADDR, sizeof(settings_t));
-
+/*
 	__HAL_RCC_CRC_CLK_ENABLE();
 
 	//calculate new CRC
 	uint32_t computed_crc = HAL_CRC_Calculate(
 			hcrc_settings,
 			(uint32_t *)GLOBAL_settings_ptr,
-			(sizeof(settings_t)-sizeof(uint32_t))/sizeof(uint32_t)/*size minus the crc32 at the end, IN WORDS*/
+			(sizeof(settings_t)-sizeof(uint32_t))/sizeof(uint32_t)/*size minus the crc32 at the end, IN WORDS
 	);
 
 	__HAL_RCC_CRC_CLK_DISABLE();
@@ -39,6 +39,7 @@ void SettingsRead(void){
 	if (computed_crc != GLOBAL_settings_ptr->crc32){
 		SettingsReset2Defaults();
 	}
+	*/
 }
 
 uint32_t SettingsWrite(void){
@@ -47,12 +48,12 @@ uint32_t SettingsWrite(void){
 	__HAL_RCC_CRC_CLK_ENABLE();
 
 	//calculate new CRC
-	GLOBAL_settings_ptr->crc32 = HAL_CRC_Calculate(
+/*	GLOBAL_settings_ptr->crc32 = HAL_CRC_Calculate(
 			hcrc_settings,
 			(uint32_t *)GLOBAL_settings_ptr,
-			(sizeof(settings_t)-sizeof(uint32_t))/sizeof(uint32_t)/*size minus the crc32 at the end, IN WORDS*/
+			(sizeof(settings_t)-sizeof(uint32_t))/sizeof(uint32_t)/*size minus the crc32 at the end, IN WORDS
 	);
-
+*/
 	__HAL_RCC_CRC_CLK_DISABLE();
 
 	HAL_FLASHEx_DATAEEPROM_Unlock();
@@ -86,35 +87,25 @@ void SettingsReset2Defaults(void){
 	GLOBAL_settings_ptr->RC5Addr = 0;					//IR remote control address
 	GLOBAL_settings_ptr->ReceiverMode = 2;				//Mode for acting on commands from other devices
 	GLOBAL_settings_ptr->SenderMode = 2;				//Mode for sending commands to other devices
-	GLOBAL_settings_ptr->LCDContrast = 12;				//LCD contrast setting
 	GLOBAL_settings_ptr->ExtBrightness_last = 0;		//external brightness during lights off divided by 256
 	GLOBAL_settings_ptr->Brightness_start[0] = 0;		//value before lights off
 	GLOBAL_settings_ptr->Brightness_start[1] = 0;		//value before lights off
 	GLOBAL_settings_ptr->Brightness_start[2] = 0;		//value before lights off
-	GLOBAL_settings_ptr->Brightness_start[3] = 0;		//value before lights off
-	GLOBAL_settings_ptr->Brightness_start[4] = 0;		//value before lights off
 	GLOBAL_settings_ptr->minBrightness[0] = 7;			//minimum brightness after power on and recalculation using measured brightness
 	GLOBAL_settings_ptr->minBrightness[1] = 7;			//minimum brightness after power on and recalculation using measured brightness
-	GLOBAL_settings_ptr->minBrightness[2] = 7;			//minimum brightness after power on and recalculation using measured brightness
-	GLOBAL_settings_ptr->minBrightness[3] = 7;			//minimum brightness after power on and recalculation using measured brightness
 	GLOBAL_settings_ptr->maxBrightness[0] = 255;		//maximum brightness
 	GLOBAL_settings_ptr->maxBrightness[1] = 255;		//maximum brightness
 	GLOBAL_settings_ptr->maxBrightness[2] = 255;		//maximum brightness
-	GLOBAL_settings_ptr->maxBrightness[3] = 255;		//maximum brightness
-	GLOBAL_settings_ptr->maxBrightness[4] = 255;		//maximum brightness
 	GLOBAL_settings_ptr->AlarmBrightness[0] = 128;		//maximum brightness targeted during alarm
 	GLOBAL_settings_ptr->AlarmBrightness[1] = 255;		//maximum brightness targeted during alarm
-	GLOBAL_settings_ptr->AlarmBrightness[2] =  52;		//maximum brightness targeted during alarm
-	GLOBAL_settings_ptr->AlarmBrightness[3] = 180;		//maximum brightness targeted during alarm
 	GLOBAL_settings_ptr->PWM_Offset[0] = 0;				//PWM value, where the driver effectively starts to generate an output
 	GLOBAL_settings_ptr->PWM_Offset[1] = 0;				//PWM value, where the driver effectively starts to generate an output
-	GLOBAL_settings_ptr->PWM_Offset[2] = 0;				//PWM value, where the driver effectively starts to generate an output
-	GLOBAL_settings_ptr->PWM_Offset[3] = 0;				//PWM value, where the driver effectively starts to generate an output
 	GLOBAL_settings_ptr->LightFading = 16;				//Minutes to fade light in
-	GLOBAL_settings_ptr->AlarmTime2Signal = 11;			//Delay after alarm until noise is being generated
-	GLOBAL_settings_ptr->AlarmTimeSnooze = 6;			//Snooze Time
 	GLOBAL_settings_ptr->FadingTime = 10;				//Seconds to fade from one color setting to next
-	GLOBAL_settings_ptr->BeepVolume = 0x40;				//Volume of the key beep
+	GLOBAL_settings_ptr->cal_uBat = 1;	  		//Seconds to fade from one color setting to next
+	GLOBAL_settings_ptr->cal_uPwr = 1;			//Seconds to fade from one color setting to next
+	GLOBAL_settings_ptr->min_uBat = 1;	  		//Seconds to fade from one color setting to next
+	GLOBAL_settings_ptr->min_uPwr = 1;			//Seconds to fade from one color setting to next
 
 	alarm_t alarms[maxAlarm] = {
 			{ 0, 6, 20 },

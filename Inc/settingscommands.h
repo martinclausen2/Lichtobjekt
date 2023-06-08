@@ -9,6 +9,8 @@
 #include "setbrightness.h"
 #include "fadelight.h"
 
+#define calibarationScaleBits 16
+
 void SettingsCommands_Init();
 
 uint8_t BrightnessCmd();

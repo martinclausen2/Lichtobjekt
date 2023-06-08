@@ -9,9 +9,9 @@ void SettingsCommands_Init()
 	CLI_AddCmd("date", SetDateCmd, 4, TMC_None, "set date of RTC - [2 digit year] [month] [day] [w] with w weekday");
 	CLI_AddCmd("timestamp", GetTimestampCmd, 0, TMC_None, "get date and time from RTC");
 	CLI_AddCmd("alarmschedule", AlarmScheduleCmd, 1, TMC_None, "set alarm schedule - [alarm no] <-w weekday> <-h hour> <-m minute>");
-	CLI_AddCmd("alarmsetting", AlarmSettingsCmd, 0, TMC_None, "set alarm parameters - <-f time to fade-in light> <-si time to signal> <-sn snooze time>");
+	CLI_AddCmd("alarmsetting", AlarmSettingsCmd, 0, TMC_None, "set alarm parameters - <-f time to fade-in light>");
 	CLI_AddCmd("alarm", AlarmCmd, 0, TMC_None, "trigger, reset, set alarm skip count - <-a 1 | 0> <-s alarm skip count>");
-	CLI_AddCmd("power", PowerCmd, 0, TMC_None, "switch light - <-l 1 | 0>");
+	CLI_AddCmd("power", PowerCmd, 0, TMC_None, "switch light set min external power and battery voltage and calibration- <-l 1 | 0>\r\n<-ub battery voltage> <-mub minimum battery voltage>\r\n<-up external power voltage> <-mup minimum external power voltage>");
 	CLI_AddCmd("reset", ResetSettingsCmd, 0, TMC_None, "reset settings to factory defaults");
 	CLI_AddCmd("statusled", StatusLEDCmd, 1, TMC_None, "flash status led  - [flash count]");
 	CLI_AddCmd("fadelight", FadeLightCmd, 0, TMC_None, "mood light - <-f 1 | 0> time - <-t time> <-b brightness> <-mb maximum brightness>");
@@ -235,31 +235,17 @@ uint8_t GetTimestampCmd()
 uint8_t AlarmSettingsCmd()
 {
 	uint32_t fading = 0;
-	uint32_t signal = 0;
-	uint32_t snooze = 0;
 	char strf[12];
-	char strsi[12];
 
 	// optional arguments
 	if (CLI_GetArgDecByFlag("-f", &fading))
 	{
 		GLOBAL_settings_ptr->LightFading = (uint8_t)fading;
 	}
-	if (CLI_GetArgDecByFlag("-si", &signal) & (signal < maxTime2Signal) )
-	{
-		GLOBAL_settings_ptr->AlarmTime2Signal = (uint8_t)signal;
-	}
-	if (CLI_GetArgDecByFlag("-sn", &snooze) & (snooze <= maxSnooze))
-	{
-		GLOBAL_settings_ptr->AlarmTimeSnooze = (uint8_t)snooze;
-	}
 
 	SettingsWrite();
 
-	CLI_Printf("\r\ntime to fade-in light: %s, time to signal: %s, snooze time: %d min.",
-			printMinuteOff(strf, GLOBAL_settings_ptr->LightFading),
-			printMinuteOff(strsi, GLOBAL_settings_ptr->AlarmTime2Signal),
-			(int)GLOBAL_settings_ptr->AlarmTimeSnooze);
+	CLI_Printf("\r\ntime to fade-in light: %s", printMinuteOff(strf, GLOBAL_settings_ptr->LightFading));
 
 	return TE_OK;
 }
@@ -349,6 +335,10 @@ uint8_t AlarmCmd()
 uint8_t PowerCmd()
 {
 	uint32_t light = 0;
+	uint32_t ref_uBat = 0;
+	uint32_t ref_uPwr = 0;
+	uint32_t min_uBat = 0;
+	uint32_t min_uPwr = 0;
 
 	if (CLI_GetArgDecByFlag("-l", &light))
 	{
@@ -362,6 +352,30 @@ uint8_t PowerCmd()
 		}
 	}
 
+	// user provided value in mV
+	// ADC value in bit
+	// calibration value in mV / bit
+
+	if (CLI_GetArgDecByFlag("-ub", &ref_uBat))
+	{
+		GLOBAL_settings_ptr->cal_uBat = (ref_uBat<<calibarationScaleBits)/uBat;
+	}
+
+	if (CLI_GetArgDecByFlag("-uep", &ref_uPwr))
+	{
+		GLOBAL_settings_ptr->cal_uPwr = (ref_uPwr<<calibarationScaleBits)/uPwr;
+	}
+
+	if (CLI_GetArgDecByFlag("-mub", &min_uBat))
+	{
+		GLOBAL_settings_ptr->min_uBat = (min_uBat<<calibarationScaleBits)/(GLOBAL_settings_ptr->cal_uBat);
+	}
+
+	if (CLI_GetArgDecByFlag("-mup", &min_uPwr))
+	{
+		GLOBAL_settings_ptr->min_uPwr = (min_uPwr<<calibarationScaleBits)/(GLOBAL_settings_ptr->cal_uPwr);
+	}
+
 	if (LightOn)
 	{
 		CLI_Printf("\r\nLight on.");
@@ -370,6 +384,17 @@ uint8_t PowerCmd()
 	{
 		CLI_Printf("\r\nLight off.");
 	}
+
+	CLI_Printf("\r\nBattery: %d raw, %dmV min battery: %dmV.", (int)uBat, (int)((uBat*(GLOBAL_settings_ptr->cal_uBat))>>calibarationScaleBits), (int)(((GLOBAL_settings_ptr->min_uBat)*(GLOBAL_settings_ptr->cal_uBat))>>calibarationScaleBits) );
+	CLI_Printf("\r\nExternal power: %d raw, %dmV min external power: %dmV.", (int)uPwr, (int)((uPwr*(GLOBAL_settings_ptr->cal_uPwr))>>calibarationScaleBits), (int)(((GLOBAL_settings_ptr->min_uPwr)*(GLOBAL_settings_ptr->cal_uPwr))>>calibarationScaleBits) );
+
+	if 	(HAL_GPIO_ReadPin(Charging_Status_GPIO_Port, Charging_Status_Pin))
+	{
+		CLI_Printf("\r\nCharging.");
+	}
+
+	SettingsWrite();
+
 	return TE_OK;
 }
 

@@ -66,7 +66,7 @@ void PWM_StepDim()		// perform next dimming step, must frequently called for dim
 		}
 		else
 		{
-			htim_PWM->Instance->CCR3 = PWM_SetPulseWidth(0);
+			htim_PWM->Instance->CCR1 = PWM_SetPulseWidth(0);
 			PWM_step_cnt[0] = PWM_step_cnt_reload[0];
 		}
 	}
@@ -79,7 +79,7 @@ void PWM_StepDim()		// perform next dimming step, must frequently called for dim
 		}
 		else
 		{
-			htim_PWM->Instance->CCR1 = PWM_SetPulseWidth(1);
+			htim_PWM->Instance->CCR2 = PWM_SetPulseWidth(1);
 
 			PWM_step_cnt[1] = PWM_step_cnt_reload[1];
 		}

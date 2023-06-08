@@ -312,7 +312,7 @@ void SendRC5(unsigned char address, unsigned char code, unsigned char toggle, un
 		{
 		for(j=1; j<=repeats; j++)
 			{
-			SendCommand(address, code, toggle);
+			//SendCommand(address, code, toggle);
 			if (j<repeats)			//skip last pause in sequence of repeated commands
 				{
 				HAL_Delay(89);		//wait 88.9ms

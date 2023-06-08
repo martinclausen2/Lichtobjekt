@@ -14,8 +14,12 @@
 #include "main.h"
 
 #define extbrightness_ADC_RANK 0
+#define uBat_ADC_RANK 1
+#define uPwr_ADC_RANK 2
 
 #define maxADCvalue 0xFFF
+
+#define ADC_cnt_reload 10			// defines how often the ADC is triggered per call to measurement function
 
 #define minphotoamp		 100
 #define maxphotoamp		3000
@@ -37,6 +41,9 @@ typedef union {
 } PhotoGain_t;
 
 extern unsigned long extBrightness;
+
+extern unsigned int uBat;
+extern unsigned int uPwr;
 
 /**amplification factors of photoamp */
 extern const unsigned int photoampfactor[];

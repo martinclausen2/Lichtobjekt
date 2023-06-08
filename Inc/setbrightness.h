@@ -13,7 +13,7 @@
 #include "stm32l1xx_hal.h"
 #include "extbrightness.h"
 
-#define maxPWM	   			0xFFFF	// =  maxBrigntess^2 = 2^16-1
+#define maxPWM	   			839		//should equal reload value of counter
 #define Brightness_steps	20		//number of steps used to execute a brightness change
 #define startupfocus		0		//focus channel
 #define fadetime			150

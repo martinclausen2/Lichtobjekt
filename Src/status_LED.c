@@ -56,7 +56,7 @@ void LEDFadeLightOut()
 // indicate value by color
 void LEDValue(unsigned char i)		//i should not exceed colorTable length - 5
 {
-	LEDSetColor(i+5);		//add offset reserved for other status
+	LEDSetColor(i+5);				//add offset reserved for other status
 }
 
 // functions to indicate current option
@@ -119,12 +119,12 @@ void LEDStandby()
 		{
 			if (extBrightness > 0xFFFF0)	// must be equal to 0xFFFF << 4
 				{
-			    htim_StatusPWM->Instance->CCR1 = 0x0FFFF;
+			    htim_StatusPWM->Instance->CCR3 = 0x0FFFF;
 				}
 			else
 				{
 				//dim red LED along with external brightness
-			    htim_StatusPWM->Instance->CCR1 = (extBrightness >> 4 & 0x0FFFF);
+			    htim_StatusPWM->Instance->CCR3 = (extBrightness >> 4 & 0x0FFFF);
 			    }
 		}
 }
@@ -172,16 +172,16 @@ void LEDSetColorTemp(unsigned char i)
 	tempPWM = colorTable[i][0];	//blue
 	tempPWM *= tempPWM;
 
-    htim_StatusPWM->Instance->CCR2 = tempPWM;
+    htim_StatusPWM->Instance->CCR1 = tempPWM;
 
 	tempPWM = colorTable[i][1];	//green
 	tempPWM *= tempPWM;
 
-    htim_StatusPWM->Instance->CCR3 = tempPWM;
+    htim_StatusPWM->Instance->CCR2 = tempPWM;
 
 	tempPWM = colorTable[i][2];	//red
 	tempPWM *= tempPWM;
 
-    htim_StatusPWM->Instance->CCR1 = tempPWM;
+    htim_StatusPWM->Instance->CCR3 = tempPWM;
 }
 
