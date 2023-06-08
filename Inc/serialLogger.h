@@ -8,10 +8,8 @@
 #ifndef INC_SERIALLOGGER_H_
 #define INC_SERIALLOGGER_H_
 
-#include "stm32l1xx_hal.h"
 #include <string.h>
-
-void Init_SerialLogger(UART_HandleTypeDef *huart_logger);
+#include "terminal_helper.h"
 
 void log_serial(char *c);
 void log_serial_P(const char *c);

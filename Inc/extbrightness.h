@@ -1,6 +1,8 @@
 /*
  * extbrightness.h
  *
+ * USE_HAL_ADC_REGISTER_CALLBACKS must be set to on = 1U
+ *
  *  Created on: 18.04.2022
  *      Author: Martin
  */
@@ -11,7 +13,9 @@
 #include "stm32l1xx_hal.h"
 #include "main.h"
 
-#define extbrightness_ADC_RANK 1
+#define extbrightness_ADC_RANK 0
+
+#define maxADCvalue 0xFFF
 
 #define minphotoamp		 100
 #define maxphotoamp		3000
@@ -32,7 +36,7 @@ typedef union {
 	};
 } PhotoGain_t;
 
-extern unsigned long ExtBrightness;
+extern unsigned long extBrightness;
 
 /**amplification factors of photoamp */
 extern const unsigned int photoampfactor[];
@@ -40,6 +44,5 @@ extern const unsigned int photoampfactor[];
 void Init_ExtBrightness(ADC_HandleTypeDef *handle_adc);
 void Sample_ExtBrightness();
 void AddValue_ExtBrightness(ADC_HandleTypeDef* handle_adc);
-unsigned long Get_ExtBrightness();
 
 #endif /* EXTBRIGHTNESS_H_ */

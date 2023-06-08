@@ -7,13 +7,12 @@
   ******************************************************************************
   * @attention
   *
-  * <h2><center>&copy; Copyright (c) 2021 STMicroelectronics.
-  * All rights reserved.</center></h2>
+  * Copyright (c) 2022 STMicroelectronics.
+  * All rights reserved.
   *
-  * This software component is licensed by ST under BSD 3-Clause license,
-  * the "License"; You may not use this file except in compliance with the
-  * License. You may obtain a copy of the License at:
-  *                        opensource.org/licenses/BSD-3-Clause
+  * This software is licensed under terms that can be found in the LICENSE file
+  * in the root directory of this software component.
+  * If no LICENSE file comes with this software, it is provided AS-IS.
   *
   ******************************************************************************
   */
@@ -36,14 +35,16 @@ extern "C" {
 #include <stdbool.h>
 #include <ctype.h>
 #include <string.h>
+#include "settings.h"
+#include "terminal_helper.h"
+#include "rtc.h"
 #include "serialLogger.h"
 #include "mainmenu.h"
-#include "eeprom.h"
 #include "encoder.h"
 #include "keys.h"
 #include "RC5.h"
-#include "settings.h"
 #include "extbrightness.h"
+#include "settingscommands.h"
 
 /* USER CODE END Includes */
 
@@ -68,6 +69,7 @@ void HAL_TIM_MspPostInit(TIM_HandleTypeDef *htim);
 void Error_Handler(void);
 
 /* USER CODE BEGIN EFP */
+void MainTimerCallback(TIM_HandleTypeDef *htim);
 
 /* USER CODE END EFP */
 
@@ -136,12 +138,6 @@ void Error_Handler(void);
 #define ENC_A_GPIO_Port GPIOB
 
 /* USER CODE BEGIN Private defines */
-
-// set to 1 for ZXLD1374 since the chip will not switch on at PWM frequencies lower than 100Hz (SetBrightness.C)
-// this will also activate push-pull outputs (InitMCU.C)
-#define HighPWM	1	// set to 0 for ZXLD1362 to obtain a wider dimming range at the cost of a lower PWM frequency / flickering
-void send(uint8_t *pData);
-												
 /* USER CODE END Private defines */
 
 #ifdef __cplusplus

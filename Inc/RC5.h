@@ -11,13 +11,13 @@
 #include "stm32l1xx_hal.h"
 #include "serialLogger.h"
 #include "setbrightness.h"
-#include "main.h"
 #include "settings.h"
+#include "main.h"
 #include <stdbool.h>
 #include <stdio.h>
 
-
-#define MainloopFrequ       10	//40Hz durch 4 Schritte
+#define pulsesActive 31
+#define pulsesInactive 31
 
 #define maxComMode 3
 
@@ -26,8 +26,7 @@
 #define ComModeConditional	2
 #define ComModeAll	3
 
-#define RC5Addr_front		27	//address for front light brightness
-#define RC5Addr_back		28	//address for back light brightness, MUST follow front address!
+#define RC5Addr_first		27	//address for first light brightness
 #define RC5Addr_com			29	//address for RC5 communication
 #define maxRC5Address		31	//maximum possible RC5 address
 
@@ -55,10 +54,17 @@ static const unsigned char tblRemote[] =	{
 		39, 40, 0, 40, 0, 41, 0, 42, 35, 34, 35, 44,
 		0, 45, 48, 46, 48, 47, 48, 0, 49, 0, 50, 0, 34, 43};
 
+void RC5_Init(TIM_HandleTypeDef *handle_tim_decode, TIM_HandleTypeDef *handle_tim_encode);
+void RC5_decode(TIM_HandleTypeDef *htim);
+void RC5_encode(TIM_HandleTypeDef *htim);
 void RC5SignalSampling(GPIO_PinState signal);
 void SetLightRemote(unsigned char i, signed char steps);
 void SetBrightnessRemote(unsigned char i);
 void SetBrightnessLevelRemote();
 void DecodeRemote();
+void SendRC5(unsigned char address, unsigned char code, unsigned char toggle, unsigned char requiredmode, unsigned repeats);
+void SendCommand(unsigned char address, unsigned char code, unsigned char toggle);
+void SendBit0();
+void SendBit1();
 
 #endif /* RC5_H_ */

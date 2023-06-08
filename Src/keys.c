@@ -5,7 +5,7 @@
  *      Author: Martin
  */
 
-/** Handels keys reading
+/** Handles keys reading
  */
 
 #include "keys.h"

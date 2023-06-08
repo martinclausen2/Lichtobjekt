@@ -15,13 +15,15 @@
 #include "setbrightness.h"
 #include "status_LED.h"
 #include "RC5.h"
+#include "wakeuplight.h"
 #include <stdbool.h>
+#include <ctype.h>
+#include <string.h>
 
 #define KeyPressShort	30
 #define KeyPressLong	80
 #define KeyPressLonger	KeyPressLong*2
 
 void MainMenu();
-void Init_MainMenu();
 
 #endif /* MAINMENU_H_ */

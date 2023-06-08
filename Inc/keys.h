@@ -8,7 +8,7 @@
 #ifndef KEYS_H_
 #define KEYS_H_
 
-extern volatile unsigned char KeyState;		//stores the keys state
+extern volatile unsigned char KeyState;			//stores the keys state
 extern volatile unsigned char OldKeyState;
 extern volatile unsigned char KeyPressDuration;
 

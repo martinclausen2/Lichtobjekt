@@ -8,11 +8,11 @@ Controls Status RGB LED
 #include "stm32l1xx_hal.h"
 #include "extbrightness.h"
 
-#define LEDFlashMaxSeq	8	//max. number of flashes in a squence, should not exceed 0x7F ...
+#define LEDFlashMaxSeq	8	//max. number of flashes in a sequence, should not exceed 0x7F ...
 #define LEDFlashMaxSeqSteps LEDFlashMaxSeq << 1
-#define LEDmaxFlashTimer 6	//cycles to execute before next flash toggel happens
+#define LEDmaxFlashTimer 12	//cycles to execute before next flash toggle happens
 #define LEDmaxLimitFlashTimer 4	//cycles to execute before LED status is restored
-#define LEDmaxStandyTimer 0x3F	//cycles to execute before LED brightness is dimed
+#define LEDmaxStandyTimer 0x3F	//cycles to execute before LED brightness is dimmed
 #define flashColorMask	0x07
 
 #define maxLimit		2	//upper brightness limit

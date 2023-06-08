@@ -26,8 +26,14 @@ const unsigned int photoampfactor[] = {1, 30, 1000};
 
 void Init_ExtBrightness(ADC_HandleTypeDef *handle_adc)
 {
-	//
 	hadc_extbrightness = handle_adc;
+
+	pADC_CallbackTypeDef pCallback = AddValue_ExtBrightness;
+	HAL_ADC_RegisterCallback(hadc_extbrightness, HAL_ADC_CONVERSION_COMPLETE_CB_ID, pCallback);
+
+	//Set both pins to high to the can be fake pull up outputs by changing the output mode.
+	HAL_GPIO_WritePin(BRIGHT_LOW_GPIO_Port, BRIGHT_LOW_Pin, GPIO_PIN_SET);
+	HAL_GPIO_WritePin(BRIGHT_HIGH_GPIO_Port, BRIGHT_HIGH_Pin, GPIO_PIN_SET);
 }
 
 void Sample_ExtBrightness()
@@ -66,8 +72,8 @@ void AddValue_ExtBrightness(ADC_HandleTypeDef *handle_adc)
 	// check if value was created by sampling the brightness ADC input channel
 	if (handle_adc->Instance == hadc_extbrightness->Instance && handle_adc->NbrOfConversionRank == extbrightness_ADC_RANK)
 	{
-		int ADC_Result = HAL_ADC_GetValue(hadc_extbrightness);
-		extBrightness -= (extBrightness >> 6);		//in the meantime: remove a 1/64 so we have a moving average over 64 data points
+		int ADC_Result = maxADCvalue - HAL_ADC_GetValue(hadc_extbrightness);
+		extBrightness -= (extBrightness >> 6) & 0x0FFFFFFF;		//in the meantime: remove a 1/64 so we have a moving average over 64 data points
 		extBrightness += ADC_Result * photoampfactor[PhotoGain.ALL];
 		if ((maxphotoamp < ADC_Result) && (maxphotogain > PhotoGain.ALL))
 			{
@@ -82,7 +88,3 @@ void AddValue_ExtBrightness(ADC_HandleTypeDef *handle_adc)
 	}
 }
 
-unsigned long Get_ExtBrightness()
-{
-	return extBrightness;
-}

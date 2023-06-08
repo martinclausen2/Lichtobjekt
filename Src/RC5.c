@@ -4,13 +4,48 @@
 
 #include "RC5.h"
 
+TIM_HandleTypeDef *htim_decode;		//handle to address timer
+TIM_HandleTypeDef *htim_encode;		//handle to address timer
+
 volatile unsigned char rCommand;   	//Bitte erhalten! Wenn Befehl fertig: auswerten
 volatile unsigned char rAddress;   	//Bitte erhalten! Wenn Befehl fertig: auswerten
 volatile unsigned char rCounter;  	//Bitte erhalten!
 
 volatile bool RTbit;				//Togglebit von RC5
+volatile int irCounter;
 
 unsigned char SenderMode;			//Mode for sending commands to other devices
+
+TIM_OC_InitTypeDef sConfigOC = {0};
+
+void RC5_Init(TIM_HandleTypeDef *handle_tim_decode, TIM_HandleTypeDef *handle_tim_encode)
+{
+
+	htim_decode = handle_tim_decode;
+	pTIM_CallbackTypeDef pDecodeCallback = *RC5_decode;
+	HAL_TIM_RegisterCallback(htim_decode, HAL_TIM_PERIOD_ELAPSED_CB_ID, pDecodeCallback);
+	HAL_TIM_Base_Start_IT(htim_decode);
+
+	htim_encode = handle_tim_encode;
+
+	sConfigOC.OCMode = TIM_OCMODE_FORCED_INACTIVE;
+	sConfigOC.Pulse = handle_tim_encode->Instance->CCR1;
+	sConfigOC.OCPolarity = TIM_OCPOLARITY_HIGH;
+	sConfigOC.OCFastMode = TIM_OCFAST_DISABLE;
+
+	pTIM_CallbackTypeDef pEncodeCallback = *RC5_encode;
+	HAL_TIM_RegisterCallback(htim_encode, HAL_TIM_PWM_PULSE_FINISHED_CB_ID, pEncodeCallback);
+}
+
+void RC5_decode(TIM_HandleTypeDef *htim)
+{
+	RC5SignalSampling(HAL_GPIO_ReadPin(IR_IN_GPIO_Port, IR_IN_Pin));
+}
+
+void RC5_encode(TIM_HandleTypeDef *htim)
+{
+	irCounter++;
+}
 
 void RC5SignalSampling(GPIO_PinState signal)		//int from Timer to read RC5 state
 {
@@ -58,8 +93,8 @@ void RC5SignalSampling(GPIO_PinState signal)		//int from Timer to read RC5 state
 //setup brightness values
 void SetLightRemote(unsigned char i, signed char steps)
 {
-	PWM_SetupDim(i, Brightness_steps, steps);
-	FocusBacklight=i;
+	PWM_SetupDim(i, Brightness_steps, steps, 0);
+	FocusChannel=i;
 	LightOn=1;
 	LEDOn();
 	LEDSetupLimit();
@@ -78,12 +113,12 @@ void SetBrightnessLevelRemote()
 {
 	if (rCommand<=5)
 		{
-		Brightness[0]=(((unsigned int)rCommand*(unsigned int)maxBrightness)/5) & maxBrightness;
+		Brightness[0]=(((unsigned int)(rCommand)*(unsigned int)GLOBAL_settings_ptr->maxBrightness[0])/(5)) & 0xFF;
 		SetLightRemote(0,0);
 		}
 	else if (rCommand<=10)
 		{
-		Brightness[1]=(((unsigned int)(rCommand-5)*(unsigned int)maxBrightness)/5) & maxBrightness;
+		Brightness[1]=(((unsigned int)(rCommand-5)*(unsigned int)GLOBAL_settings_ptr->maxBrightness[1])/(5)) & 0xFF;
 		SetLightRemote(1,0);
 		}
 }
@@ -133,13 +168,9 @@ void DecodeRemote()
 	  			}
 	  		RTbitold=RTbit;				//Togglebit speichern
 	  		}
-	  	else if (RC5Addr_front==rAddress)
+	  	else if ((RC5Addr_first>=rAddress) & ((RC5Addr_first + maxVirtualChannel -1) <= rAddress) & ( RC5Addr_com > rAddress))
 	  		{
-	  		SetBrightnessRemote(0);
-	  		}
-	  	else if (RC5Addr_back==rAddress)
-	  		{
-	  		SetBrightnessRemote(1);
+	  		SetBrightnessRemote(rAddress - RC5Addr_first);
 	  		}
 	  	else if (RC5Addr_com==rAddress)
 	  		{
@@ -148,13 +179,13 @@ void DecodeRemote()
 	  			case RC5Cmd_AlarmStart:
 	  				if (ComModeAlarm<=GLOBAL_settings_ptr->ReceiverMode)
 	  					{
-	  					// TODO		Alarm();
+	  					alarmState.alarmTrigger = 1;
 	  					}
 	  				break;
 	  			case RC5Cmd_AlarmEnd:
 	  				if (ComModeAlarm<=GLOBAL_settings_ptr->ReceiverMode)
 	  					{
-	  					// TODO		AlarmEnd();
+	  					AlarmEnd();
 	  					}
 	  				break;
 	  			case RC5Cmd_Off:
@@ -173,4 +204,119 @@ void DecodeRemote()
 	  		}
 		rCounter=0;					//Nach Erkennung zurücksetzen
 		}
+}
+
+
+
+// RC5 Sender
+
+// output and timer configuration required to keep IRQ all time and PWM output at the time needed
+
+void SetOutputActive()
+{
+ 	//890us Impuls mit 36kHz senden
+    sConfigOC.OCMode = TIM_OCMODE_PWM1;
+	HAL_TIM_PWM_ConfigChannel(htim_encode, &sConfigOC, TIM_CHANNEL_1);
+	irCounter = 0;
+	while(irCounter<pulsesActive);
+}
+
+void SetOutputInactive()
+{
+	//890us Pause
+    sConfigOC.OCMode = TIM_OCMODE_FORCED_INACTIVE;
+	HAL_TIM_PWM_ConfigChannel(htim_encode, &sConfigOC, TIM_CHANNEL_1);
+	irCounter = 0;
+	while(irCounter<pulsesInactive);
+}
+
+//send zero
+void SendBit0()
+{
+	SetOutputActive();
+	SetOutputInactive();
+}
+
+//Send one
+void SendBit1()
+{
+	SetOutputInactive();
+	SetOutputActive();
+}
+
+//Sends RC5 code
+void SendCommand(unsigned char address, unsigned char code, unsigned char toggle)
+{
+	unsigned char mask;
+	unsigned char i;
+
+	//disable RC5 decoder for the moment
+	HAL_TIM_Base_Stop_IT(htim_decode);
+	HAL_TIM_PWM_Start_IT(htim_encode, TIM_CHANNEL_1);
+
+	SendBit1();	//1st Startbit=1
+	SendBit1();	//2nd Startbit=1
+
+	//Togglebit
+	if(toggle==0)
+		{
+		SendBit0();
+    		}
+   	else
+    		{
+     		SendBit1();
+    		}
+
+	//5 Bit Address
+   	mask=0x10;	//Begin with MSB
+   	for(i=0; i<5; i++)
+    		{
+		if(address&mask)
+      			{
+       			SendBit1();
+      			}
+     		else
+      			{
+       			SendBit0();
+      			}
+		mask>>=1;	//Next bit
+    		}
+
+	//6 Bit Code
+   	mask=0x20;
+	for(i=0; i<6; i++)
+		{
+		if(code&mask)
+			{
+       			SendBit1();
+      			}
+     		else
+     	 		{
+       			SendBit0();
+      			}
+     		mask>>=1;
+		}
+
+	//switch off IR-LED anyway, just to be sure
+	SetOutputInactive();
+	HAL_TIM_PWM_Stop_IT(htim_encode, TIM_CHANNEL_1);
+	HAL_TIM_Base_Start_IT(htim_decode);
+}
+
+
+//Sends RC5 code if required, including repeats
+void SendRC5(unsigned char address, unsigned char code, unsigned char toggle, unsigned char requiredmode, unsigned repeats)
+{
+	unsigned char j;
+	if (SenderMode>=requiredmode)
+		{
+		for(j=1; j<=repeats; j++)
+			{
+			SendCommand(address, code, toggle);
+			if (j<repeats)			//skip last pause in sequence of repeated commands
+				{
+				HAL_Delay(89);		//wait 88.9ms
+				}
+		   	}
+	   	}
 }

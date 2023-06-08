@@ -17,9 +17,11 @@ TIM_HandleTypeDef *htim_StatusPWM;				//handle to address timer
 unsigned char LEDFlashCount;		//Number of flashes currently required, should not exceed 0x7F ...
 unsigned char LEDFlashSeqCounter;	//Number of flashes * 2 (on & off) to be produced in this sequence
 unsigned char LEDLimitFlashTimer;	//Software timer to decouple flashing frequency from calling frequency
+unsigned char LEDFlashTimer;		//Software timer to decouple flashing frequency from calling frequency
 unsigned char LEDStandbyTimer;
 
 unsigned char LEDCurrentColor;
+unsigned char LEDColorBackup;
 
 unsigned char limit;
 
@@ -60,19 +62,24 @@ void LEDValue(unsigned char i)		//i should not exceed colorTable length - 5
 // functions to indicate current option
 void LEDSetupOptions(unsigned char i)	//i should not exceed LEDmax Flash
 {
-	LEDSetColor(flashColorTable[0]);
-	LEDFlashSeqCounter = 0;
-	LEDFlashCount = i*2+1;
+	if (i)
+	{
+		LEDColorBackup = LEDCurrentColor;
+		LEDSetColor(flashColorTable[0]);
+		LEDFlashSeqCounter = 0;
+		LEDFlashCount = i*2-1;
+		LEDFlashTimer = LEDmaxFlashTimer;
+	}
+	else
+	{
+		LEDFlashTimer = 0;					//stop flashing
+		LEDSetColorTemp(LEDColorBackup);	//restore LED color
+	}
 }
 
-void LEDOptions()		//flashes LED to indicate current option
+void LEDOptions()		//flashes LED to indicate current option, must be called frequently
 {
-	unsigned char static LEDFlashTimer;	//Software timer to decouple flashing frequency from calling frequency
-	if (LEDFlashTimer)
-		{
-		--LEDFlashTimer;
-		}
-	else
+	if (LEDFlashTimer == 1)
 		{
 		LEDFlashTimer = LEDmaxFlashTimer;
 		if (LEDFlashSeqCounter <= (LEDFlashCount))
@@ -87,6 +94,10 @@ void LEDOptions()		//flashes LED to indicate current option
 			{
 			++LEDFlashSeqCounter;		//upcounting required for proper reading of flash color table
 			}
+		}
+	else if (LEDFlashTimer)
+		{
+		--LEDFlashTimer;
 		}
 }
 
@@ -106,16 +117,15 @@ void LEDStandby()
 		}
 		else
 		{
-			if (Get_ExtBrightness() > 0xFFFF0)	// must be equal to 0xFFFF << 4
+			if (extBrightness > 0xFFFF0)	// must be equal to 0xFFFF << 4
 				{
 			    htim_StatusPWM->Instance->CCR1 = 0x0FFFF;
 				}
 			else
 				{
 				//dim red LED along with external brightness
-			    htim_StatusPWM->Instance->CCR1 = (Get_ExtBrightness() >> 4 & 0x0FFFF);
+			    htim_StatusPWM->Instance->CCR1 = (extBrightness >> 4 & 0x0FFFF);
 			    }
-		    HAL_TIM_PWM_Start(htim_StatusPWM, TIM_CHANNEL_1); //TODO required?
 		}
 }
 
@@ -162,19 +172,16 @@ void LEDSetColorTemp(unsigned char i)
 	tempPWM = colorTable[i][0];	//blue
 	tempPWM *= tempPWM;
 
-    htim_StatusPWM->Instance->CCR1 = tempPWM;
-    HAL_TIM_PWM_Start(htim_StatusPWM, TIM_CHANNEL_1); //TODO required?
+    htim_StatusPWM->Instance->CCR2 = tempPWM;
 
 	tempPWM = colorTable[i][1];	//green
 	tempPWM *= tempPWM;
 
-    htim_StatusPWM->Instance->CCR2 = tempPWM;
-    HAL_TIM_PWM_Start(htim_StatusPWM, TIM_CHANNEL_2); //TODO required?
+    htim_StatusPWM->Instance->CCR3 = tempPWM;
 
 	tempPWM = colorTable[i][2];	//red
 	tempPWM *= tempPWM;
 
-    htim_StatusPWM->Instance->CCR3 = tempPWM;
-    HAL_TIM_PWM_Start(htim_StatusPWM, TIM_CHANNEL_3); //TODO required?
+    htim_StatusPWM->Instance->CCR1 = tempPWM;
 }
 
