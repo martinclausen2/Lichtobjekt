@@ -43,6 +43,8 @@ void Init_ExtBrightness(ADC_HandleTypeDef *handle_adc)
 	//Set both pins to high to the can be fake pull up outputs by changing the output mode.
 	HAL_GPIO_WritePin(BRIGHT_LOW_GPIO_Port, BRIGHT_LOW_Pin, GPIO_PIN_SET);
 	HAL_GPIO_WritePin(BRIGHT_HIGH_GPIO_Port, BRIGHT_HIGH_Pin, GPIO_PIN_SET);
+	uBat = maxADCvalue;
+	uPwr = maxADCvalue;
 }
 
 void Sample_ExtBrightness()
@@ -61,6 +63,14 @@ void Sample_ExtBrightness()
 		HAL_ADC_Stop_DMA(hadc_extbrightness);
 		valuesReceived = false;
 	}
+}
+
+void Sample_ExtBrightness_now()
+{
+	HAL_ADC_Stop_DMA(hadc_extbrightness);
+	HAL_ADC_Start_DMA(hadc_extbrightness, &ADCdata[0], ADCchannels);
+	uBat = maxADCvalue;
+	uPwr = maxADCvalue;
 }
 
 // set pin to output or analog input to imitate open source output not available on STM32

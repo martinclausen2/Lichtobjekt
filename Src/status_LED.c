@@ -134,7 +134,11 @@ void LEDStandby()
 
 void LEDSetupLimit()
 {
-	if (maxLimit == limit)
+	if (LEDLimitFlashTimer)
+		{
+			//nothing to do
+		}
+	else if (maxLimit == limit)
 		{
 		LEDLimitFlashTimer = LEDmaxLimitFlashTimer;
 		LEDSetColorTemp(LEDGreen);
@@ -144,6 +148,11 @@ void LEDSetupLimit()
 		LEDLimitFlashTimer = LEDmaxLimitFlashTimer;
 		LEDSetColorTemp(LEDRed);
 		}
+	else if (charging == limit)
+		{
+		LEDLimitFlashTimer = LEDmaxLimitFlashTimer;
+		LEDSetColorTemp(LEDBlue);
+		}
 }
 
 void LEDLimit()		//blanks LED to indicate brightness limit
@@ -151,7 +160,7 @@ void LEDLimit()		//blanks LED to indicate brightness limit
 	if (LEDLimitFlashTimer)
 		{
 		--LEDLimitFlashTimer;
-		if (0==LEDLimitFlashTimer)	//Restore LED status
+		if (LEDLimitFlashTimer == (LEDmaxLimitFlashTimer/2))	//Restore LED status at half duration
 			{
 			LEDSetColorTemp(LEDCurrentColor);
 			}

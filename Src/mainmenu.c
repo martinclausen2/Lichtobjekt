@@ -7,6 +7,44 @@
 
 #include "mainmenu.h"
 
+extern ADC_HandleTypeDef hadc;
+
+bool awaitBatStandby = false;
+
+void PrepareBatStandby() {
+	SwAllLightOff();
+	LEDOff();
+	awaitBatStandby = true;
+}
+
+void EnterBatStandby()
+{
+	//prepare for stopmode
+	HAL_NVIC_DisableIRQ(TIM6_IRQn);
+	HAL_NVIC_DisableIRQ(TIM11_IRQn);
+	PhotoGain_t PhotoGain = {0};
+	AdjustGain(PhotoGain);
+	HAL_ADC_Stop_DMA(&hadc);
+	//HAL_ADC_DeInit(); TODO add also init
+
+	HAL_GPIO_WritePin(PERIP_PWR_GPIO_Port, PERIP_PWR_Pin, GPIO_PIN_RESET);
+	//HAL_PWR_EnableWakeUpPin(PWR_WAKEUP_PIN1); not possible since polarity of switch is wrong (switch must pull up instead of down) otherwise standby entry at high level is directly recognized as wake up signal;
+	HAL_SuspendTick();
+
+	//enter stop mode
+	HAL_PWR_EnterSTOPMode(PWR_LOWPOWERREGULATOR_ON, PWR_SLEEPENTRY_WFI);
+
+	//restore operation
+	SystemClock_Config();
+	HAL_ResumeTick();
+	HAL_GPIO_WritePin(PERIP_PWR_GPIO_Port, PERIP_PWR_Pin, GPIO_PIN_SET);
+	LEDSetupStandby();
+	Sample_ExtBrightness_now();
+	HAL_NVIC_EnableIRQ(TIM11_IRQn);
+	HAL_NVIC_EnableIRQ(TIM6_IRQn);
+	SwAllLightOn();		//always start will on, to prevent falling directly into stop mode again when on battery
+}
+
 void MainMenu()
 {
 	static unsigned char actionCounter = 0xFF;
@@ -54,23 +92,29 @@ void MainMenu()
 		// Flash LED if charging
 		if (HAL_GPIO_ReadPin(Charging_Status_GPIO_Port, Charging_Status_Pin))
 		{
-			LEDSetupOptions(1);
+			limit = charging;
+			LEDSetupLimit();
 		}
 		// complete shutdown, if battery drained and external power is not available
-		if ((uBat < GLOBAL_settings_ptr->min_uBat)) & ((uPwr + GLOBAL_settings_ptr->min_uPwr) < uBat))
+		else if ((uBat < GLOBAL_settings_ptr->min_uBat) & ((uPwr + GLOBAL_settings_ptr->min_uPwr) < uBat))
 		{
-			SwAllLightOff();
-			LEDOff();
-			HAL_GPIO_WritePin(PERIP_PWR_GPIO_Port, PERIP_PWR_Pin, GPIO_PIN_RESET);
-			//HAL_PWR_EnableWakeUpPin(PWR_WAKEUP_PIN1); not possible since polarity of switch is wrong (switch must pull up instead of down) otherwise standby entry at high level is directly recognized as wake up signal;
-			HAL_PWR_EnterSTOPMode(PWR_LOWPOWERREGULATOR_ON, PWR_SLEEPENTRY_WFI);
-			SystemClock_Config();
-			HAL_GPIO_WritePin(PERIP_PWR_GPIO_Port, PERIP_PWR_Pin, GPIO_PIN_SET);
-			LEDSetupStandby();
+			PrepareBatStandby();
+		}
+		// if in standby and external power is removed, change to bat standby
+		else if (!LightOn & (uPwr < (uBat + GLOBAL_settings_ptr->min_uPwr)))
+		{
+			PrepareBatStandby();
+		}
+
+		if (awaitBatStandby & (0==PWM_StepDimSteps()))
+		{
+			awaitBatStandby = false;
+			EnterBatStandby();
 		}
 		break;
 	case 1:
 		CheckAlarm();
+		LEDLimit();
 		if (FocusChannel == FadeLightChannel)
 		{
 			FadeLight();
@@ -82,7 +126,6 @@ void MainMenu()
 		if (LightOn)
 		{
 			StoreBrightness();	// store brightness if required
-			LEDLimit();
 		}
 		else
 		{
@@ -152,10 +195,10 @@ void MainMenu()
 				EncoderSteps = 0;								//ack any steps
 				LEDSetupLimit();
 				WriteTimer=WriteTime;
-			  	if ((RC5Addr_first + FocusChannel) < RC5Addr_com)
-			  	{
-			  		SendRC5(RC5Addr_first+FocusChannel, Brightness[FocusChannel], Brightness[FocusChannel] & 0x01, ComModeAll, RC5Value_Repeats);
-			  	}
+				if ((RC5Addr_first + FocusChannel) < RC5Addr_com)
+				{
+					SendRC5(RC5Addr_first+FocusChannel, Brightness[FocusChannel], Brightness[FocusChannel] & 0x01, ComModeAll, RC5Value_Repeats);
+				}
 			}
 		}
 		actionCounter=0xFF;	//last time slot, do reset counter with increment to 0

@@ -48,6 +48,8 @@ extern unsigned int uPwr;
 
 void Init_ExtBrightness(ADC_HandleTypeDef *handle_adc);
 void Sample_ExtBrightness();
+void Sample_ExtBrightness_now();
+void AdjustGain(PhotoGain_t PhotoGain);
 void AddValue_ExtBrightness(ADC_HandleTypeDef* handle_adc);
 
 #endif /* EXTBRIGHTNESS_H_ */

@@ -26,5 +26,6 @@
 #define KeyPressLonger	KeyPressLong*2
 
 void MainMenu();
+void EnterBatStandby();
 
 #endif /* MAINMENU_H_ */

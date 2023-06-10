@@ -86,6 +86,12 @@ void PWM_StepDim()		// perform next dimming step, must frequently called for dim
 	}
 }
 
+unsigned int PWM_StepDimSteps()		// return total number of dim steps remaining
+{
+	return PWM_incr_cnt[0] + PWM_incr_cnt[1];
+}
+
+
 void PWM_SetupDim(unsigned char i, signed int PWM_dimsteps, signed int brightnessStep, unsigned int timeSteps)
 {
 	signed int temp;

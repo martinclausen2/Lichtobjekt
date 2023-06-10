@@ -76,6 +76,7 @@ void SystemClock_Config(void);
 /* Private defines -----------------------------------------------------------*/
 #define ENC_SW_Pin GPIO_PIN_0
 #define ENC_SW_GPIO_Port GPIOA
+#define ENC_SW_EXTI_IRQn EXTI0_IRQn
 #define LED_2_PWM_Pin GPIO_PIN_1
 #define LED_2_PWM_GPIO_Port GPIOA
 #define IR_IN_Pin GPIO_PIN_2

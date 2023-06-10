@@ -29,6 +29,7 @@ extern unsigned char Brightness[maxVirtualChannel];	//current value
 
 void PWM_Init(TIM_HandleTypeDef *htim_PWM);
 void PWM_StepDim();
+unsigned int PWM_StepDimSteps();
 void SwLightOn(unsigned char i, unsigned int relBrightness);
 void SwAllLightOn();
 void SwLightOff(unsigned char i);
