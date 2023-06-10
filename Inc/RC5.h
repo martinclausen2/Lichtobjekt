@@ -39,7 +39,6 @@
 #define RC5Value_Repeats	1	//number of repeats for value transmission
 
 #define RemoteSteps			2	//Step size for brightness control via remote control
-#define Brightness_steps	20	//number of steps used to execute a brightness change
 
 extern unsigned char SenderMode;		//Mode for sending commands to other devices
 

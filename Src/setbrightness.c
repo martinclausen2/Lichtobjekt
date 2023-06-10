@@ -7,20 +7,20 @@
 
 #include "setbrightness.h"
 
-TIM_HandleTypeDef *htim_PWM;					//handle to address timer
+TIM_HandleTypeDef *htim_PWM;						//handle to address timer
 
 bool LightOn;
 int FocusChannel;
-unsigned char Brightness[maxVirtualChannel];	//current value
+unsigned char Brightness[maxVirtualChannel];		//current value
 
-unsigned int PWM_Offset[] = {0};		  	 	//PWM value, where the driver effectively starts to generate an output
-unsigned char WriteTimer;						/* time until Brightness is saved in calls to StoreBrightness() */
+unsigned int PWM_Offset[maxChannel] = {0};	 		//PWM value, where the driver effectively starts to generate an output
+unsigned char WriteTimer;							/* time until Brightness is saved in calls to StoreBrightness() */
 
-signed int PWM_set[] = {0};						//current PWM value
-signed int PWM_incr[] = {0};					//PWM dimming step size
-unsigned int PWM_incr_cnt[] = {0};				//no of steps required to reach target PWM value
-unsigned int PWM_step_cnt[] = {0};				//no of steps until next PWM step
-unsigned int PWM_step_cnt_reload[] = {0};		//no of steps required between two PWM steps, required to fade more smoothly for slow and small changes seen with wake up and mod light
+signed int PWM_set[maxChannel] = {0};				//current PWM value
+signed int PWM_incr[maxChannel] = {0};				//PWM dimming step size
+unsigned int PWM_incr_cnt[maxChannel] = {0};		//no of steps required to reach target PWM value
+unsigned int PWM_step_cnt[maxChannel] = {0};		//no of steps until next PWM step
+unsigned int PWM_step_cnt_reload[maxChannel] = {0};	//no of steps required between two PWM steps, required to fade more smoothly for slow and small changes seen with wake up and mod light
 
 void PWM_Init(TIM_HandleTypeDef *handle_tim)
 {

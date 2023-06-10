@@ -361,7 +361,7 @@ uint8_t PowerCmd()
 		GLOBAL_settings_ptr->cal_uBat = (ref_uBat<<calibarationScaleBits)/uBat;
 	}
 
-	if (CLI_GetArgDecByFlag("-uep", &ref_uPwr))
+	if (CLI_GetArgDecByFlag("-up", &ref_uPwr))
 	{
 		GLOBAL_settings_ptr->cal_uPwr = (ref_uPwr<<calibarationScaleBits)/uPwr;
 	}
@@ -386,7 +386,7 @@ uint8_t PowerCmd()
 	}
 
 	CLI_Printf("\r\nBattery: %d raw, %dmV min battery: %dmV.", (int)uBat, (int)((uBat*(GLOBAL_settings_ptr->cal_uBat))>>calibarationScaleBits), (int)(((GLOBAL_settings_ptr->min_uBat)*(GLOBAL_settings_ptr->cal_uBat))>>calibarationScaleBits) );
-	CLI_Printf("\r\nExternal power: %d raw, %dmV min external power: %dmV.", (int)uPwr, (int)((uPwr*(GLOBAL_settings_ptr->cal_uPwr))>>calibarationScaleBits), (int)(((GLOBAL_settings_ptr->min_uPwr)*(GLOBAL_settings_ptr->cal_uPwr))>>calibarationScaleBits) );
+	CLI_Printf("\r\nExternal power: %d raw, %dmV min external power to battery difference: %dmV.", (int)uPwr, (int)((uPwr*(GLOBAL_settings_ptr->cal_uPwr))>>calibarationScaleBits), (int)(((GLOBAL_settings_ptr->min_uPwr)*(GLOBAL_settings_ptr->cal_uPwr))>>calibarationScaleBits) );
 
 	if 	(HAL_GPIO_ReadPin(Charging_Status_GPIO_Port, Charging_Status_Pin))
 	{

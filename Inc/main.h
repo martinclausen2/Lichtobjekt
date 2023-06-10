@@ -70,7 +70,7 @@ void Error_Handler(void);
 
 /* USER CODE BEGIN EFP */
 void MainTimerCallback(TIM_HandleTypeDef *htim);
-
+void SystemClock_Config(void);
 /* USER CODE END EFP */
 
 /* Private defines -----------------------------------------------------------*/

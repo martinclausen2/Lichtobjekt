@@ -16,6 +16,7 @@
 #include "status_LED.h"
 #include "RC5.h"
 #include "wakeuplight.h"
+#include "main.h"
 #include <stdbool.h>
 #include <ctype.h>
 #include <string.h>

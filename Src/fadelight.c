@@ -20,10 +20,10 @@ bool fadeLightFlag = false;
 
 unsigned int colors[colorCount][maxChannel]=
 {
-		{255, 000},
+		{40, 000},
 
-		{ 95, 255},
-		{000, 255}
+		{ 10, 40},
+		{000, 40}
 };
 
 // limit entry to max brightness

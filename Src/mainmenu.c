@@ -51,6 +51,23 @@ void MainMenu()
 	{
 	case 0:
 		DecodeRemote();
+		// Flash LED if charging
+		if (HAL_GPIO_ReadPin(Charging_Status_GPIO_Port, Charging_Status_Pin))
+		{
+			LEDSetupOptions(1);
+		}
+		// complete shutdown, if battery drained and external power is not available
+		if ((uBat < GLOBAL_settings_ptr->min_uBat)) & ((uPwr + GLOBAL_settings_ptr->min_uPwr) < uBat))
+		{
+			SwAllLightOff();
+			LEDOff();
+			HAL_GPIO_WritePin(PERIP_PWR_GPIO_Port, PERIP_PWR_Pin, GPIO_PIN_RESET);
+			//HAL_PWR_EnableWakeUpPin(PWR_WAKEUP_PIN1); not possible since polarity of switch is wrong (switch must pull up instead of down) otherwise standby entry at high level is directly recognized as wake up signal;
+			HAL_PWR_EnterSTOPMode(PWR_LOWPOWERREGULATOR_ON, PWR_SLEEPENTRY_WFI);
+			SystemClock_Config();
+			HAL_GPIO_WritePin(PERIP_PWR_GPIO_Port, PERIP_PWR_Pin, GPIO_PIN_SET);
+			LEDSetupStandby();
+		}
 		break;
 	case 1:
 		CheckAlarm();
@@ -137,7 +154,7 @@ void MainMenu()
 				WriteTimer=WriteTime;
 			  	if ((RC5Addr_first + FocusChannel) < RC5Addr_com)
 			  	{
-			  		SendRC5(RC5Addr_first+FocusChannel, (Brightness[FocusChannel]>>2) & 0x3F, (Brightness[FocusChannel]>>1) & 0x01, ComModeAll, RC5Value_Repeats);
+			  		SendRC5(RC5Addr_first+FocusChannel, Brightness[FocusChannel], Brightness[FocusChannel] & 0x01, ComModeAll, RC5Value_Repeats);
 			  	}
 			}
 		}

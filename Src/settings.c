@@ -24,37 +24,37 @@ void SettingsInit(CRC_HandleTypeDef *handle_crc)
 void SettingsRead(void){
 	//copy data from EEPROM to RAM
 	memcpy(GLOBAL_settings_ptr, (uint32_t*)DATA_EEPROM_START_ADDR, sizeof(settings_t));
-/*
-	__HAL_RCC_CRC_CLK_ENABLE();
+
+/*	__HAL_RCC_CRC_CLK_ENABLE();
 
 	//calculate new CRC
 	uint32_t computed_crc = HAL_CRC_Calculate(
 			hcrc_settings,
 			(uint32_t *)GLOBAL_settings_ptr,
-			(sizeof(settings_t)-sizeof(uint32_t))/sizeof(uint32_t)/*size minus the crc32 at the end, IN WORDS
+			(sizeof(settings_t)-sizeof(uint32_t))/sizeof(uint32_t)size minus the crc32 at the end, IN WORDS
 	);
 
 	__HAL_RCC_CRC_CLK_DISABLE();
 
 	if (computed_crc != GLOBAL_settings_ptr->crc32){
 		SettingsReset2Defaults();
-	}
-	*/
+	}*/
+
 }
 
 uint32_t SettingsWrite(void){
 	GLOBAL_settings_ptr->revision++;
 
-	__HAL_RCC_CRC_CLK_ENABLE();
+/*	__HAL_RCC_CRC_CLK_ENABLE();
 
 	//calculate new CRC
-/*	GLOBAL_settings_ptr->crc32 = HAL_CRC_Calculate(
+	GLOBAL_settings_ptr->crc32 = HAL_CRC_Calculate(
 			hcrc_settings,
 			(uint32_t *)GLOBAL_settings_ptr,
-			(sizeof(settings_t)-sizeof(uint32_t))/sizeof(uint32_t)/*size minus the crc32 at the end, IN WORDS
+			(sizeof(settings_t)-sizeof(uint32_t))/sizeof(uint32_t)size minus the crc32 at the end, IN WORDS
 	);
-*/
-	__HAL_RCC_CRC_CLK_DISABLE();
+
+	__HAL_RCC_CRC_CLK_DISABLE();*/
 
 	HAL_FLASHEx_DATAEEPROM_Unlock();
 
@@ -91,21 +91,21 @@ void SettingsReset2Defaults(void){
 	GLOBAL_settings_ptr->Brightness_start[0] = 0;		//value before lights off
 	GLOBAL_settings_ptr->Brightness_start[1] = 0;		//value before lights off
 	GLOBAL_settings_ptr->Brightness_start[2] = 0;		//value before lights off
-	GLOBAL_settings_ptr->minBrightness[0] = 7;			//minimum brightness after power on and recalculation using measured brightness
-	GLOBAL_settings_ptr->minBrightness[1] = 7;			//minimum brightness after power on and recalculation using measured brightness
-	GLOBAL_settings_ptr->maxBrightness[0] = 255;		//maximum brightness
-	GLOBAL_settings_ptr->maxBrightness[1] = 255;		//maximum brightness
-	GLOBAL_settings_ptr->maxBrightness[2] = 255;		//maximum brightness
-	GLOBAL_settings_ptr->AlarmBrightness[0] = 128;		//maximum brightness targeted during alarm
-	GLOBAL_settings_ptr->AlarmBrightness[1] = 255;		//maximum brightness targeted during alarm
+	GLOBAL_settings_ptr->minBrightness[0] = 1;			//minimum brightness after power on and recalculation using measured brightness
+	GLOBAL_settings_ptr->minBrightness[1] = 0;			//minimum brightness after power on and recalculation using measured brightness
+	GLOBAL_settings_ptr->maxBrightness[0] = 40;			//maximum brightness
+	GLOBAL_settings_ptr->maxBrightness[1] = 40;			//maximum brightness
+	GLOBAL_settings_ptr->maxBrightness[2] = 40;			//maximum brightness
+	GLOBAL_settings_ptr->AlarmBrightness[0] = 20;		//maximum brightness targeted during alarm
+	GLOBAL_settings_ptr->AlarmBrightness[1] = 40;		//maximum brightness targeted during alarm
 	GLOBAL_settings_ptr->PWM_Offset[0] = 0;				//PWM value, where the driver effectively starts to generate an output
 	GLOBAL_settings_ptr->PWM_Offset[1] = 0;				//PWM value, where the driver effectively starts to generate an output
 	GLOBAL_settings_ptr->LightFading = 16;				//Minutes to fade light in
-	GLOBAL_settings_ptr->FadingTime = 10;				//Seconds to fade from one color setting to next
-	GLOBAL_settings_ptr->cal_uBat = 1;	  		//Seconds to fade from one color setting to next
-	GLOBAL_settings_ptr->cal_uPwr = 1;			//Seconds to fade from one color setting to next
-	GLOBAL_settings_ptr->min_uBat = 1;	  		//Seconds to fade from one color setting to next
-	GLOBAL_settings_ptr->min_uPwr = 1;			//Seconds to fade from one color setting to next
+	GLOBAL_settings_ptr->FadingTime = 30;				//Seconds to fade from one color setting to next
+	GLOBAL_settings_ptr->cal_uBat = 210514;
+	GLOBAL_settings_ptr->cal_uPwr = 205402;
+	GLOBAL_settings_ptr->min_uBat = 2023;
+	GLOBAL_settings_ptr->min_uPwr = 319;
 
 	alarm_t alarms[maxAlarm] = {
 			{ 0, 6, 20 },

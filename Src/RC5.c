@@ -1,5 +1,7 @@
-/* Function to decode and code RC5 commands for LampenSteuerung
+/* Function to decode and code RC5 commands
    call decoder state machine at 4499 Hz for four times oversampling of the 889µs demodulated RC5 signal pulses
+
+   Interrupt driven counter of pulses is not computational efficient, a core clock of at least 8 MHz is required
  */
 
 #include "RC5.h"
@@ -312,7 +314,7 @@ void SendRC5(unsigned char address, unsigned char code, unsigned char toggle, un
 		{
 		for(j=1; j<=repeats; j++)
 			{
-			//SendCommand(address, code, toggle);
+			SendCommand(address, code, toggle);
 			if (j<repeats)			//skip last pause in sequence of repeated commands
 				{
 				HAL_Delay(89);		//wait 88.9ms

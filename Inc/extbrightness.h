@@ -13,11 +13,12 @@
 #include "stm32l1xx_hal.h"
 #include "main.h"
 
-#define extbrightness_ADC_RANK 0
-#define uBat_ADC_RANK 1
-#define uPwr_ADC_RANK 2
-
 #define maxADCvalue 0xFFF
+
+#define ADCchannels 3
+#define ADCextBrightCh 0
+#define ADCuBatCh 1
+#define ADCuPwrCh 2
 
 #define ADC_cnt_reload 10			// defines how often the ADC is triggered per call to measurement function
 
@@ -44,9 +45,6 @@ extern unsigned long extBrightness;
 
 extern unsigned int uBat;
 extern unsigned int uPwr;
-
-/**amplification factors of photoamp */
-extern const unsigned int photoampfactor[];
 
 void Init_ExtBrightness(ADC_HandleTypeDef *handle_adc);
 void Sample_ExtBrightness();
