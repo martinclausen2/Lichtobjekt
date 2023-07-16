@@ -42,7 +42,7 @@ void EnterBatStandby()
 	Sample_ExtBrightness_now();
 	HAL_NVIC_EnableIRQ(TIM11_IRQn);
 	HAL_NVIC_EnableIRQ(TIM6_IRQn);
-	SwAllLightOn();		//always start will on, to prevent falling directly into stop mode again when on battery
+	SwAllLightOn();		//always start with on, to prevent falling directly into stop mode again when on battery
 }
 
 void MainMenu()

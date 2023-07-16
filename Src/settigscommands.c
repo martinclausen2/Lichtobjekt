@@ -11,7 +11,7 @@ void SettingsCommands_Init()
 	CLI_AddCmd("alarmschedule", AlarmScheduleCmd, 1, TMC_None, "set alarm schedule - [alarm no] <-w weekday> <-h hour> <-m minute>");
 	CLI_AddCmd("alarmsetting", AlarmSettingsCmd, 0, TMC_None, "set alarm parameters - <-f time to fade-in light>");
 	CLI_AddCmd("alarm", AlarmCmd, 0, TMC_None, "trigger, reset, set alarm skip count - <-a 1 | 0> <-s alarm skip count>");
-	CLI_AddCmd("power", PowerCmd, 0, TMC_None, "switch light set min external power and battery voltage and calibration- <-l 1 | 0>\r\n<-ub battery voltage> <-mub minimum battery voltage>\r\n<-up external power voltage> <-mup minimum external power voltage>");
+	CLI_AddCmd("power", PowerCmd, 0, TMC_None, "switch light set min external power and battery voltage and calibration- <-l 1 | 0>\r\n<-ub battery voltage> <-mub minimum battery voltage>\r\n<-up external power voltage> <-mup minimum external power voltage difference>");
 	CLI_AddCmd("reset", ResetSettingsCmd, 0, TMC_None, "reset settings to factory defaults");
 	CLI_AddCmd("statusled", StatusLEDCmd, 1, TMC_None, "flash status led  - [flash count]");
 	CLI_AddCmd("fadelight", FadeLightCmd, 0, TMC_None, "mood light - <-f 1 | 0> time - <-t time> <-b brightness> <-mb maximum brightness>");
@@ -386,7 +386,8 @@ uint8_t PowerCmd()
 	}
 
 	CLI_Printf("\r\nBattery: %d raw, %dmV min battery: %dmV.", (int)uBat, (int)((uBat*(GLOBAL_settings_ptr->cal_uBat))>>calibarationScaleBits), (int)(((GLOBAL_settings_ptr->min_uBat)*(GLOBAL_settings_ptr->cal_uBat))>>calibarationScaleBits) );
-	CLI_Printf("\r\nExternal power: %d raw, %dmV min external power to battery difference: %dmV.", (int)uPwr, (int)((uPwr*(GLOBAL_settings_ptr->cal_uPwr))>>calibarationScaleBits), (int)(((GLOBAL_settings_ptr->min_uPwr)*(GLOBAL_settings_ptr->cal_uPwr))>>calibarationScaleBits) );
+	CLI_Printf("\r\nExternal power: %d raw, %dmV.", (int)uPwr, (int)((uPwr*(GLOBAL_settings_ptr->cal_uPwr))>>calibarationScaleBits));
+	CLI_Printf("\r\nMin external power to battery difference: %dmV.", (int)(((GLOBAL_settings_ptr->min_uPwr)*(GLOBAL_settings_ptr->cal_uPwr))>>calibarationScaleBits) );
 
 	if 	(HAL_GPIO_ReadPin(Charging_Status_GPIO_Port, Charging_Status_Pin))
 	{

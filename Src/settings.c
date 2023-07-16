@@ -25,36 +25,36 @@ void SettingsRead(void){
 	//copy data from EEPROM to RAM
 	memcpy(GLOBAL_settings_ptr, (uint32_t*)DATA_EEPROM_START_ADDR, sizeof(settings_t));
 
-/*	__HAL_RCC_CRC_CLK_ENABLE();
+	__HAL_RCC_CRC_CLK_ENABLE();
 
 	//calculate new CRC
 	uint32_t computed_crc = HAL_CRC_Calculate(
 			hcrc_settings,
 			(uint32_t *)GLOBAL_settings_ptr,
-			(sizeof(settings_t)-sizeof(uint32_t))/sizeof(uint32_t)size minus the crc32 at the end, IN WORDS
+			(sizeof(settings_t)-sizeof(uint32_t))/sizeof(uint32_t)	//size minus the crc32 at the end, IN WORDS
 	);
 
 	__HAL_RCC_CRC_CLK_DISABLE();
 
 	if (computed_crc != GLOBAL_settings_ptr->crc32){
 		SettingsReset2Defaults();
-	}*/
+	}
 
 }
 
 uint32_t SettingsWrite(void){
 	GLOBAL_settings_ptr->revision++;
 
-/*	__HAL_RCC_CRC_CLK_ENABLE();
+	__HAL_RCC_CRC_CLK_ENABLE();
 
 	//calculate new CRC
 	GLOBAL_settings_ptr->crc32 = HAL_CRC_Calculate(
 			hcrc_settings,
 			(uint32_t *)GLOBAL_settings_ptr,
-			(sizeof(settings_t)-sizeof(uint32_t))/sizeof(uint32_t)size minus the crc32 at the end, IN WORDS
+			(sizeof(settings_t)-sizeof(uint32_t))/sizeof(uint32_t)	//size minus the crc32 at the end, IN WORDS
 	);
 
-	__HAL_RCC_CRC_CLK_DISABLE();*/
+	__HAL_RCC_CRC_CLK_DISABLE();
 
 	HAL_FLASHEx_DATAEEPROM_Unlock();
 
@@ -102,10 +102,10 @@ void SettingsReset2Defaults(void){
 	GLOBAL_settings_ptr->PWM_Offset[1] = 0;				//PWM value, where the driver effectively starts to generate an output
 	GLOBAL_settings_ptr->LightFading = 16;				//Minutes to fade light in
 	GLOBAL_settings_ptr->FadingTime = 30;				//Seconds to fade from one color setting to next
-	GLOBAL_settings_ptr->cal_uBat = 210514;
-	GLOBAL_settings_ptr->cal_uPwr = 205402;
-	GLOBAL_settings_ptr->min_uBat = 2023;
-	GLOBAL_settings_ptr->min_uPwr = 319;
+	GLOBAL_settings_ptr->cal_uBat = 210514;				//calibration for battery voltage measurement
+	GLOBAL_settings_ptr->cal_uPwr = 205402;				//calibration for external voltage source measurement
+	GLOBAL_settings_ptr->min_uBat = 2023;				//Minimum battery voltage to stay on
+	GLOBAL_settings_ptr->min_uPwr = 319;				//Minimum difference voltage between battery and external voltage source needed to switch to external power mode
 
 	alarm_t alarms[maxAlarm] = {
 			{ 0, 6, 20 },
