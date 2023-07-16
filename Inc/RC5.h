@@ -9,7 +9,6 @@
 #define RC5_H_
 
 #include "stm32l1xx_hal.h"
-#include "serialLogger.h"
 #include "setbrightness.h"
 #include "settings.h"
 #include "main.h"

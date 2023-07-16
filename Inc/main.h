@@ -38,7 +38,6 @@ extern "C" {
 #include "settings.h"
 #include "terminal_helper.h"
 #include "rtc.h"
-#include "serialLogger.h"
 #include "mainmenu.h"
 #include "encoder.h"
 #include "keys.h"
