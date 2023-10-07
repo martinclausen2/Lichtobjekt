@@ -29,6 +29,7 @@ void CheckAlarm()
 		//execute a new alarm, but only if none is already running
 		if (alarmState.skipAlarmCnt > 0)
 			{
+			CLI_Printf("\r\nAlarm skipped.");
 			alarmState.skipAlarmCnt--;
 			}
 		else if (!AlarmFlag)

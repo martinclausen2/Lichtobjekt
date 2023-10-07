@@ -21,9 +21,9 @@
 #include <ctype.h>
 #include <string.h>
 
-#define KeyPressShort	30
-#define KeyPressLong	80
-#define KeyPressLonger	KeyPressLong*2
+#define KeyPressShort	40
+#define KeyPressLong	120
+#define KeyPressLonger	KeyPressLong*3
 
 void MainMenu();
 void EnterBatStandby();

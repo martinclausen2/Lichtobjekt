@@ -1,5 +1,7 @@
 #include <settingscommands.h>
 
+#define maxskipAlarmCnt 30
+
 void SettingsCommands_Init()
 {
 	CLI_AddCmd("bright", BrightnessCmd, 1, TMC_None, "set brightness values - [type] <-c channel_no> <-b brightness_value>");
@@ -303,7 +305,7 @@ uint8_t AlarmCmd()
 	uint32_t set = 0;
 
 	// optional arguments
-	if (CLI_GetArgDecByFlag("-s", &skipcnt) & (skipcnt <=alarmState.maxskipAlarmCnt))
+	if (CLI_GetArgDecByFlag("-s", &skipcnt) & (skipcnt <=maxskipAlarmCnt))
 	{
 		alarmState.skipAlarmCnt = skipcnt;
 		Rtc_SetAlarm();
@@ -327,7 +329,7 @@ uint8_t AlarmCmd()
 				WeekdayNames[alarmRtc.AlarmDateWeekDay],
 				(int)alarmRtc.AlarmTime.Hours,
 				(int)alarmRtc.AlarmTime.Minutes);
-		CLI_Printf("\r\nSkipping #%d, current maximum skip count %d", alarmState.skipAlarmCnt, alarmState.maxskipAlarmCnt);
+		CLI_Printf("\r\nSkipping #%d", alarmState.skipAlarmCnt);
 	}
 	return TE_OK;
 }

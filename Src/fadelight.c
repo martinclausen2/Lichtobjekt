@@ -9,6 +9,8 @@
 
 #define colorCount 4
 
+#define maxBrightnessSetting 40
+
 unsigned int FadeDim_Cnt[maxChannel] = {0};
 
 unsigned int fadeColor = colorCount;
@@ -20,9 +22,9 @@ bool fadeLightFlag = false;
 
 unsigned int colors[colorCount][maxChannel]=
 {
-		{40, 000},
+		{ 40, 00},
 		{ 10, 40},
-		{000, 40},
+		{ 00, 40},
 		{ 10, 40}
 };
 
@@ -73,7 +75,7 @@ void ResetFadeLight()
 int FadeLight_StepDim(unsigned int i)
 {
 	int dimStep = 0;
-	int deltaBrightness = ((Brightness[FadeLightChannel]*colors[fadeColor][i]) >> 8) - Brightness[i];
+	int deltaBrightness = ((Brightness[FadeLightChannel]*colors[fadeColor][i]) / maxBrightnessSetting) - Brightness[i];
 
 	if (FadeDim_Cnt[i])
 	{
@@ -81,7 +83,7 @@ int FadeLight_StepDim(unsigned int i)
 	}
 	else if (deltaBrightness)						//dimming step
 	{
-		int totalDeltaBrightness = (Brightness[FadeLightChannel]*(colors[fadeColor][i]-colors[oldFadeColor][i])) >> 8;
+		int totalDeltaBrightness = (Brightness[FadeLightChannel]*(colors[fadeColor][i]-colors[oldFadeColor][i])) / maxBrightnessSetting;
 		if (totalDeltaBrightness)
 		{
 			FadeDim_Cnt[i]=GLOBAL_settings_ptr->FadingTime*callsinsecond/totalDeltaBrightness;
