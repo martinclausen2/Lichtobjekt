@@ -115,7 +115,7 @@ void MainMenu()
 	case 1:
 		CheckAlarm();
 		LEDLimit();
-		if (FocusChannel == FadeLightChannel)
+		if ((FocusChannel == FadeLightChannel) & LightOn)
 		{
 			FadeLight();
 		}

@@ -43,4 +43,6 @@ void TUSART_ProcessInput(uint8_t* pData, uint16_t Size);
 
 void TUSART_UARTEx_RxEventCallback(uint16_t Size);
 
+void UARTEx_RxEventCallbackCore();
+
 #endif /* INC_TERMINAL_HELPER_H_ */

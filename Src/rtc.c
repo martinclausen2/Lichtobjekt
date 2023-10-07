@@ -3,7 +3,7 @@
 RTC_TimeTypeDef timeRtc = {0};
 RTC_DateTypeDef dateRtc = {0};
 RTC_AlarmTypeDef alarmRtc = {.Alarm = RTC_ALARM_A,
-								.AlarmDateWeekDaySel = RTC_ALARMDATEWEEKDAYSEL_WEEKDAY};
+		.AlarmDateWeekDaySel = RTC_ALARMDATEWEEKDAYSEL_WEEKDAY};
 
 alarmState_t alarmState = {0};
 
@@ -57,55 +57,46 @@ void Rtc_AlarmAEventCallback(RTC_HandleTypeDef *hrtc)
 }
 
 //Checks for the next alarm, returns -1 if no alarm was found
-//considers skipAlarmCnt, not fast, but memory effective
+//does NOT consider skipAlarmCnt, not fast, but memory effective
 void Find_NextAlarm()
 {
 	unsigned int j;
-	unsigned int i;
 	signed int curdifference;		//time between alarm and curent time
 	signed int mindifference=0;		//maximum difference is 7*24*60 Minutes = 10080 Minutes
 									//0 is no alarm on yet found
-	signed int curmindifference=0;	//minimum for this skipped alarm iteration, goes up with every skip iteration
 
 	int minAlarm = noPendingAlarm;	//number of the alarm with the smallest difference
 
 	Rtc_GetDateTime();
 
-	for(i=0; i<=alarmState.skipAlarmCnt; i++)
+	for(j=0; j<maxAlarm+1; j++)		//go through all alarms
+	{
+		alarm_t curAlarm = GLOBAL_settings_ptr->Alarm[j];
+		if (curAlarm.weekday)			//is this alarm on at all?
 		{
-		alarmState.maxskipAlarmCnt=0;
-		for(j=0; j<maxAlarm+1; j++)		//go through all alarms
+			//calculate time difference between now and alarm
+			if (alldays==curAlarm.weekday)
 			{
-			alarm_t curAlarm = GLOBAL_settings_ptr->Alarm[j];
-			if (curAlarm.weekday)			//is this alarm on at all?
-				{
-				//calculate time difference between now and alarm
-				if (alldays==curAlarm.weekday)
-					{
-					curdifference = 0;
-					}
-				else
-					{
-					curdifference = (curAlarm.weekday-dateRtc.WeekDay)*minutesinday;
-					}
-				curdifference += (curAlarm.hour-timeRtc.Hours)*minutesinhour;
-				curdifference += curAlarm.minute-timeRtc.Minutes;
-				if (0>curdifference)		//warp into next week
-					{
-					curdifference+=daysinweek*minutesinday;
-					}
-				alarmState.maxskipAlarmCnt++;
-
-				// set alarm no if alarm is closer or no alarm is set yet
-				if (((mindifference>curdifference) || 0==mindifference) && curmindifference<curdifference)
-					{
-					mindifference=curdifference;
-					minAlarm=j;
-					}
-				}
+				curdifference = 0;
 			}
-		curmindifference=mindifference;			//save this iterations smallest time difference
-		mindifference=0;						//reset search
+			else
+			{
+				curdifference = (curAlarm.weekday-dateRtc.WeekDay)*minutesinday;
+			}
+			curdifference += (curAlarm.hour-timeRtc.Hours)*minutesinhour;
+			curdifference += curAlarm.minute-timeRtc.Minutes;
+			if (0>curdifference)		//warp into next week
+			{
+				curdifference+=daysinweek*minutesinday;
+			}
+
+			// set alarm no if alarm is closer or no alarm is set yet
+			if ((mindifference>curdifference) || 0==mindifference)
+			{
+				mindifference=curdifference;
+				minAlarm=j;
+			}
 		}
+	}
 	alarmState.nextAlarmIndex = minAlarm;
 }

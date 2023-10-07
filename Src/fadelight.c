@@ -7,7 +7,7 @@
 
 #include "fadelight.h"
 
-#define colorCount 3
+#define colorCount 4
 
 unsigned int FadeDim_Cnt[maxChannel] = {0};
 
@@ -21,9 +21,9 @@ bool fadeLightFlag = false;
 unsigned int colors[colorCount][maxChannel]=
 {
 		{40, 000},
-
 		{ 10, 40},
-		{000, 40}
+		{000, 40},
+		{ 10, 40}
 };
 
 // limit entry to max brightness
