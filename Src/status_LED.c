@@ -41,22 +41,25 @@ void LEDOff()
 void LEDOn()
 {
 	LEDSetColor(LEDWhite);
+	LEDColorBackup = LEDCurrentColor;
 }
 
 void LEDCancel()
 {
 	LEDSetColor(LEDGreen);
+	LEDColorBackup = LEDCurrentColor;
 }
 
 void LEDFadeLightOut()
 {
 	LEDSetColor(LEDGreen);
+	LEDColorBackup = LEDCurrentColor;
 }
 
 // indicate value by color
 void LEDValue(unsigned char i)		//i should not exceed colorTable length - 5
 {
-	LEDSetColor(i+5);				//add offset reserved for other status
+	LEDSetColor(i+5);		//add offset reserved for other status
 }
 
 // functions to indicate current option
@@ -73,6 +76,7 @@ void LEDSetupOptions(unsigned char i)	//i should not exceed LEDmax Flash
 	else
 	{
 		LEDFlashTimer = 0;					//stop flashing
+											// backup of color setting required in case function is called for first time with i == 0
 		LEDSetColorTemp(LEDColorBackup);	//restore LED color
 	}
 }
@@ -106,6 +110,7 @@ void LEDOptions()		//flashes LED to indicate current option, must be called freq
 void LEDSetupStandby()					//call once before entering standby, then call LEDStandby repeatedly
 {
 	LEDSetColor(LEDRed);
+	LEDColorBackup = LEDCurrentColor;
 	LEDStandbyTimer = LEDmaxStandyTimer;
 }
 

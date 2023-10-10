@@ -45,4 +45,6 @@ void TUSART_UARTEx_RxEventCallback(uint16_t Size);
 
 void UARTEx_RxEventCallbackCore();
 
+void TUSART_StartReceptionCore();
+
 #endif /* INC_TERMINAL_HELPER_H_ */

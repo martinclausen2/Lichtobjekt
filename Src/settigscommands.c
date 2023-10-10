@@ -17,6 +17,7 @@ void SettingsCommands_Init()
 	CLI_AddCmd("reset", ResetSettingsCmd, 0, TMC_None, "reset settings to factory defaults");
 	CLI_AddCmd("statusled", StatusLEDCmd, 1, TMC_None, "flash status led  - [flash count]");
 	CLI_AddCmd("fadelight", FadeLightCmd, 0, TMC_None, "mood light - <-f 1 | 0> time - <-t time> <-b brightness> <-mb maximum brightness>");
+	CLI_AddCmd("version", VersionCmd, 0, TMC_None, "show STM32 software version");
 }
 
 void printValueArray(unsigned char(*values)[])
@@ -470,5 +471,11 @@ uint8_t FadeLightCmd()
 
 	SettingsWrite();
 
+	return TE_OK;
+}
+
+uint8_t VersionCmd()
+{
+	CLI_Printf("\r\n STM32 RGBW-Lampe sw version: "); CLI_Printf(__DATE__); CLI_Printf(" ");CLI_Printf(__TIME__);
 	return TE_OK;
 }

@@ -22,10 +22,10 @@ uint8_t GetTimestampCmd();
 uint8_t AlarmSettingsCmd();
 uint8_t AlarmScheduleCmd();
 uint8_t AlarmCmd();
-uint8_t AlarmCmd();
 uint8_t PowerCmd();
 uint8_t ResetSettingsCmd();
 uint8_t StatusLEDCmd();
 uint8_t FadeLightCmd();
+uint8_t VersionCmd();
 
 #endif // _SETTINGSCOMMANDS_H_
