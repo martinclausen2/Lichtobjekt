@@ -20,9 +20,12 @@ void EnterBatStandby()
 {
 	int uDelta = uBat - GLOBAL_settings_ptr->min_uBat;
 	if (uDelta >0)
+	{
+		LEDSetColor(LEDBlue);
 		HAL_Delay(uDelta*4);
+	}
 	LEDOff();
-
+	HAL_Delay(10);
 	//prepare for stopmode
 	HAL_NVIC_DisableIRQ(TIM6_IRQn);
 	HAL_NVIC_DisableIRQ(TIM11_IRQn);
