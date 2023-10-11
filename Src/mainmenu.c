@@ -13,12 +13,16 @@ bool awaitBatStandby = false;
 
 void PrepareBatStandby() {
 	SwAllLightOff();
-	LEDOff();
 	awaitBatStandby = true;
 }
 
 void EnterBatStandby()
 {
+	int uDelta = uBat - GLOBAL_settings_ptr->min_uBat;
+	if (uDelta >0)
+		HAL_Delay(uDelta*4);
+	LEDOff();
+
 	//prepare for stopmode
 	HAL_NVIC_DisableIRQ(TIM6_IRQn);
 	HAL_NVIC_DisableIRQ(TIM11_IRQn);
