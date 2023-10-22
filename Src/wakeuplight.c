@@ -59,9 +59,12 @@ void CheckAlarm()
 //stop any brightness increase, count down to acoustic alarm, or acoustic alarm
 void AlarmEnd()
 {
-	SendRC5(RC5Addr_com, RC5Cmd_AlarmEnd, 1, ComModeOff, RC5Cmd_Repeats);
-	AlarmFlag=0;
-	LEDOn();
+	if (AlarmFlag)
+	{
+		SendRC5(RC5Addr_com, RC5Cmd_AlarmEnd, 1, ComModeOff, RC5Cmd_Repeats);
+		AlarmFlag=0;
+		LEDOn();
+	}
 }
 
 //wake-up light dimming
