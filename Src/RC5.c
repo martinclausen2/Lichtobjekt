@@ -169,7 +169,7 @@ void DecodeRemote()
 			}
 			RTbitold=RTbit;				//Togglebit speichern
 		}
-		else if ((RC5Addr_first>=rAddress) & ((RC5Addr_first + maxVirtualChannel -1) <= rAddress) & ( RC5Addr_com > rAddress))
+		else if ((RC5Addr_first<=rAddress) & ((RC5Addr_first + maxVirtualChannel -1) >= rAddress) & ( RC5Addr_com > rAddress))
 		{
 			SetBrightnessRemote(rAddress - RC5Addr_first);
 		}
