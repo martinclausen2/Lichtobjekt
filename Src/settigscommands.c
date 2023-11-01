@@ -312,9 +312,12 @@ uint8_t AlarmCmd()
 		Rtc_SetAlarm();
 	}
 
-	if (CLI_GetArgDecByFlag("-a", &set) & (set <=1))
+	if (CLI_GetArgDecByFlag("-a", &set))
 	{
-		alarmState.alarmTrigger = (set == 1);
+		if (set = 0)
+			AlarmEnd();
+		else if (set = 1)
+			alarmState.alarmTrigger = 1;
 	}
 
 	if (noPendingAlarm == alarmState.nextAlarmIndex)
