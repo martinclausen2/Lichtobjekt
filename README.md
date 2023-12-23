@@ -71,6 +71,7 @@ TBA
 - The MCU does not switch the battery charger off, if the input voltage would lead to a thermal overload of the charging transistor
 The batch of pcb made is missing the required hardware prerequisites, the latest version contains the required circuits, but has not been manufactured yet.
 This PCB batch is also missing the MOSFET to shutdown the battery temperature and external voltage measurement. Due to the high leakage current of the charging transistor, the battery is drained with about 400µA also during power down.
+- The ioc file currently targets the STM32L151 which is not available anymore. The setup can easily be changed to the STM32L151A.
 
 # User Manual
 
@@ -106,82 +107,100 @@ The white flash is actually not visible, since the LED is already shining white.
 
 The serial port uses the following parameter 115200 Baud rate, data site 8, parity none, stop bits 1
 
-The commands can be listed by sending the command "help".
+The commands can be listed by sending the command 'help'.
 
 ## Available Commands
 
 ### Set Brightness
 
-"bright"
+'bright [type] <-c channel_no> <-b brightness_value>'
 
-set brightness values - [type] <-c channel_no> <-b brightness_value>
+set brightness values
+
+| Type | Decription |
+| :--- | :--------- |
+| 0 | Brightness last used before lights were switched off. |
+| 1 | Minimum brightness when switched on |
+| 2 | Maximum brightness any time |
+| 3 | Maximum brightness when an alarm is triggered |
+| 4 | PWM offset for brightness |
+| 5 | Current brightness |
 
 ### Get External Brightness
 
-"getextbright"
+'getextbright'
 
 Get the external brightness from the phototransistor
 
 ### Infrared Remote Control
 
-"remote"
+'remote <-a address> <-rm receiver mode> <-sm sender mode> <-sa send address> <-sd send data>'
 
-set infrared remote parameters - <-a address> <-rm receiver mode> <-sm sender mode> <-sa send address> <-sd send data>
+set infrared remote parameters
+
+| Mode | Decription |
+| :--- | :--------- |
+| 0 | Off |
+| 1 | Alarm |
+| 2 | Condional |
+| 3 | All |
 
 ### Set Date and Time
 
-"time" 
+'time [hour] [minute] [second]' 
 
-set time of RTC - [hour] [minute] [second]
+set time of RTC
 
-"date"
+'date [2 digit year] [month] [day] [w] with w weekday'
 
-set date of RTC - [2 digit year] [month] [day] [w] with w weekday
+set date of RTC
 
-"timestamp"
+'timestamp'
 
 get date and time from RTC
 
 ### Alarm
 
-"alarmschedule"
+'alarmschedule [alarm no] <-w weekday> <-h hour> <-m minute>'
 
-set alarm schedule - [alarm no] <-w weekday> <-h hour> <-m minute>
+set alarm schedule
 
-"alarmsetting"
+'alarmsetting <-f time to fade-in light>'
 
-set alarm parameters - <-f time to fade-in light>
+set alarm parameters
 	
-"alarm"
+'alarm <-a 1 | 0> <-s alarm skip count>'
 
-trigger, reset, set alarm skip count - <-a 1 | 0> <-s alarm skip count>
+trigger, reset, set alarm skip count
 
 ### Power and Battery
 
-"power"
+'power <-l 1 | 0>\r\n<-ub battery voltage> <-mub minimum battery voltage>\r\n<-up external power voltage> <-mup minimum external power voltage difference>''
 
-switch light set min external power and battery voltage and calibration- <-l 1 | 0>\r\n<-ub battery voltage> <-mub minimum battery voltage>\r\n<-up external power voltage> <-mup minimum external power voltage difference>"
+switch light, set min external power and battery voltage and calibration
+
+Voltages are given in mV.
 
 ### Reset Settings
 
-"reset"
+'reset'
 
 reset settings to factory defaults
 
 ### Status LED
 
-"statusled"
+'statusled [flash count]'
 
-flash status led  - [flash count]
+flash status led
 
 ### Fadelight
 
-"fadelight"
+'fadelight <-f 1 | 0> time - <-t time> <-b brightness> <-mb maximum brightness>'
 
-mood light - <-f 1 | 0> time - <-t time> <-b brightness> <-mb maximum brightness>
+switch and parameterize on mood light
 
 ### Version
 
-"version"
+'version'
 
 show STM32 software version
