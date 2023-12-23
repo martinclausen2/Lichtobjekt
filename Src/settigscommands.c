@@ -479,6 +479,6 @@ uint8_t FadeLightCmd()
 
 uint8_t VersionCmd()
 {
-	CLI_Printf("\r\n STM32 RGBW-Lampe sw version: "); CLI_Printf(__DATE__); CLI_Printf(" ");CLI_Printf(__TIME__);
+	CLI_Printf("\r\n STM32 Lichtobjekt sw version: "); CLI_Printf(__DATE__); CLI_Printf(" ");CLI_Printf(__TIME__);
 	return TE_OK;
 }
