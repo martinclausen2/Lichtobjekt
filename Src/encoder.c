@@ -24,7 +24,6 @@ void Encoder()
 	static unsigned short Decay;
 	unsigned short Counter = htim_encoder->Instance->CNT;
 	short DeltaCounter;
-	static short OldDeltaCounter;
 
 	DeltaCounter = Counter - OldCounter;
 	//handle warp around
@@ -43,17 +42,8 @@ void Encoder()
 	if (DeltaCounter != 0)
 		{
 		EncoderSteps += DeltaCounter;
-
-		//still same direction?
-		if ((DeltaCounter<0) == (OldDeltaCounter<0))
-			{
-			EncoderSteps += DeltaCounter * Acceleration / AccelerationScale;
-			++Acceleration;
-			}
-		else
-			{
-			Acceleration = 0;
-			}
+		EncoderSteps += DeltaCounter * Acceleration / AccelerationScale;
+		++Acceleration;
 		}
 	else if (Decay > 0)
 		{
@@ -69,7 +59,6 @@ void Encoder()
 		}
 
 	OldCounter = Counter;
-	OldDeltaCounter = DeltaCounter;
 }
 
 //check encoder and change value within limits, returns true if value was changed

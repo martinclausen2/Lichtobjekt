@@ -14,7 +14,7 @@
 #define AccelerationScale	0x03
 
 //start value for decrementing acceleration, depends on calling frequency
-#define startDecay	0x00AF
+#define startDecay	0x007
 
 // values to correct warp around of counter
 #define MaxChange 0x0FFF
