@@ -43,6 +43,7 @@ void CheckAlarm()
 			}
 			LightOn=1;
 			AlarmFlag=1;
+			SendRC5(RC5Addr_com, RC5Cmd_AlarmStart, 1, ComModeAlarm, RC5Cmd_Repeats);
 		}
 	}
 
@@ -61,7 +62,7 @@ void AlarmEnd()
 {
 	if (AlarmFlag)
 	{
-		SendRC5(RC5Addr_com, RC5Cmd_AlarmEnd, 1, ComModeOff, RC5Cmd_Repeats);
+		SendRC5(RC5Addr_com, RC5Cmd_AlarmEnd, 1, ComModeAlarm, RC5Cmd_Repeats);
 		AlarmFlag=0;
 		LEDOn();
 	}
