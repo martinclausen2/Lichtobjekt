@@ -60,32 +60,3 @@ void Encoder()
 
 	OldCounter = Counter;
 }
-
-//check encoder and change value within limits, returns true if value was changed
-bool EncoderSetupValue(unsigned char *Value, unsigned char maxValue, unsigned char minValue)
-{
-	signed int temp;
-	bool returnval = false;
-	// A Rotation occurred if EncoderSteps!= 0
-	// EncoderSteps = 0 must be set by receiving program after decoding
-	if (EncoderSteps)
-		{
-		temp = EncoderSteps;
-		EncoderSteps = 0;			//ack received steps
-		temp += *Value;
-		if (maxValue < temp)
-			{
-			*Value = maxValue;
-			}
-		else if (minValue > temp)
-			{
-			*Value = minValue;
-			}
-		else
-			{
-			*Value = temp & 0xFF;
-			}
-		returnval = true;
-		}
-	return returnval;
-}

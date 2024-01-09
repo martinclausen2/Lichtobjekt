@@ -47,10 +47,18 @@ unsigned int PWM_SetPulseWidth(int channel)
 	{
 		PWM_set[channel] = maxPWM;
 	}
+	else if (PWM_set[channel] < 0)
+	{
+		PWM_set[channel] = 0;
+	}
 	temp = PWM_set[channel] + PWM_Offset[channel];
 	if (temp > maxPWM)
 	{
 		temp = maxPWM;
+	}
+	else if (temp < 0)
+	{
+		temp = 0;
 	}
 	return temp;
 }
@@ -115,8 +123,8 @@ void PWM_SetupDim(unsigned char i, signed int PWM_dimsteps, signed int brightnes
 		PWM_step_cnt_reload[i] = timeSteps;
 		PWM_step_cnt[i] = timeSteps;
 
-		temp = temp * (temp + 2) - PWM_set[i];
-		if ((temp > PWM_dimsteps) || ((temp<0) && (-temp>PWM_dimsteps)))	// if we have more difference then steps to go
+		temp = temp * temp - PWM_set[i];
+		if ((temp > PWM_dimsteps) || (-temp>PWM_dimsteps))	// if we have more difference then steps to go
 		{
 			PWM_incr[i] = temp / PWM_dimsteps;
 			PWM_set[i] += (temp - PWM_incr[i]*PWM_dimsteps); 		//calculate remainder, brackets to avoid overflow!?
