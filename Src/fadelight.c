@@ -20,7 +20,7 @@ bool fadeLightFlag = false;
 
 // array with meaning full color combinations
 
-unsigned int colors[colorCount][maxChannel]=
+int colors[colorCount][maxChannel]=
 {
 		{ 40, 00},
 		{ 10, 40},
@@ -50,7 +50,7 @@ void FadeLight()
 	{
 		for (unsigned int i = 0; i < maxChannel; i++)
 		{
-			fading = fading || FadeLight_StepDim(i);
+			fading = FadeLight_StepDim(i) || fading;
 		}
 	}
 	if (!fadeLightFlag || !fading)
@@ -83,10 +83,10 @@ int FadeLight_StepDim(unsigned int i)
 	}
 	else if (deltaBrightness)						//dimming step
 	{
-		int totalDeltaBrightness = (Brightness[FadeLightChannel]*(colors[fadeColor][i]-colors[oldFadeColor][i])) / maxBrightnessSetting;
+		int totalDeltaBrightness = (Brightness[FadeLightChannel]*abs(colors[fadeColor][i]-colors[oldFadeColor][i])) / maxBrightnessSetting;
 		if (totalDeltaBrightness)
 		{
-			FadeDim_Cnt[i]=GLOBAL_settings_ptr->FadingTime*callsinsecond/totalDeltaBrightness;
+			FadeDim_Cnt[i]=(GLOBAL_settings_ptr->FadingTime*callsinsecond)/totalDeltaBrightness;
 		}
 		else
 		{

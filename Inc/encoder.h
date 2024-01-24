@@ -11,10 +11,10 @@
 #include <stdbool.h>
 #include "stm32l1xx_hal.h"
 
-#define AccelerationScale	0x03
+#define AccelerationScale	0x07
 
 //start value for decrementing acceleration, depends on calling frequency
-#define startDecay	0x007
+#define startDecay	0x03
 
 // values to correct warp around of counter
 #define MaxChange 0x0FFF
