@@ -15,8 +15,8 @@
 #include <stdbool.h>
 #include <stdio.h>
 
-#define pulsesActive 31
-#define pulsesInactive 31
+#define pulsesActive 32
+#define pulsesInactive 32
 
 #define maxComMode 3
 
@@ -41,7 +41,7 @@
 
 extern unsigned char SenderMode;		//Mode for sending commands to other devices
 
-//State Machine zur Decodierung des RC5-Fernbedieungscodes
+//State Machine zur Decodierung des RC5-Fernbedienungscodes
 static const unsigned char tblRemote[] =	{
 		1, 0, 2, 0, 3, 0, 4, 0, 5, 0, 6, 0, 7, 0,
 		8, 0, 9, 0, 10, 0, 11, 0, 12, 0, 13, 0, 14,
@@ -60,8 +60,8 @@ void SetLightRemote(unsigned char i, signed char steps);
 void SetBrightnessRemote(unsigned char i);
 void SetBrightnessLevelRemote();
 void DecodeRemote();
-void SendRC5(unsigned char address, unsigned char code, unsigned char toggle, unsigned char requiredmode, unsigned repeats);
-void SendCommand(unsigned char address, unsigned char code, unsigned char toggle);
+void SendRC5(unsigned char address, unsigned char code, unsigned char requiredmode, unsigned repeats);
+void SendCommand(unsigned char address, unsigned char code, bool toggle);
 void SendBit0();
 void SendBit1();
 

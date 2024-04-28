@@ -167,7 +167,7 @@ uint8_t RemoteControlCmd()
 	}
 	if (CLI_GetArgDecByFlag("-sa", &sendAddress) & CLI_GetArgDecByFlag("-sd", &sendData))
 	{
-		SendRC5(sendAddress, sendData, 1, ComModeOff, RC5Cmd_Repeats);
+		SendRC5(sendAddress, sendData, ComModeOff, RC5Cmd_Repeats);
 	}
 
 	CLI_Printf("\r\nRC5 receiver address: %d\r\nreceiver mode: %d %s\r\nsender mode: %d %s",
